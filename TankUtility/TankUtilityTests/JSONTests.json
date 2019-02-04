@@ -1,0 +1,26 @@
+[
+    {
+        "devices": [
+            "54df6a066667531535371367",
+            "54ff69057492666782350667"
+        ]
+    },
+    {
+        "device": {
+            "name": "Sample Device",
+            "address": "6 Dane St., Somerville, MA 02143, USA",
+            "fuelType": "oil",
+            "orientation": "horizontal",
+            "capacity": 100,
+            "lastReading": {
+                "tank": 20,
+                "temperature": 72.12,
+                "time": 1444338760345,
+                "time_iso": "2015-10-08T21:12:40.345Z"
+            }
+        }
+    },
+    {
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0MzgyMjQwODE0NjIsInYiOjAsImQiOnsidWleejoic2ltcGxlbG9naW46MzM1In0sImlhdCI6wwDIyMzk5NX0.kbYzxRtbGB2ke3IBgQTVMNQprHOWJZFgQQnPK6Wyas4"
+    }
+]
