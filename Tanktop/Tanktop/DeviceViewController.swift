@@ -32,8 +32,8 @@ class DeviceViewController: UIViewController, UIScrollViewDelegate {
         handleRefresh()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
         settingsView.toggle(open: false, animated: animated)
     }
