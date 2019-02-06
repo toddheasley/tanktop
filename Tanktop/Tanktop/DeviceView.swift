@@ -87,7 +87,7 @@ class DeviceView: UIView {
         dragControl.isEnabled = contentSize != .compact
         dragControl.frame.origin.y = (height - (CGFloat(device?.alert.threshold ?? 0.0) * height)) + y
         dragControl.threshold = device?.alert.threshold
-        dragControl.isHidden = device == nil
+        dragControl.isHidden = !dragControl.isEnabled || device == nil
     }
     
     override init(frame: CGRect) {
