@@ -14,6 +14,16 @@
 		5C3A19FE220239B00071098A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FD220239B00071098A /* ErrorView.swift */; };
 		5C3A19FF220239B00071098A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FD220239B00071098A /* ErrorView.swift */; };
 		5C41F7582205C99400FE5DC1 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */; };
+		5C58DD28220BD119001DE8F1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD26220BD119001DE8F1 /* Interface.storyboard */; };
+		5C58DD2A220BD11C001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD29220BD11C001DE8F1 /* Assets.xcassets */; };
+		5C58DD31220BD11C001DE8F1 /* TanktopWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C58DD35220BD11C001DE8F1 /* InterfaceController.swift */; };
+		5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C58DD37220BD11C001DE8F1 /* ExtensionDelegate.swift */; };
+		5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */; };
+		5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */; };
+		5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */; };
+		5C58DD4A220BD1B3001DE8F1 /* TankUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */; };
+		5C58DD4B220BD1B3001DE8F1 /* TankUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C7045F2220644C500FAF28E /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3841821F673AB00163A1C /* DeviceView.swift */; };
 		5C7045F32206458600FAF28E /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE4FD4220268B600343DA3 /* ReadingView.swift */; };
 		5C7045F42206459800FAF28E /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
@@ -46,6 +56,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5C58DD32220BD11C001DE8F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CB0054521ED002000F2E503 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C58DD2F220BD11C001DE8F1;
+			remoteInfo = "TanktopWatch Extension";
+		};
+		5C58DD3E220BD11D001DE8F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CB0054521ED002000F2E503 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C58DD23220BD119001DE8F1;
+			remoteInfo = TanktopWatch;
+		};
 		5C9F574421F4045D00D7AEC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CB0054521ED002000F2E503 /* Project object */;
@@ -67,6 +91,39 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5C58DD46220BD11D001DE8F1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5C58DD31220BD11C001DE8F1 /* TanktopWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C58DD48220BD11D001DE8F1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C58DD4C220BD1B3001DE8F1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C58DD4B220BD1B3001DE8F1 /* TankUtility.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CCD037721ED056C00EF3373 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +138,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C05E57E220BDAE500BA5155 /* TanktopWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TanktopWatch Extension.entitlements"; sourceTree = "<group>"; };
+		5C05E57F220BDAEF00BA5155 /* TanktopWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanktopWatch.entitlements; sourceTree = "<group>"; };
 		5C0BE3A3220862D30000EBE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5C175C492200AE36009C3742 /* DragControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragControl.swift; sourceTree = "<group>"; };
 		5C1AD92A21FF6D92000C4040 /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
@@ -89,6 +148,17 @@
 		5C3A19FD220239B00071098A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		5C455823220B3A580099EDED /* Tanktop.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tanktop.sketch; sourceTree = "<group>"; };
+		5C58DD24220BD119001DE8F1 /* TanktopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TanktopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C58DD27220BD119001DE8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5C58DD29220BD11C001DE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C58DD2B220BD11C001DE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TanktopWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C58DD35220BD11C001DE8F1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5C58DD37220BD11C001DE8F1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C58DD3D220BD11D001DE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TankUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TanktopToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9F573E21F4045D00D7AEC8 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +188,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C58DD2D220BD11C001DE8F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C58DD4A220BD1B3001DE8F1 /* TankUtility.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C9F573621F4045D00D7AEC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,6 +217,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C58DD25220BD119001DE8F1 /* TanktopWatch */ = {
+			isa = PBXGroup;
+			children = (
+				5C05E57F220BDAEF00BA5155 /* TanktopWatch.entitlements */,
+				5C58DD29220BD11C001DE8F1 /* Assets.xcassets */,
+				5C58DD26220BD119001DE8F1 /* Interface.storyboard */,
+				5C58DD2B220BD11C001DE8F1 /* Info.plist */,
+			);
+			path = TanktopWatch;
+			sourceTree = "<group>";
+		};
+		5C58DD34220BD11C001DE8F1 /* TanktopWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C05E57E220BDAE500BA5155 /* TanktopWatch Extension.entitlements */,
+				5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */,
+				5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */,
+				5C58DD37220BD11C001DE8F1 /* ExtensionDelegate.swift */,
+				5C58DD35220BD11C001DE8F1 /* InterfaceController.swift */,
+				5C58DD3D220BD11D001DE8F1 /* Info.plist */,
+			);
+			path = "TanktopWatch Extension";
+			sourceTree = "<group>";
+		};
 		5C9F573D21F4045D00D7AEC8 /* TanktopToday */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,9 +267,14 @@
 				5C455823220B3A580099EDED /* Tanktop.sketch */,
 				5CB0054F21ED002100F2E503 /* Tanktop */,
 				5C9F573D21F4045D00D7AEC8 /* TanktopToday */,
+				5C58DD34220BD11C001DE8F1 /* TanktopWatch Extension */,
+				5C58DD25220BD119001DE8F1 /* TanktopWatch */,
 				5CC8B2BE21ED058100BDBF35 /* Tanktop.app */,
 				5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */,
 				5CCD037421ED056C00EF3373 /* TankUtility.framework */,
+				5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */,
+				5C58DD24220BD119001DE8F1 /* TanktopWatch.app */,
+				5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */,
 				5C9F574D21F404EF00D7AEC8 /* Frameworks */,
 				5C0BE3A3220862D30000EBE8 /* README.md */,
 			);
@@ -206,6 +313,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5C58DD23220BD119001DE8F1 /* TanktopWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C58DD47220BD11D001DE8F1 /* Build configuration list for PBXNativeTarget "TanktopWatch" */;
+			buildPhases = (
+				5C58DD22220BD119001DE8F1 /* Resources */,
+				5C58DD46220BD11D001DE8F1 /* Embed App Extensions */,
+				5C58DD4E220BD279001DE8F1 /* Set Build Number */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C58DD33220BD11C001DE8F1 /* PBXTargetDependency */,
+			);
+			name = TanktopWatch;
+			productName = TanktopWatch;
+			productReference = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5C58DD2F220BD11C001DE8F1 /* TanktopWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C58DD45220BD11D001DE8F1 /* Build configuration list for PBXNativeTarget "TanktopWatch Extension" */;
+			buildPhases = (
+				5C58DD2C220BD11C001DE8F1 /* Sources */,
+				5C58DD2D220BD11C001DE8F1 /* Frameworks */,
+				5C58DD2E220BD11C001DE8F1 /* Resources */,
+				5C58DD4C220BD1B3001DE8F1 /* Embed Frameworks */,
+				5C58DD4D220BD243001DE8F1 /* Set Build Number */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TanktopWatch Extension";
+			productName = "TanktopWatch Extension";
+			productReference = 5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		5C9F573821F4045D00D7AEC8 /* TanktopToday */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C9F574721F4045D00D7AEC8 /* Build configuration list for PBXNativeTarget "TanktopToday" */;
@@ -233,12 +377,14 @@
 				5CB0054B21ED002000F2E503 /* Resources */,
 				5CCD037721ED056C00EF3373 /* Embed Frameworks */,
 				5C4AB2BE21F4032D006D0AA5 /* Embed App Extensions */,
+				5C58DD48220BD11D001DE8F1 /* Embed Watch Content */,
 				5C45581B220B09060099EDED /* Set Build Number */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5C9F574521F4045D00D7AEC8 /* PBXTargetDependency */,
+				5C58DD3F220BD11D001DE8F1 /* PBXTargetDependency */,
 			);
 			name = Tanktop;
 			productName = Tanktop;
@@ -255,6 +401,25 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Todd;
 				TargetAttributes = {
+					5C58DD23220BD119001DE8F1 = {
+						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					5C58DD2F220BD11C001DE8F1 = {
+						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 					5C9F573821F4045D00D7AEC8 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
@@ -305,11 +470,30 @@
 			targets = (
 				5CB0054C21ED002000F2E503 /* Tanktop */,
 				5C9F573821F4045D00D7AEC8 /* TanktopToday */,
+				5C58DD2F220BD11C001DE8F1 /* TanktopWatch Extension */,
+				5C58DD23220BD119001DE8F1 /* TanktopWatch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C58DD22220BD119001DE8F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C58DD2A220BD11C001DE8F1 /* Assets.xcassets in Resources */,
+				5C58DD28220BD119001DE8F1 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C58DD2E220BD11C001DE8F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C9F573721F4045D00D7AEC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,9 +552,55 @@
 			shellPath = /bin/sh;
 			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
 		};
+		5C58DD4D220BD243001DE8F1 /* Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
+		5C58DD4E220BD279001DE8F1 /* Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C58DD2C220BD11C001DE8F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */,
+				5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */,
+				5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C9F573521F4045D00D7AEC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +643,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5C58DD33220BD11C001DE8F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C58DD2F220BD11C001DE8F1 /* TanktopWatch Extension */;
+			targetProxy = 5C58DD32220BD11C001DE8F1 /* PBXContainerItemProxy */;
+		};
+		5C58DD3F220BD11D001DE8F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C58DD23220BD119001DE8F1 /* TanktopWatch */;
+			targetProxy = 5C58DD3E220BD11D001DE8F1 /* PBXContainerItemProxy */;
+		};
 		5C9F574521F4045D00D7AEC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5C9F573821F4045D00D7AEC8 /* TanktopToday */;
@@ -421,6 +661,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5C58DD26220BD119001DE8F1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C58DD27220BD119001DE8F1 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		5C9F574021F4045D00D7AEC8 /* Today.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -448,6 +696,94 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5C58DD41220BD11D001DE8F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TanktopWatch/TanktopWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Q3DL72K7D;
+				IBSC_MODULE = TanktopWatch_Extension;
+				INFOPLIST_FILE = TanktopWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		5C58DD42220BD11D001DE8F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TanktopWatch/TanktopWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Q3DL72K7D;
+				IBSC_MODULE = TanktopWatch_Extension;
+				INFOPLIST_FILE = TanktopWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		5C58DD43220BD11D001DE8F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "TanktopWatch Extension/TanktopWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Q3DL72K7D;
+				INFOPLIST_FILE = "TanktopWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch.extension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		5C58DD44220BD11D001DE8F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "TanktopWatch Extension/TanktopWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Q3DL72K7D;
+				INFOPLIST_FILE = "TanktopWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch.extension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
 		5C9F574821F4045D00D7AEC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -653,6 +989,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C58DD45220BD11D001DE8F1 /* Build configuration list for PBXNativeTarget "TanktopWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C58DD43220BD11D001DE8F1 /* Debug */,
+				5C58DD44220BD11D001DE8F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C58DD47220BD11D001DE8F1 /* Build configuration list for PBXNativeTarget "TanktopWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C58DD41220BD11D001DE8F1 /* Debug */,
+				5C58DD42220BD11D001DE8F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5C9F574721F4045D00D7AEC8 /* Build configuration list for PBXNativeTarget "TanktopToday" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
