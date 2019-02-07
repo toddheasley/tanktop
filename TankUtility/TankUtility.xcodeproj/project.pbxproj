@@ -17,6 +17,10 @@
 		5C3A094A21F1704300C47CB1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A094821F1704300C47CB1 /* Data.swift */; };
 		5C3A094B21F1704300C47CB1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A094821F1704300C47CB1 /* Data.swift */; };
 		5C3A094C21F1704300C47CB1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A094821F1704300C47CB1 /* Data.swift */; };
+		5C45581F220B27140099EDED /* TankUtility.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C45581E220B27130099EDED /* TankUtility.json */; };
+		5C455820220B27140099EDED /* TankUtility.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C45581E220B27130099EDED /* TankUtility.json */; };
+		5C455821220B27140099EDED /* TankUtility.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C45581E220B27130099EDED /* TankUtility.json */; };
+		5C455822220B27140099EDED /* TankUtility.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C45581E220B27130099EDED /* TankUtility.json */; };
 		5C4AB29D21F3D88C006D0AA5 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB29C21F3D88C006D0AA5 /* UserDefaultsTests.swift */; };
 		5C4AB29F21F3DF97006D0AA5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB29E21F3DF97006D0AA5 /* Alert.swift */; };
 		5C4AB2A021F3DF97006D0AA5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB29E21F3DF97006D0AA5 /* Alert.swift */; };
@@ -92,6 +96,7 @@
 		5C3A093A21F16E2200C47CB1 /* TankUtility.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TankUtility.png; sourceTree = "<group>"; };
 		5C3A094421F16F4A00C47CB1 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		5C3A094821F1704300C47CB1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5C45581E220B27130099EDED /* TankUtility.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TankUtility.json; sourceTree = "<group>"; };
 		5C4AB29C21F3D88C006D0AA5 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		5C4AB29E21F3DF97006D0AA5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5C4AB2A321F3DFAD006D0AA5 /* AlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTests.swift; sourceTree = "<group>"; };
@@ -126,44 +131,6 @@
 		5CE8417C21EC17560033DD1D /* JSONTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONTests.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		5CB8CACE21EA31D30083AC78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CB8CADE21EA31EB0083AC78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CB8CAEB21EA32040083AC78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CB8CAF821EA321B0083AC78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CB8CB0E21EA34020083AC78 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
 		5CB8CAC721EA31D30083AC78 = {
 			isa = PBXGroup;
@@ -189,6 +156,7 @@
 				5CB8CB0821EA327F0083AC78 /* Reading.swift */,
 				5CAC926822012B2700B77FD3 /* String.swift */,
 				5C5A058421EA904100A51F4F /* TankUtility.swift */,
+				5C45581E220B27130099EDED /* TankUtility.json */,
 				5C3A093A21F16E2200C47CB1 /* TankUtility.png */,
 				5C5C3C9521EA3ADE00E99B3C /* Token.swift */,
 				5C5C3CAA21EA544100E99B3C /* URLRequest.swift */,
@@ -225,45 +193,12 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		5CB8CACC21EA31D30083AC78 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CB8CADC21EA31EB0083AC78 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CB8CAE921EA32040083AC78 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CB8CAF621EA321B0083AC78 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		5CB8CAD021EA31D30083AC78 /* TankUtility */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CB8CAD921EA31D30083AC78 /* Build configuration list for PBXNativeTarget "TankUtility" */;
 			buildPhases = (
-				5CB8CACC21EA31D30083AC78 /* Headers */,
 				5CB8CACD21EA31D30083AC78 /* Sources */,
-				5CB8CACE21EA31D30083AC78 /* Frameworks */,
 				5CB8CACF21EA31D30083AC78 /* Resources */,
 			);
 			buildRules = (
@@ -279,9 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CB8CAE621EA31EB0083AC78 /* Build configuration list for PBXNativeTarget "TankUtilityMac" */;
 			buildPhases = (
-				5CB8CADC21EA31EB0083AC78 /* Headers */,
 				5CB8CADD21EA31EB0083AC78 /* Sources */,
-				5CB8CADE21EA31EB0083AC78 /* Frameworks */,
 				5CB8CADF21EA31EB0083AC78 /* Resources */,
 			);
 			buildRules = (
@@ -297,9 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CB8CAF321EA32040083AC78 /* Build configuration list for PBXNativeTarget "TankUtilityWatch" */;
 			buildPhases = (
-				5CB8CAE921EA32040083AC78 /* Headers */,
 				5CB8CAEA21EA32040083AC78 /* Sources */,
-				5CB8CAEB21EA32040083AC78 /* Frameworks */,
 				5CB8CAEC21EA32040083AC78 /* Resources */,
 			);
 			buildRules = (
@@ -315,9 +246,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CB8CB0021EA321B0083AC78 /* Build configuration list for PBXNativeTarget "TankUtilityTV" */;
 			buildPhases = (
-				5CB8CAF621EA321B0083AC78 /* Headers */,
 				5CB8CAF721EA321B0083AC78 /* Sources */,
-				5CB8CAF821EA321B0083AC78 /* Frameworks */,
 				5CB8CAF921EA321B0083AC78 /* Resources */,
 			);
 			buildRules = (
@@ -334,7 +263,6 @@
 			buildConfigurationList = 5CB8CB1921EA34020083AC78 /* Build configuration list for PBXNativeTarget "TankUtilityTests" */;
 			buildPhases = (
 				5CB8CB0D21EA34020083AC78 /* Sources */,
-				5CB8CB0E21EA34020083AC78 /* Frameworks */,
 				5CB8CB0F21EA34020083AC78 /* Resources */,
 			);
 			buildRules = (
@@ -406,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C45581F220B27140099EDED /* TankUtility.json in Resources */,
 				5C0BE3A5220862E50000EBE8 /* README.md in Resources */,
 				5C3A093B21F16E2200C47CB1 /* TankUtility.png in Resources */,
 			);
@@ -415,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C455822220B27140099EDED /* TankUtility.json in Resources */,
 				5C3A093E21F16E2200C47CB1 /* TankUtility.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C455820220B27140099EDED /* TankUtility.json in Resources */,
 				5C3A093C21F16E2200C47CB1 /* TankUtility.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C455821220B27140099EDED /* TankUtility.json in Resources */,
 				5C3A093D21F16E2200C47CB1 /* TankUtility.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
