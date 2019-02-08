@@ -1,5 +1,6 @@
 import UIKit
 import UserNotifications
+import WatchConnectivity
 import TankUtility
 
 class SettingsView: UIView {
@@ -54,6 +55,7 @@ class SettingsView: UIView {
         switch sender as? UISwitch {
         case primaryCell.toggle:
             TankUtility.primary = primaryCell.toggle.isOn ? device?.id : nil
+            try? WCSession.available?.updateApplicationContext(TankUtility.context)
         case alertCell.toggle:
             guard alertCell.toggle.isOn else {
                 device?.alert.isEnabled = false

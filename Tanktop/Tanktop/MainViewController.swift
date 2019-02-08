@@ -102,7 +102,6 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     }
     
     func pageBarDidDeauthorize() {
-        TankUtility.deauthorize()
         self.present(AuthorizeViewController(delegate: self), animated: true) {
             self.devices = []
         }

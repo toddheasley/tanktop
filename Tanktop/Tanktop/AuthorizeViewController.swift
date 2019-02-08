@@ -1,4 +1,5 @@
 import UIKit
+import WatchConnectivity
 import TankUtility
 
 protocol AuthorizeViewDelegate {
@@ -32,6 +33,8 @@ class AuthorizeViewController: UIViewController, TextFieldDelegate, KeyboardDele
         Keyboard.shared.delegate = self
         
         usernameTextField.text = TankUtility.username ?? ""
+        TankUtility.deauthorize()
+        try? WCSession.available?.updateApplicationContext(TankUtility.context)
         if let _: String = TankUtility.username {
             passwordTextField.isEditing = true
         } else {
@@ -100,6 +103,7 @@ class AuthorizeViewController: UIViewController, TextFieldDelegate, KeyboardDele
                         self.passwordTextField.isEditing = false
                         self.delegate?.viewDidAuthorize()
                     }
+                    try? WCSession.available?.updateApplicationContext(TankUtility.context)
                 }
             default:
                 usernameTextField.isEditing = true

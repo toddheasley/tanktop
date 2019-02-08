@@ -29,6 +29,8 @@
 		5C7045F42206459800FAF28E /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
 		5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5C80846622048F48008F8B11 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */; };
+		5C91AFF1220CA9DB004CCB6D /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
+		5C91AFF2220CA9DB004CCB6D /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
 		5C9F573F21F4045D00D7AEC8 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F573E21F4045D00D7AEC8 /* TodayViewController.swift */; };
 		5C9F574221F4045D00D7AEC8 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F574021F4045D00D7AEC8 /* Today.storyboard */; };
 		5C9F574621F4045D00D7AEC8 /* TanktopToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -160,6 +162,7 @@
 		5C58DD3D220BD11D001DE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TankUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
+		5C91AFF0220CA9DB004CCB6D /* WCSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCSession.swift; sourceTree = "<group>"; };
 		5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TanktopToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9F573E21F4045D00D7AEC8 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		5C9F574121F4045D00D7AEC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
@@ -220,9 +223,9 @@
 		5C58DD25220BD119001DE8F1 /* TanktopWatch */ = {
 			isa = PBXGroup;
 			children = (
-				5C05E57F220BDAEF00BA5155 /* TanktopWatch.entitlements */,
 				5C58DD29220BD11C001DE8F1 /* Assets.xcassets */,
 				5C58DD26220BD119001DE8F1 /* Interface.storyboard */,
+				5C05E57F220BDAEF00BA5155 /* TanktopWatch.entitlements */,
 				5C58DD2B220BD11C001DE8F1 /* Info.plist */,
 			);
 			path = TanktopWatch;
@@ -231,11 +234,11 @@
 		5C58DD34220BD11C001DE8F1 /* TanktopWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5C05E57E220BDAE500BA5155 /* TanktopWatch Extension.entitlements */,
 				5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */,
 				5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */,
 				5C58DD37220BD11C001DE8F1 /* ExtensionDelegate.swift */,
 				5C58DD35220BD11C001DE8F1 /* InterfaceController.swift */,
+				5C05E57E220BDAE500BA5155 /* TanktopWatch Extension.entitlements */,
 				5C58DD3D220BD11D001DE8F1 /* Info.plist */,
 			);
 			path = "TanktopWatch Extension";
@@ -304,6 +307,7 @@
 				5CD726D721EF78D600564338 /* UIColor.swift */,
 				5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */,
 				5CD579C721F56EC4001B9562 /* URL.swift */,
+				5C91AFF0220CA9DB004CCB6D /* WCSession.swift */,
 				5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */,
 				5CB0055C21ED002200F2E503 /* Info.plist */,
 			);
@@ -377,8 +381,8 @@
 				5CB0054B21ED002000F2E503 /* Resources */,
 				5CCD037721ED056C00EF3373 /* Embed Frameworks */,
 				5C4AB2BE21F4032D006D0AA5 /* Embed App Extensions */,
-				5C58DD48220BD11D001DE8F1 /* Embed Watch Content */,
 				5C45581B220B09060099EDED /* Set Build Number */,
+				5C58DD48220BD11D001DE8F1 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -450,6 +454,9 @@
 							};
 							com.apple.Keychain = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -595,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C91AFF2220CA9DB004CCB6D /* WCSession.swift in Sources */,
 				5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */,
 				5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */,
 				5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */,
@@ -637,6 +645,7 @@
 				5CD579C821F56EC4001B9562 /* URL.swift in Sources */,
 				5C3A19FB220235A10071098A /* EmptyView.swift in Sources */,
 				5CD3841C21F6E93800163A1C /* RefreshControl.swift in Sources */,
+				5C91AFF1220CA9DB004CCB6D /* WCSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

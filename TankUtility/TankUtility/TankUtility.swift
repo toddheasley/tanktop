@@ -37,6 +37,24 @@ public struct TankUtility {
         return URLRequest.username
     }
     
+    public static var context: [String: Any] {
+        set {
+            URLRequest.authorization = newValue["authorization"] as? Data
+            primary = newValue["primary"] as? String
+        }
+        get {
+            var context: [String: Any] = [:]
+            guard let authorization: Data = URLRequest.authorization, !authorization.isEmpty else {
+                return context
+            }
+            context["authorization"] = authorization
+            if let primary: String = primary {
+                context["primary"] = primary
+            }
+            return context
+        }
+    }
+    
     public static func devices(completion: @escaping ([String], Error?) -> Void) {
         func validate(_ devices: [String]) {
             primary = devices.contains(primary ?? "") ? primary : nil

@@ -3,9 +3,12 @@ import XCTest
 
 class URLRequestTests: XCTestCase {
     func testToken() {
+        URLRequest.authorize(username: "toddheasley@me.com", password: "P@$$w0rd")
         XCTAssertEqual(URLRequest.token.httpMethod, "GET")
-        XCTAssertEqual(URLRequest.token.url, URL.token)
         XCTAssertEqual(URLRequest.token.allHTTPHeaderFields?.first?.key, "Authorization")
+        XCTAssertEqual(URLRequest.token.allHTTPHeaderFields?.first?.value, "Basic dG9kZGhlYXNsZXlAbWUuY29tOlBAJCR3MHJk")
+        XCTAssertEqual(URLRequest.token.url, URL.token)
+        URLRequest.deauthorize()
     }
     
     func testDevices() {
@@ -19,7 +22,7 @@ class URLRequestTests: XCTestCase {
 extension URLRequestTests {
     func testAuthorization() {
         URLRequest.authorize(username: "toddheasley@me.com", password: "P@$$w0rd")
-        XCTAssertEqual(URLRequest.authorization, "Basic dG9kZGhlYXNsZXlAbWUuY29tOlBAJCR3MHJk")
+        XCTAssertEqual(URLRequest.authorization, Data(base64Encoded: "dG9kZGhlYXNsZXlAbWUuY29tOlBAJCR3MHJk"))
         URLRequest.deauthorize()
         XCTAssertNil(URLRequest.authorization)
     }
@@ -33,9 +36,11 @@ extension URLRequestTests {
     
     func testAuthorize() {
         URLRequest.authorize(username: "toddheasley@me.com", password: "12345678")
-        XCTAssertEqual(URLRequest.authorization, "Basic dG9kZGhlYXNsZXlAbWUuY29tOjEyMzQ1Njc4")
+        XCTAssertEqual(URLRequest.authorization, Data(base64Encoded: "dG9kZGhlYXNsZXlAbWUuY29tOjEyMzQ1Njc4"))
+        XCTAssertEqual(URLRequest.username, "toddheasley@me.com")
         URLRequest.authorize(username: "toddheasley@me.com", password: "P@$$w0rd")
-        XCTAssertEqual(URLRequest.authorization, "Basic dG9kZGhlYXNsZXlAbWUuY29tOlBAJCR3MHJk")
+        XCTAssertEqual(URLRequest.authorization, Data(base64Encoded: "dG9kZGhlYXNsZXlAbWUuY29tOlBAJCR3MHJk"))
+        XCTAssertEqual(URLRequest.username, "toddheasley@me.com")
         URLRequest.deauthorize()
         XCTAssertNil(URLRequest.authorization)
     }

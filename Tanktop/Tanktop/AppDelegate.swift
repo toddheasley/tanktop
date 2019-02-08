@@ -1,18 +1,24 @@
 import UIKit
 import UserNotifications
+import WatchConnectivity
 import TankUtility
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, WCSessionDelegate {
     
     // MARK: UIApplicationDelegate
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         TankUtility.appGroup = "group.toddheasley.tanktop"
-        application.setMinimumBackgroundFetchInterval(43200.0)
+        application.setMinimumBackgroundFetchInterval(7200.0)
         UNUserNotificationCenter.current().delegate = self
+        WCSession.activate(delegate: self)
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        try? WCSession.available?.updateApplicationContext(TankUtility.context)
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -45,5 +51,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         (window?.rootViewController as? MainViewController)?.open(device: response.notification.request.identifier)
         completionHandler()
+    }
+    
+    // MARK: WCSessionDelegate
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        try? session.updateApplicationContext(TankUtility.context)
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
     }
 }
