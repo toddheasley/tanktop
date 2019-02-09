@@ -31,7 +31,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        TankUtility.context = session.receivedApplicationContext        
+        TankUtility.context = session.receivedApplicationContext
         applicationDidBecomeActive()
     }
 }

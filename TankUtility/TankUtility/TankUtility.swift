@@ -40,16 +40,15 @@ public struct TankUtility {
     public static var context: [String: Any] {
         set {
             URLRequest.authorization = newValue["authorization"] as? Data
-            primary = newValue["primary"] as? String
+            UserDefaults.shared.data = newValue["data"] as? Data
         }
         get {
             var context: [String: Any] = [:]
-            guard let authorization: Data = URLRequest.authorization, !authorization.isEmpty else {
-                return context
-            }
-            context["authorization"] = authorization
-            if let primary: String = primary {
-                context["primary"] = primary
+            if let authorization: Data = URLRequest.authorization, !authorization.isEmpty {
+                context["authorization"] = authorization
+                if let data: Data = UserDefaults.shared.data {
+                    context["data"] = data
+                }
             }
             return context
         }

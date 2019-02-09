@@ -1,4 +1,5 @@
 import UIKit
+import WatchConnectivity
 import TankUtility
 
 class DeviceView: UIView {
@@ -39,6 +40,7 @@ class DeviceView: UIView {
         let height: CGFloat = bounds.size.height - (y + contentInset.bottom + safeAreaInsets.bottom)
         
         device?.alert.threshold = Double(1.0 - ((sender.frame.origin.y + delta - y) / height))
+        try? WCSession.available?.updateApplicationContext(TankUtility.context)
     }
     
     private let tankView: UIView = UIView()

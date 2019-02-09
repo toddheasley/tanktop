@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C147141220E85B500C2A723 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5C175C4A2200AE36009C3742 /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
 		5C1AD92B21FF6D92000C4040 /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1AD92A21FF6D92000C4040 /* PageBar.swift */; };
 		5C29A53221F0390A00E3914B /* DeauthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */; };
@@ -28,6 +29,7 @@
 		5C7045F32206458600FAF28E /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE4FD4220268B600343DA3 /* ReadingView.swift */; };
 		5C7045F42206459800FAF28E /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
 		5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
+		5C7375EB220E28AA004275C5 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
 		5C80846622048F48008F8B11 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */; };
 		5C91AFF1220CA9DB004CCB6D /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
 		5C91AFF2220CA9DB004CCB6D /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
@@ -55,6 +57,8 @@
 		5CD7F23321F22329006FE3DE /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD7F23221F22329006FE3DE /* Keyboard.swift */; };
 		5CEE4FD5220268B600343DA3 /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE4FD4220268B600343DA3 /* ReadingView.swift */; };
 		5CEE4FD7220299BB00343DA3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE4FD6220299BB00343DA3 /* SettingsView.swift */; };
+		5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
+		5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C58DD2A220BD11C001DE8F1 /* Assets.xcassets in Resources */,
+				5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */,
 				5C58DD28220BD119001DE8F1 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */,
 				5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +612,7 @@
 				5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */,
 				5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */,
 				5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */,
+				5C147141220E85B500C2A723 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C7375EB220E28AA004275C5 /* WCSession.swift in Sources */,
 				5C3A19FF220239B00071098A /* ErrorView.swift in Sources */,
 				5C7045F2220644C500FAF28E /* DeviceView.swift in Sources */,
 				5C7045F42206459800FAF28E /* DragControl.swift in Sources */,
