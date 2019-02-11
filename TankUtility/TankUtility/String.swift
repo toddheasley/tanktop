@@ -21,7 +21,7 @@ extension String {
         self = "\(formatter.string(from: temperature))"
     }
     
-    public init?(percent: Double?) {
+    public init?(percent: Double?, symbol: Bool = true) {
         guard let percent: Double = percent else {
             return nil
         }
@@ -30,7 +30,7 @@ extension String {
         guard let string: String = formatter.string(from: NSNumber(value: percent)) else {
             return nil
         }
-        self = "\(string)"
+        self = "\(string)".replacingOccurrences(of: symbol ? "" : formatter.percentSymbol, with: "")
     }
     
     public init?(date: Date?, timeZone: TimeZone? = nil) {

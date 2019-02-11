@@ -6,7 +6,7 @@
         "orientation": "vertical",
         "capacity": 120,
         "lastReading": {
-            "tank": 87,
+            "tank": 77,
             "temperature": 41.21,
             "time": 1549488000000,
             "time_iso": "2019-02-06T21:20:00Z"

@@ -3,6 +3,15 @@ import WatchConnectivity
 import TankUtility
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
+    func refresh(completion: ((Error?) -> Void)? = nil) {
+        TankUtility.device { device, error in
+            (WKExtension.shared().rootInterfaceController as? InterfaceController)?.device = device
+            ComplicationController.device = device
+            WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: 7200.0), userInfo: nil) { error in
+                completion?(error)
+            }
+        }
+    }
     
     // MARK: WKExtensionDelegate
     func applicationDidFinishLaunching() {
@@ -11,12 +20,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     }
     
     func applicationDidBecomeActive() {
-        (WKExtension.shared().rootInterfaceController as? InterfaceController)?.refresh()
+        refresh()
     }
     
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         for task in backgroundTasks {
             switch task {
+            case let refreshTask as WKApplicationRefreshBackgroundTask:
+                self.refresh { _ in
+                    refreshTask.setTaskCompletedWithSnapshot(true)
+                }
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: .distantFuture, userInfo: nil)
             default:
