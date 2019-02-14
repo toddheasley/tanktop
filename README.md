@@ -10,4 +10,4 @@ Behind the scenes, Tanktop uses the included [`TankUtility`](TankUtility) framew
 
 ## Requirements
 
-`Tanktop` is written in [Swift 5](https://docs.swift.org/swift-book/) and requires [Xcode](https://developer.apple.com/xcode/) 10.2 or newer to build.
+`Tanktop` is written in [Swift 5](https://docs.swift.org/swift-book) and requires [Xcode](https://developer.apple.com/xcode) 10.2 or newer to build.
