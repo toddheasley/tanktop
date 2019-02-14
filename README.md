@@ -6,7 +6,7 @@ If you don’t have a Tank Utility monitor for your oil or propane tank — or y
 
 ## `TankUtility`
 
-Behind the scenes, Tanktop uses the included [`TankUtility` framework](TankUtility), a lightweight Cocoa wrapper for the [Tank Utility API.](http://apidocs.tankutility.com)
+Behind the scenes, Tanktop uses the included [`TankUtility`](TankUtility) framework, a lightweight Cocoa wrapper for the [Tank Utility API.](http://apidocs.tankutility.com)
 
 ## Requirements
 
