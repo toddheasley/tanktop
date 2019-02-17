@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C0BE3A5220862E50000EBE8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C0BE3A4220862E40000EBE8 /* README.md */; };
 		5C3A093B21F16E2200C47CB1 /* TankUtility.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3A093A21F16E2200C47CB1 /* TankUtility.png */; };
 		5C3A093C21F16E2200C47CB1 /* TankUtility.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3A093A21F16E2200C47CB1 /* TankUtility.png */; };
 		5C3A093D21F16E2200C47CB1 /* TankUtility.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3A093A21F16E2200C47CB1 /* TankUtility.png */; };
@@ -335,7 +334,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C45581F220B27140099EDED /* TankUtility.json in Resources */,
-				5C0BE3A5220862E50000EBE8 /* README.md in Resources */,
 				5C3A093B21F16E2200C47CB1 /* TankUtility.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
