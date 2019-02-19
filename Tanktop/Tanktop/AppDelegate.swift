@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        (window?.rootViewController as? MainViewController)?.open()
         try? WCSession.available?.updateApplicationContext(TankUtility.context)
     }
     

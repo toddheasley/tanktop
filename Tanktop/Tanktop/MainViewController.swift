@@ -3,10 +3,9 @@ import TankUtility
 
 class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, PageBarDelegate, AuthorizeViewDelegate {
     func open(device id: String? = nil) {
-        guard let id: String = id, devices.contains(id) else {
-            return
+        if let id: String = id, devices.contains(id) {
+            current = id
         }
-        current = id
         viewDidAuthorize()
     }
     
@@ -40,6 +39,8 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     // MARK: UIViewController
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        print("viewDidAppear")
         
         viewDidAuthorize()
     }
