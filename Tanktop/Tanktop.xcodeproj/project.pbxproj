@@ -11,8 +11,8 @@
 		5C175C4A2200AE36009C3742 /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
 		5C1AD92B21FF6D92000C4040 /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1AD92A21FF6D92000C4040 /* PageBar.swift */; };
 		5C29A53221F0390A00E3914B /* DeauthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */; };
-		5C2A59E22210D076006B4287 /* CLKComplicationFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A59E12210D076006B4287 /* CLKComplicationFamily.swift */; };
-		5C2A59E42210D0FC006B4287 /* CLKComplicationFamily.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C2A59E32210D0FC006B4287 /* CLKComplicationFamily.json */; };
+		5C2A59E22210D076006B4287 /* CLKComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A59E12210D076006B4287 /* CLKComplication.swift */; };
+		5C2A59E42210D0FC006B4287 /* CLKComplication.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C2A59E32210D0FC006B4287 /* CLKComplication.json */; };
 		5C3A19FB220235A10071098A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FA220235A10071098A /* EmptyView.swift */; };
 		5C3A19FE220239B00071098A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FD220239B00071098A /* ErrorView.swift */; };
 		5C3A19FF220239B00071098A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FD220239B00071098A /* ErrorView.swift */; };
@@ -152,8 +152,8 @@
 		5C175C492200AE36009C3742 /* DragControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragControl.swift; sourceTree = "<group>"; };
 		5C1AD92A21FF6D92000C4040 /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
 		5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeauthorizeControl.swift; sourceTree = "<group>"; };
-		5C2A59E12210D076006B4287 /* CLKComplicationFamily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplicationFamily.swift; sourceTree = "<group>"; };
-		5C2A59E32210D0FC006B4287 /* CLKComplicationFamily.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CLKComplicationFamily.json; sourceTree = "<group>"; };
+		5C2A59E12210D076006B4287 /* CLKComplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplication.swift; sourceTree = "<group>"; };
+		5C2A59E32210D0FC006B4287 /* CLKComplication.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CLKComplication.json; sourceTree = "<group>"; };
 		5C3A19FA220235A10071098A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		5C3A19FD220239B00071098A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
@@ -243,8 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */,
-				5C2A59E12210D076006B4287 /* CLKComplicationFamily.swift */,
-				5C2A59E32210D0FC006B4287 /* CLKComplicationFamily.json */,
+				5C2A59E12210D076006B4287 /* CLKComplication.swift */,
+				5C2A59E32210D0FC006B4287 /* CLKComplication.json */,
 				5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */,
 				5C58DD37220BD11C001DE8F1 /* ExtensionDelegate.swift */,
 				5C58DD35220BD11C001DE8F1 /* InterfaceController.swift */,
@@ -513,7 +513,7 @@
 			files = (
 				5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */,
 				5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */,
-				5C2A59E42210D0FC006B4287 /* CLKComplicationFamily.json in Resources */,
+				5C2A59E42210D0FC006B4287 /* CLKComplication.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +620,7 @@
 			files = (
 				5C91AFF2220CA9DB004CCB6D /* WCSession.swift in Sources */,
 				5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */,
-				5C2A59E22210D076006B4287 /* CLKComplicationFamily.swift in Sources */,
+				5C2A59E22210D076006B4287 /* CLKComplication.swift in Sources */,
 				5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */,
 				5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */,
 				5C147141220E85B500C2A723 /* UIColor.swift in Sources */,

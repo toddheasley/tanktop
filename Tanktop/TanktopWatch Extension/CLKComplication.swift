@@ -28,7 +28,6 @@ extension CLKComplication {
             return template
         default:
             return nil
-
         }
     }
 }
