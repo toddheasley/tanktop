@@ -10,6 +10,7 @@
 		5C147141220E85B500C2A723 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5C175C4A2200AE36009C3742 /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
 		5C1AD92B21FF6D92000C4040 /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1AD92A21FF6D92000C4040 /* PageBar.swift */; };
+		5C1BFD2C224CDFE100ECB788 /* AuthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1BFD2B224CDFE100ECB788 /* AuthorizeControl.swift */; };
 		5C29A53221F0390A00E3914B /* DeauthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */; };
 		5C2A59E22210D076006B4287 /* CLKComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A59E12210D076006B4287 /* CLKComplication.swift */; };
 		5C2A59E42210D0FC006B4287 /* CLKComplication.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C2A59E32210D0FC006B4287 /* CLKComplication.json */; };
@@ -151,6 +152,7 @@
 		5C0BE3A3220862D30000EBE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5C175C492200AE36009C3742 /* DragControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragControl.swift; sourceTree = "<group>"; };
 		5C1AD92A21FF6D92000C4040 /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
+		5C1BFD2B224CDFE100ECB788 /* AuthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeControl.swift; sourceTree = "<group>"; };
 		5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeauthorizeControl.swift; sourceTree = "<group>"; };
 		5C2A59E12210D076006B4287 /* CLKComplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplication.swift; sourceTree = "<group>"; };
 		5C2A59E32210D0FC006B4287 /* CLKComplication.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CLKComplication.json; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			children = (
 				5CB0055021ED002100F2E503 /* AppDelegate.swift */,
 				5CB0055721ED002200F2E503 /* Assets.xcassets */,
+				5C1BFD2B224CDFE100ECB788 /* AuthorizeControl.swift */,
 				5CD726D121EE1CE800564338 /* AuthorizeViewController.swift */,
 				5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */,
 				5CC8B2D821ED50F400BDBF35 /* DeviceViewController.swift */,
@@ -663,6 +666,7 @@
 				5CD726D821EF78D600564338 /* UIColor.swift in Sources */,
 				5CD579C821F56EC4001B9562 /* URL.swift in Sources */,
 				5C3A19FB220235A10071098A /* EmptyView.swift in Sources */,
+				5C1BFD2C224CDFE100ECB788 /* AuthorizeControl.swift in Sources */,
 				5CD3841C21F6E93800163A1C /* RefreshControl.swift in Sources */,
 				5C91AFF1220CA9DB004CCB6D /* WCSession.swift in Sources */,
 			);

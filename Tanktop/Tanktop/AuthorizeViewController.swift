@@ -1,5 +1,6 @@
 import UIKit
 import WatchConnectivity
+import SafariServices
 import TankUtility
 
 protocol AuthorizeViewDelegate {
@@ -9,15 +10,19 @@ protocol AuthorizeViewDelegate {
 class AuthorizeViewController: UIViewController, TextFieldDelegate, KeyboardDelegate {
     var delegate: AuthorizeViewDelegate?
     
+    @objc func handleAuthorize(_ control: AuthorizeControl?) {
+        present(SFSafariViewController(url: URL(string: "https://tankutility.com")!), animated: true, completion: nil)
+    }
+    
     convenience init(delegate: AuthorizeViewDelegate) {
         self.init(nibName: nil, bundle: nil)
         self.delegate = delegate
     }
     
     private let contentView: UIView = UIView()
+    private let authorizeControl: AuthorizeControl = AuthorizeControl()
     private let usernameTextField: TextField = TextField(input: .username)
     private let passwordTextField: TextField = TextField(input: .password)
-    private let imageView: UIImageView = UIImageView()
     
     private func handle(error: TankUtility.Error?) {
         contentView.transform = CGAffineTransform(translationX: 32.0, y: 0.0)
@@ -51,6 +56,7 @@ class AuthorizeViewController: UIViewController, TextFieldDelegate, KeyboardDele
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        contentView.frame.size.height = passwordTextField.frame.origin.y + passwordTextField.frame.size.height
         keyboardWillChange(to: Keyboard.shared, duration: 0.0)
     }
     
@@ -61,26 +67,24 @@ class AuthorizeViewController: UIViewController, TextFieldDelegate, KeyboardDele
         
         contentView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
         contentView.frame.size.width = 290.0
-        contentView.frame.size.height = 260.0
         contentView.frame.origin.x = (view.bounds.size.width - contentView.frame.size.width) / 2.0
         view.addSubview(contentView)
         
+        authorizeControl.addTarget(self, action: #selector(handleAuthorize(_:)), for: .touchUpInside)
+        authorizeControl.frame.size.width = contentView.bounds.size.width
+        authorizeControl.frame.size.height = authorizeControl.intrinsicContentSize.height + 16.0
+        contentView.addSubview(authorizeControl)
+        
         usernameTextField.frame.size.width = contentView.bounds.size.width
         usernameTextField.frame.size.height = 49.0
-        usernameTextField.frame.origin.y = contentView.bounds.size.height - (usernameTextField.frame.size.height * 2.0 + 16.0)
+        usernameTextField.frame.origin.y = authorizeControl.frame.size.height + 16.0
         usernameTextField.delegate = self
         contentView.addSubview(usernameTextField)
         
         passwordTextField.frame.size = usernameTextField.frame.size
-        passwordTextField.frame.origin.y = contentView.bounds.size.height - passwordTextField.frame.size.height
+        passwordTextField.frame.origin.y = (usernameTextField.frame.origin.y + usernameTextField.frame.size.height) + 16.0
         passwordTextField.delegate = self
         contentView.addSubview(passwordTextField)
-        
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(data: TankUtility.logo)
-        imageView.frame.size.width = contentView.bounds.size.width
-        imageView.frame.size.height = 114.0
-        contentView.addSubview(imageView)
     }
     
     // MARK: TextFieldDelegate
