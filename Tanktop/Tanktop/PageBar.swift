@@ -42,15 +42,6 @@ class PageBar: UIView {
         return pageControl.intrinsicContentSize
     }
     
-    override var alpha: CGFloat {
-        set {
-            pageControl.alpha = newValue
-        }
-        get {
-            return pageControl.alpha
-        }
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -72,8 +63,6 @@ class PageBar: UIView {
         deauthorizeControl.addTarget(self, action: #selector(handleDeauthorize(_:)), for: .touchUpInside)
         deauthorizeControl.frame.size = CGSize(width: 38.0, height: 44.0)
         addSubview(deauthorizeControl)
-        
-        super.alpha = 1.0
     }
     
     required init?(coder decoder: NSCoder) {

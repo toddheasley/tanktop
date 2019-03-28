@@ -29,10 +29,6 @@ public struct TankUtility {
         }
     }
     
-    public static var logo: Data {
-        return try! Data.logo()
-    }
-    
     public static var username: String? {
         return URLRequest.username
     }
