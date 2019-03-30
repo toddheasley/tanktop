@@ -4,7 +4,7 @@ Tanktop is an easy way to keep track of your [Tank Utility](https://www.tankutil
 
 ![](Tanktop.png)
 
-[![Download on the App Store](../App.svg)](https://itunes.apple.com/app/id1452241428)
+[![Download on the App Store](App.svg)](https://itunes.apple.com/app/id1452241428)
 
 If you don’t have a Tank Utility monitor for your oil or propane tank — or you don’t have an oil or propane tank at all — this app is completely useless to you. However, there is a dummy account that you can view using the email address `tanktop@example.com` and any non-empty string as a password.
 
