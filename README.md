@@ -6,12 +6,14 @@ Tanktop is an easy way to keep track of your [Tank Utility](https://www.tankutil
 
 [![Download on the App Store](Tanktop/App.svg)](https://itunes.apple.com/app/id1452241428)
 
-If you don’t have a Tank Utility monitor for your oil or propane tank — or you don’t have an oil or propane tank at all — this app is completely useless to you. However, there is a dummy account that you can view using the email address `tanktop@example.com` and any non-empty string as a password.
+If you don’t have a Tank Utility monitor for your oil or propane tank — or you don’t have an oil or propane tank at all — this app is completely useless to you. However, there is an example account that you can view using the email address `tanktop@example.com` and any non-empty string as a password.
 
 ## `TankUtility`
 
-Behind the scenes, Tanktop uses the included [`TankUtility`](TankUtility) framework, a lightweight Cocoa wrapper for the [Tank Utility API.](http://apidocs.tankutility.com)
+Tanktop relies on the included [`TankUtility`](TankUtility) Swift package, which wraps the [Tank Utility API.](http://apidocs.tankutility.com) 
 
 ## Requirements
 
-Tanktop is written in [Swift 5](https://docs.swift.org/swift-book) and requires [Xcode](https://developer.apple.com/xcode) 10.2 or newer to build.
+Targets [iOS](https://developer.apple.com/ios)/[iPadOS](https://developer.apple.com/ipad)/[tvOS ](https://developer.apple.com/tvos) 13, as well as [watchOS](https://developer.apple.com/watchos) 6 and [macOS](https://developer.apple.com/macos) 10.15 Catalina.
+
+It's written in [Swift](https://developer.apple.com/documentation/swift) 5.1 using the [Foundation](https://developer.apple.com/documentation/foundation), [UIKit](https://developer.apple.com/documentation/uikit) and [WatchKit](https://developer.apple.com/documentation/watchkit) frameworks and requires [Xcode](https://developer.apple.com/xcode) 11 or newer to build.

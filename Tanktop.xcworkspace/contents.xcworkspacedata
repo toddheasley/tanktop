@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Tanktop/Tanktop.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TankUtility/TankUtility.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:README.md">
-   </FileRef>
-   <FileRef
-      location = "group:PRIVACY.md">
-   </FileRef>
-   <FileRef
-      location = "group:App.svg">
+      location = "group:TankUtility">
    </FileRef>
 </Workspace>
