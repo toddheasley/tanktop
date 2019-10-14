@@ -84,3 +84,57 @@ extension Device: Codable {
         case id, name, address, fuelType, orientation, capacity, lastReading
     }
 }
+
+extension Device {
+    public static var examples: [Device]? {
+        return try? JSONDecoder().decode([Device].self, from: data)
+    }
+    
+    public static var template: Device? {
+        return examples?.first
+    }
+}
+
+private let data: Data = """
+[
+    {
+        "id": "example66667531535371367",
+        "name": "Propane Tank",
+        "address": "Home",
+        "fuelType": "propane",
+        "orientation": "vertical",
+        "capacity": 120,
+        "lastReading": {
+            "tank": 77,
+            "temperature": 41.21,
+            "time": 1549488000000
+        }
+    },
+    {
+        "id": "example57492666782350637",
+        "name": "Propane Tank #2",
+        "address": "Home",
+        "fuelType": "propane",
+        "orientation": "vertical",
+        "capacity": 120,
+        "lastReading": {
+            "tank": 13,
+            "temperature": 41.21,
+            "time": 1549488000000
+        }
+    },
+    {
+        "id": "example57492666782350667",
+        "name": "Oil Tank",
+        "address": "Ski Cabin",
+        "fuelType": "oil",
+        "orientation": "horizontal",
+        "capacity": 100,
+        "lastReading": {
+            "tank": 32,
+            "temperature": 14.12,
+            "time": 1549444800000
+        }
+    }
+]
+""".data(using: .utf8)!

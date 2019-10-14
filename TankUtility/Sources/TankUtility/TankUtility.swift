@@ -29,7 +29,7 @@ public struct TankUtility {
     }
     
     public static func devices(completion: @escaping ([Device]?, Error?) -> Void) {
-        if let devices: [Device] = examples {
+        if URLRequest.isExample, let devices: [Device] = Device.examples {
             UserDefaults.shared.devices = devices
             completion(devices, nil)
         } else {
@@ -47,7 +47,7 @@ public struct TankUtility {
     }
     
     public static func device(id: String, completion: @escaping (Device?, Bool, Error?) -> Void) {
-        if let devices: [Device] = examples {
+        if URLRequest.isExample, let devices: [Device] = Device.examples {
             for device in devices {
                 guard device.id == id else {
                     continue
@@ -86,13 +86,13 @@ public struct TankUtility {
     public static func authorize(username: String, password: String, completion: ((Error?) -> Void)?) {
         context.reset()
         URLRequest.authorize(username: username, password: password)
-        if let _: [Device] = examples {
+        guard !URLRequest.isExample else {
             completion?(nil)
-        } else {
-            URLSession.shared.token { _, error in
-                DispatchQueue.main.async {
-                    completion?(error != nil ? (error as? Error ?? .unauthorized) : nil)
-                }
+            return
+        }
+        URLSession.shared.token { _, error in
+            DispatchQueue.main.async {
+                completion?(error != nil ? (error as? Error ?? .unauthorized) : nil)
             }
         }
     }
@@ -127,56 +127,3 @@ extension TankUtility {
         }
     }
 }
-
-extension TankUtility {
-    private static var examples: [Device]? {
-        guard username == "tankutility@example.com" else {
-            return nil
-        }
-        return try? JSONDecoder().decode([Device].self, from: data)
-    }
-}
-
-private let data: Data = """
-[
-    {
-        "id": "example66667531535371367",
-        "name": "Propane Tank #1",
-        "address": "Home",
-        "fuelType": "propane",
-        "orientation": "vertical",
-        "capacity": 120,
-        "lastReading": {
-            "tank": 77,
-            "temperature": 41.21,
-            "time": 1549488000000
-        }
-    },
-    {
-        "id": "example57492666782350637",
-        "name": "Propane Tank #2",
-        "address": "Home",
-        "fuelType": "propane",
-        "orientation": "vertical",
-        "capacity": 120,
-        "lastReading": {
-            "tank": 13,
-            "temperature": 41.21,
-            "time": 1549488000000
-        }
-    },
-    {
-        "id": "example57492666782350667",
-        "name": "Oil Tank",
-        "address": "Ski Cabin",
-        "fuelType": "oil",
-        "orientation": "horizontal",
-        "capacity": 100,
-        "lastReading": {
-            "tank": 32,
-            "temperature": 14.12,
-            "time": 1549444800000
-        }
-    }
-]
-""".data(using: .utf8)!

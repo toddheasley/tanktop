@@ -70,3 +70,11 @@ extension URLRequest {
     
     private static let label: String = "com.tankutility.api"
 }
+
+extension URLRequest {
+    static var isExample: Bool {
+        return username == example
+    }
+    
+    private static let example: String = "tankutility@example.com"
+}

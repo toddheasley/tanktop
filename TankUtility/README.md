@@ -13,15 +13,6 @@ Supports apps targeting [iOS](https://developer.apple.com/ios)/[iPadOS](https://
 
 It's written in [Swift](https://developer.apple.com/documentation/swift) 5.1 using the [Foundation](https://developer.apple.com/documentation/foundation), [BackgroundTasks](https://developer.apple.com/documentation/backgroundtasks) and [WatchConnectivity](https://developer.apple.com/documentation/watchconnectivity) frameworks and requires [Xcode](https://developer.apple.com/xcode) 11 or newer to build.
 
-## Example Usage
-
-```swift
-import TankUtility
-
-```
+## Examples
 
 Access the bundled example account by authenticating with the email address `tankutility@example.com` and any non-empty string as the password. The example account behaves just like a real Tank Utility account but makes no networking requests to the Tank Utility API.
-
-## Requirements
-
-`TankUtility` is written in [Swift](https://developer.apple.com/documentation/swift) 5.1 and requires [Xcode](https://developer.apple.com/xcode) 11 or newer to build.
