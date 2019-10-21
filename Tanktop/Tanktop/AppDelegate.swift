@@ -13,7 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
+        #if targetEnvironment(macCatalyst)
+        window?.windowScene?.titlebar?.titleVisibility = .hidden
+        #endif
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
