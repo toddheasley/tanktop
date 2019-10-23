@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5C147141220E85B500C2A723 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
+		5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDBE235DCDD40006EAFC /* DeviceView.swift */; };
+		5C23DDC2235DD49F0006EAFC /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* DragControl.swift */; };
+		5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC1235DD49F0006EAFC /* ReadingView.swift */; };
 		5C320B5A234B8D4F002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B59234B8D4F002DF386 /* TankUtility */; };
 		5C320B5C234B8D73002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5B234B8D73002DF386 /* TankUtility */; };
 		5C320B5E234B8D87002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5D234B8D87002DF386 /* TankUtility */; };
@@ -21,6 +24,11 @@
 		5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */; };
 		5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */; platformFilter = ios; };
 		5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
+		5C835864235F95E800CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
+		5C83586523600A2700CFE869 /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC1235DD49F0006EAFC /* ReadingView.swift */; };
+		5C83586623600A2E00CFE869 /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* DragControl.swift */; };
+		5C83586723600A3200CFE869 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDBE235DCDD40006EAFC /* DeviceView.swift */; };
+		5C83586823600A9700CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
 		5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F573E21F4045D00D7AEC8 /* TodayController.swift */; };
 		5C9F574221F4045D00D7AEC8 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F574021F4045D00D7AEC8 /* Today.storyboard */; };
 		5C9F574621F4045D00D7AEC8 /* TanktopToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -102,6 +110,9 @@
 /* Begin PBXFileReference section */
 		5C05E57E220BDAE500BA5155 /* TanktopWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TanktopWatch Extension.entitlements"; sourceTree = "<group>"; };
 		5C05E57F220BDAEF00BA5155 /* TanktopWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanktopWatch.entitlements; sourceTree = "<group>"; };
+		5C23DDBE235DCDD40006EAFC /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		5C23DDC0235DD49F0006EAFC /* DragControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragControl.swift; sourceTree = "<group>"; };
+		5C23DDC1235DD49F0006EAFC /* ReadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
 		5C2A59E12210D076006B4287 /* CLKComplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplication.swift; sourceTree = "<group>"; };
 		5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		5C455823220B3A580099EDED /* Tanktop.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tanktop.sketch; sourceTree = "<group>"; };
@@ -115,6 +126,7 @@
 		5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C58DD3D220BD11D001DE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C835863235F95E800CFE869 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TanktopToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9F573E21F4045D00D7AEC8 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
 		5C9F574121F4045D00D7AEC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
@@ -229,10 +241,14 @@
 			children = (
 				5CB0055021ED002100F2E503 /* AppDelegate.swift */,
 				5CB0055721ED002200F2E503 /* Assets.xcassets */,
+				5C23DDBE235DCDD40006EAFC /* DeviceView.swift */,
+				5C23DDC0235DD49F0006EAFC /* DragControl.swift */,
 				5CB0055921ED002200F2E503 /* Launch.storyboard */,
 				5CB0055421ED002100F2E503 /* Main.storyboard */,
 				5CC8B2DA21ED51AA00BDBF35 /* MainController.swift */,
+				5C23DDC1235DD49F0006EAFC /* ReadingView.swift */,
 				5CD726D721EF78D600564338 /* UIColor.swift */,
+				5C835863235F95E800CFE869 /* UILabel.swift */,
 				5CD579C721F56EC4001B9562 /* URL.swift */,
 				5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */,
 				5CB0055C21ED002200F2E503 /* Info.plist */,
@@ -553,6 +569,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CFA6D122354CEC500CFE10C /* URL.swift in Sources */,
+				5C83586523600A2700CFE869 /* ReadingView.swift in Sources */,
+				5C83586823600A9700CFE869 /* UILabel.swift in Sources */,
+				5C83586723600A3200CFE869 /* DeviceView.swift in Sources */,
+				5C83586623600A2E00CFE869 /* DragControl.swift in Sources */,
 				5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */,
 				5CAC92672200EFAB00B77FD3 /* UIColor.swift in Sources */,
 			);
@@ -564,8 +584,12 @@
 			files = (
 				5CB0055121ED002100F2E503 /* AppDelegate.swift in Sources */,
 				5CFA6D112354CEC300CFE10C /* URL.swift in Sources */,
+				5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */,
+				5C835864235F95E800CFE869 /* UILabel.swift in Sources */,
 				5CC8B2DB21ED51AA00BDBF35 /* MainController.swift in Sources */,
 				5CD726D821EF78D600564338 /* UIColor.swift in Sources */,
+				5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */,
+				5C23DDC2235DD49F0006EAFC /* DragControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
