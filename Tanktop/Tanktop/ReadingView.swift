@@ -7,6 +7,7 @@ class ReadingView: UIView {
             tankLabel.text = String(percent: reading?.tank)
             temperatureLabel.text = String(temperature: reading?.temperature)
             dateLabel.text = String(date: reading?.date)?.uppercased()
+            
             setNeedsLayout()
             layoutIfNeeded()
         }
@@ -23,6 +24,17 @@ class ReadingView: UIView {
     private let dateLabel: UILabel = UILabel()
     
     // MARK: UIView
+    override var description: String {
+        if let reading: Reading = reading,
+            let tank: String = String(percent: reading.tank),
+            let temperature: String = String(temperature: reading.temperature),
+            let date: String = String(date: reading.date) {
+            return "Device reading: \(tank); \(date); \(temperature)"
+        } else {
+            return emptyLabel.text!
+        }
+    }
+    
     override var intrinsicContentSize: CGSize {
         setNeedsLayout()
         layoutIfNeeded()
@@ -51,6 +63,8 @@ class ReadingView: UIView {
         contentView.frame.size.height = max(temperatureLabel.frame.size.height + temperatureLabel.frame.origin.y, emptyLabel.frame.size.height)
         contentView.frame.origin.x = (bounds.size.width - contentView.frame.size.width) / 2.0
         contentView.frame.origin.y = (bounds.size.height - contentView.frame.size.height) / 2.0
+        
+        accessibilityLabel = accessibilityLabel ?? description
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -86,5 +100,8 @@ class ReadingView: UIView {
         dateLabel.autoresizingMask = [.flexibleWidth]
         dateLabel.frame.size.width = bounds.size.width
         contentView.addSubview(dateLabel)
+        
+        accessibilityTraits = .summaryElement
+        isAccessibilityElement = true
     }
 }

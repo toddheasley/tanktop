@@ -14,6 +14,10 @@ public struct TankUtility {
         case unavailable = 503
     }
     
+    public static var website: URL {
+        return .website
+    }
+    
     public static var appGroup: String? {
         didSet {
             UserDefaults.shared = UserDefaults(suiteName: appGroup) ?? .standard
@@ -90,7 +94,10 @@ public struct TankUtility {
             completion?(nil)
             return
         }
-        URLSession.shared.token { _, error in
+        URLSession.shared.token { token, error in
+            if token == nil {
+                deauthorize()
+            }
             DispatchQueue.main.async {
                 completion?(error != nil ? (error as? Error ?? .unauthorized) : nil)
             }
@@ -112,6 +119,7 @@ extension TankUtility {
         fileprivate func reset() {
             URLRequest.authorization = nil
             UserDefaults.shared.devices = []
+            Token.reset()
         }
     }
     

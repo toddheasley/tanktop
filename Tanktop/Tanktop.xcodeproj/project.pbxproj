@@ -14,7 +14,12 @@
 		5C320B5A234B8D4F002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B59234B8D4F002DF386 /* TankUtility */; };
 		5C320B5C234B8D73002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5B234B8D73002DF386 /* TankUtility */; };
 		5C320B5E234B8D87002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5D234B8D87002DF386 /* TankUtility */; };
+		5C3F57C723666040007E8095 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F57C623666040007E8095 /* AuthorizeViewController.swift */; };
+		5C3F57C923667F35007E8095 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F57C823667F35007E8095 /* UIViewController.swift */; };
+		5C3F57CB236686E7007E8095 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F57CA236686E7007E8095 /* UIAlertController.swift */; };
 		5C41F7582205C99400FE5DC1 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */; };
+		5C4D3166236877BA007052FC /* AuthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D3165236877BA007052FC /* AuthorizeControl.swift */; };
+		5C4D316823687801007052FC /* DeauthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D316723687801007052FC /* DeauthorizeControl.swift */; };
 		5C58DD28220BD119001DE8F1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD26220BD119001DE8F1 /* Interface.storyboard */; };
 		5C58DD2A220BD11C001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD29220BD11C001DE8F1 /* Assets.xcassets */; };
 		5C58DD31220BD11C001DE8F1 /* TanktopWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -25,9 +30,6 @@
 		5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */; platformFilter = ios; };
 		5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5C835864235F95E800CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
-		5C83586523600A2700CFE869 /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC1235DD49F0006EAFC /* ReadingView.swift */; };
-		5C83586623600A2E00CFE869 /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* DragControl.swift */; };
-		5C83586723600A3200CFE869 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDBE235DCDD40006EAFC /* DeviceView.swift */; };
 		5C83586823600A9700CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
 		5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F573E21F4045D00D7AEC8 /* TodayController.swift */; };
 		5C9F574221F4045D00D7AEC8 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F574021F4045D00D7AEC8 /* Today.storyboard */; };
@@ -38,8 +40,14 @@
 		5CB0055621ED002100F2E503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055421ED002100F2E503 /* Main.storyboard */; };
 		5CB0055821ED002200F2E503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CB0055B21ED002200F2E503 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055921ED002200F2E503 /* Launch.storyboard */; };
-		5CC8B2DB21ED51AA00BDBF35 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8B2DA21ED51AA00BDBF35 /* MainController.swift */; };
+		5CC8B2DB21ED51AA00BDBF35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */; };
+		5CCA328623607FEA000B56E5 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA328523607FEA000B56E5 /* DeviceView.swift */; };
 		5CD726D821EF78D600564338 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
+		5CD9644F236504D6004528AC /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9644E236504D6004528AC /* RefreshControl.swift */; };
+		5CD9A7A123674578000F9666 /* AuthorizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A023674578000F9666 /* AuthorizeView.swift */; };
+		5CD9A7A323674AF4000F9666 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A223674AF4000F9666 /* Keyboard.swift */; };
+		5CD9A7A523675CAB000F9666 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A423675CAB000F9666 /* UITextField.swift */; };
+		5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5DA092364A32100DB55BB /* DeviceViewController.swift */; };
 		5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CFA6D112354CEC300CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
@@ -114,8 +122,13 @@
 		5C23DDC0235DD49F0006EAFC /* DragControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragControl.swift; sourceTree = "<group>"; };
 		5C23DDC1235DD49F0006EAFC /* ReadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
 		5C2A59E12210D076006B4287 /* CLKComplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplication.swift; sourceTree = "<group>"; };
+		5C3F57C623666040007E8095 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
+		5C3F57C823667F35007E8095 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5C3F57CA236686E7007E8095 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		5C455823220B3A580099EDED /* Tanktop.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tanktop.sketch; sourceTree = "<group>"; };
+		5C4D3165236877BA007052FC /* AuthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeControl.swift; sourceTree = "<group>"; };
+		5C4D316723687801007052FC /* DeauthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeauthorizeControl.swift; sourceTree = "<group>"; };
 		5C58DD24220BD119001DE8F1 /* TanktopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TanktopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C58DD27220BD119001DE8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5C58DD29220BD11C001DE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,9 +153,15 @@
 		5CB0055C21ED002200F2E503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC8B2BE21ED058100BDBF35 /* Tanktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tanktop.entitlements; sourceTree = "<group>"; };
-		5CC8B2DA21ED51AA00BDBF35 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5CCA328523607FEA000B56E5 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		5CD579C721F56EC4001B9562 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		5CD726D721EF78D600564338 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5CD9644E236504D6004528AC /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		5CD9A7A023674578000F9666 /* AuthorizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeView.swift; sourceTree = "<group>"; };
+		5CD9A7A223674AF4000F9666 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		5CD9A7A423675CAB000F9666 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		5CE5DA092364A32100DB55BB /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +222,7 @@
 		5C9F573D21F4045D00D7AEC8 /* TanktopToday */ = {
 			isa = PBXGroup;
 			children = (
+				5CCA328523607FEA000B56E5 /* DeviceView.swift */,
 				5C9F573E21F4045D00D7AEC8 /* TodayController.swift */,
 				5C9F574021F4045D00D7AEC8 /* Today.storyboard */,
 				5C9F575221F4056F00D7AEC8 /* TanktopToday.entitlements */,
@@ -240,15 +260,25 @@
 			isa = PBXGroup;
 			children = (
 				5CB0055021ED002100F2E503 /* AppDelegate.swift */,
+				5C4D3165236877BA007052FC /* AuthorizeControl.swift */,
+				5CD9A7A023674578000F9666 /* AuthorizeView.swift */,
+				5C3F57C623666040007E8095 /* AuthorizeViewController.swift */,
 				5CB0055721ED002200F2E503 /* Assets.xcassets */,
+				5C4D316723687801007052FC /* DeauthorizeControl.swift */,
 				5C23DDBE235DCDD40006EAFC /* DeviceView.swift */,
+				5CE5DA092364A32100DB55BB /* DeviceViewController.swift */,
 				5C23DDC0235DD49F0006EAFC /* DragControl.swift */,
+				5CD9A7A223674AF4000F9666 /* Keyboard.swift */,
 				5CB0055921ED002200F2E503 /* Launch.storyboard */,
 				5CB0055421ED002100F2E503 /* Main.storyboard */,
-				5CC8B2DA21ED51AA00BDBF35 /* MainController.swift */,
+				5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */,
 				5C23DDC1235DD49F0006EAFC /* ReadingView.swift */,
+				5CD9644E236504D6004528AC /* RefreshControl.swift */,
+				5C3F57CA236686E7007E8095 /* UIAlertController.swift */,
 				5CD726D721EF78D600564338 /* UIColor.swift */,
 				5C835863235F95E800CFE869 /* UILabel.swift */,
+				5CD9A7A423675CAB000F9666 /* UITextField.swift */,
+				5C3F57C823667F35007E8095 /* UIViewController.swift */,
 				5CD579C721F56EC4001B9562 /* URL.swift */,
 				5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */,
 				5CB0055C21ED002200F2E503 /* Info.plist */,
@@ -569,10 +599,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CFA6D122354CEC500CFE10C /* URL.swift in Sources */,
-				5C83586523600A2700CFE869 /* ReadingView.swift in Sources */,
 				5C83586823600A9700CFE869 /* UILabel.swift in Sources */,
-				5C83586723600A3200CFE869 /* DeviceView.swift in Sources */,
-				5C83586623600A2E00CFE869 /* DragControl.swift in Sources */,
+				5CCA328623607FEA000B56E5 /* DeviceView.swift in Sources */,
 				5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */,
 				5CAC92672200EFAB00B77FD3 /* UIColor.swift in Sources */,
 			);
@@ -584,12 +612,22 @@
 			files = (
 				5CB0055121ED002100F2E503 /* AppDelegate.swift in Sources */,
 				5CFA6D112354CEC300CFE10C /* URL.swift in Sources */,
+				5C3F57C923667F35007E8095 /* UIViewController.swift in Sources */,
+				5CD9A7A523675CAB000F9666 /* UITextField.swift in Sources */,
+				5C3F57C723666040007E8095 /* AuthorizeViewController.swift in Sources */,
+				5CD9A7A123674578000F9666 /* AuthorizeView.swift in Sources */,
 				5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */,
 				5C835864235F95E800CFE869 /* UILabel.swift in Sources */,
-				5CC8B2DB21ED51AA00BDBF35 /* MainController.swift in Sources */,
+				5CD9A7A323674AF4000F9666 /* Keyboard.swift in Sources */,
+				5CC8B2DB21ED51AA00BDBF35 /* MainViewController.swift in Sources */,
 				5CD726D821EF78D600564338 /* UIColor.swift in Sources */,
+				5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */,
+				5C4D316823687801007052FC /* DeauthorizeControl.swift in Sources */,
 				5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */,
 				5C23DDC2235DD49F0006EAFC /* DragControl.swift in Sources */,
+				5CD9644F236504D6004528AC /* RefreshControl.swift in Sources */,
+				5C3F57CB236686E7007E8095 /* UIAlertController.swift in Sources */,
+				5C4D3166236877BA007052FC /* AuthorizeControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

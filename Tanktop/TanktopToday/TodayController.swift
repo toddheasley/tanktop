@@ -4,7 +4,7 @@ import TankUtility
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     @objc func handleOpen() {
-        extensionContext?.open(.app(device: nil), completionHandler: nil)
+        extensionContext?.open(.app(device: deviceView.device?.id), completionHandler: nil)
     }
     
     private let deviceView: DeviceView = DeviceView()
@@ -18,8 +18,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         let decoder: JSONDecoder = JSONDecoder()
         decoder.userInfo[CodingUserInfoKey(rawValue: "id")!] = "54ff69057492666782350667"
-        
         deviceView.device = try? decoder.decode(Device.self, from: data)
+        deviceView.contentInset = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 44.0, right: 8.0)
         deviceView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         deviceView.frame = view.bounds
         view.addSubview(deviceView)
@@ -44,7 +44,7 @@ private let data: Data = """
     "orientation": "vertical",
     "capacity": 100,
     "lastReading": {
-        "tank": 77,
+        "tank": 34,
         "temperature": 72.12,
         "time": 1444338760345,
     }

@@ -16,13 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if targetEnvironment(macCatalyst)
         window?.windowScene?.titlebar?.titleVisibility = .hidden
         #endif
+        (window?.rootViewController as? MainViewController)?.refresh()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let scheme: String = URL.app().scheme, scheme == url.scheme else {
             return false
         }
-        (window?.rootViewController as? MainController)?.open(device: url.host)
+        (window?.rootViewController as? MainViewController)?.open(device: url.host)
         return true
     }
 }

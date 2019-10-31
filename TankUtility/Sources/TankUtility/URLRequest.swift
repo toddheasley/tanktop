@@ -59,12 +59,9 @@ extension URLRequest {
     }
     
     static func deauthorize() {
-        guard let username: String = username else {
-            return
-        }
         SecItemDelete([
             kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: username as Any
+            kSecAttrLabel as String: label as Any
         ] as CFDictionary)
     }
     

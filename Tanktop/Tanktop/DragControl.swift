@@ -17,6 +17,10 @@ class DragControl: UIControl {
     private let label: UILabel = UILabel()
     
     // MARK: UIControl
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: super.intrinsicContentSize.width, height: 44.0)
+    }
+    
     override var frame: CGRect {
         set {
             super.frame = CGRect(x: newValue.origin.x, y: newValue.origin.y, width: newValue.size.width, height: intrinsicContentSize.height)
@@ -26,10 +30,6 @@ class DragControl: UIControl {
         }
     }
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: super.intrinsicContentSize.width, height: 44.0)
-    }
-    
     override var isHighlighted: Bool {
         didSet {
             label.isHidden = !isHighlighted
@@ -37,26 +37,27 @@ class DragControl: UIControl {
     }
     
     override var isEnabled: Bool {
-        set {
-            super.isEnabled = newValue
-            dragIndicator.isHidden = !newValue
-        }
-        get {
-            return super.isEnabled
+        didSet {
+            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        dragIndicator.isHidden = !isEnabled
+        
         label.frame.size.width = bounds.size.width - 16.0
         label.frame.origin.x = (bounds.size.width - label.frame.size.width) / 2.0
+        
+        backgroundColor = UIColor.systemTeal.withAlphaComponent(0.5)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        dragIndicator.backgroundColor = .tertiaryLabel
+        dragIndicator.backgroundColor = UIColor.systemGray.withAlphaComponent(0.5)
         dragIndicator.isUserInteractionEnabled = false
         dragIndicator.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
         dragIndicator.frame.size.width = 68.0

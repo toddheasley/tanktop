@@ -7,12 +7,13 @@ class DeviceView: UIView {
             nameLabel.text = device?.name
             addressLabel.text = device?.address
             readingView.reading = device?.lastReading
+            
             setNeedsLayout()
             layoutIfNeeded()
         }
     }
     
-    var isAlertLevelHidden: Bool = true {
+    var contentInset: UIEdgeInsets = .zero {
         didSet {
             setNeedsLayout()
             layoutIfNeeded()
@@ -46,6 +47,15 @@ class DeviceView: UIView {
     private let dragControl: DragControl = DragControl()
     
     // MARK: UIView
+    override var description: String {
+        if let device: Device = device,
+            let reading: String = readingView.accessibilityLabel {
+            return "\(device.name); \(device.address); \(reading)"
+        } else {
+            return emptyLabel.text!
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -53,9 +63,9 @@ class DeviceView: UIView {
         emptyLabel.frame.origin.x = (bounds.size.width - emptyLabel.frame.size.width) / 2.0
         emptyLabel.isHidden = device != nil
         
-        let y: CGFloat = safeAreaInsets.top + (bounds.size.height > 110.0 ? 44.0 : 0.0)
-        let height: CGFloat = bounds.size.height - (y + safeAreaInsets.bottom)
-        let pointSize: CGFloat = UIFont.preferredFont(forTextStyle: .body).pointSize * (bounds.size.width > 414.0 ? 2.0 : 1.0)
+        let y: CGFloat = safeAreaInsets.top + contentInset.top
+        let height: CGFloat = bounds.size.height - (y + safeAreaInsets.bottom + contentInset.bottom)
+        let pointSize: CGFloat = UIFont.preferredFont(forTextStyle: .body).pointSize * (bounds.size.width < 768.0 ? 1.0 : 2.0)
         
         tankView.frame.size.height = bounds.size.height
         UIView.animate(withDuration: 0.42) {
@@ -63,15 +73,15 @@ class DeviceView: UIView {
             self.tankView.frame.origin.y = (height - (CGFloat(self.device?.lastReading?.tank ?? 0.0) * height)) + y
         }
         
-        contentView.frame.size.width = bounds.size.width * 0.9
+        contentView.frame.size.width = bounds.size.width - (contentInset.left + contentInset.right)
         contentView.frame.size.height = height
-        contentView.frame.origin.x = (bounds.size.width - contentView.frame.size.width) / 2.0
+        contentView.frame.origin.x = contentInset.left
         contentView.frame.origin.y = y
         contentView.isHidden = device == nil
         
         nameLabel.font = .systemFont(ofSize: pointSize, weight: .semibold)
         nameLabel.frame.size.height = nameLabel.sizeThatFits(contentView.bounds.size).height + 5.0
-        nameLabel.frame.origin.y = bounds.size.height > 1023.0 ? 88.0 : 44.0
+        nameLabel.frame.origin.y = 32.0
         
         addressLabel.font = .systemFont(ofSize: pointSize, weight: .regular)
         addressLabel.frame.size.height = addressLabel.sizeThatFits(contentView.bounds.size).height + 5.0
@@ -80,10 +90,11 @@ class DeviceView: UIView {
         readingView.frame.size.height = readingView.intrinsicContentSize.height + (nameLabel.frame.origin.y * 2.0)
         readingView.frame.origin.y = addressLabel.frame.size.height + addressLabel.frame.origin.y
         
-        dragControl.isEnabled = !isAlertLevelHidden
         dragControl.frame.origin.y = (height - (CGFloat(device?.alert.threshold ?? 0.0) * height)) + y
         dragControl.threshold = device?.alert.threshold
-        dragControl.isHidden = isAlertLevelHidden || device == nil
+        dragControl.isHidden = true // device == nil
+        
+        accessibilityLabel = accessibilityLabel ?? description
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -96,15 +107,18 @@ class DeviceView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        emptyLabel.isUserInteractionEnabled = false
         emptyLabel.autoresizingMask = [.flexibleHeight]
         emptyLabel.frame.size.height = bounds.size.height
         addSubview(emptyLabel)
         
+        tankView.isUserInteractionEnabled = false
         tankView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
         tankView.frame.size.width = bounds.size.width
         tankView.frame.origin.y = bounds.size.height
         addSubview(tankView)
         
+        contentView.isUserInteractionEnabled = false
         addSubview(contentView)
         
         nameLabel.adjustsFontForContentSizeCategory = true
@@ -128,5 +142,8 @@ class DeviceView: UIView {
         dragControl.autoresizingMask = [.flexibleWidth]
         dragControl.frame.size.width = bounds.size.width
         addSubview(dragControl)
+        
+        accessibilityTraits = .summaryElement
+        isAccessibilityElement = true
     }
 }

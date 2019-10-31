@@ -8,6 +8,10 @@ struct Token {
         return cached
     }
     
+    static func reset() {
+        cached = nil
+    }
+    
     let date: Date = Date()
     private static var cached: Token?
     private let value: String
