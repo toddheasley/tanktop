@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C147141220E85B500C2A723 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDBE235DCDD40006EAFC /* DeviceView.swift */; };
 		5C23DDC2235DD49F0006EAFC /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* DragControl.swift */; };
 		5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC1235DD49F0006EAFC /* ReadingView.swift */; };
@@ -48,6 +47,9 @@
 		5CD9A7A323674AF4000F9666 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A223674AF4000F9666 /* Keyboard.swift */; };
 		5CD9A7A523675CAB000F9666 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A423675CAB000F9666 /* UITextField.swift */; };
 		5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5DA092364A32100DB55BB /* DeviceViewController.swift */; };
+		5CEA4424236D39AF009E173B /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA4423236D39AF009E173B /* PageBar.swift */; };
+		5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */; };
+		5CEA4427236E48C4009E173B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CFA6D112354CEC300CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
@@ -162,6 +164,8 @@
 		5CD9A7A223674AF4000F9666 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		5CD9A7A423675CAB000F9666 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		5CE5DA092364A32100DB55BB /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		5CEA4423236D39AF009E173B /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
+		5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAccessoryControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,8 @@
 				5CB0055921ED002200F2E503 /* Launch.storyboard */,
 				5CB0055421ED002100F2E503 /* Main.storyboard */,
 				5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */,
+				5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */,
+				5CEA4423236D39AF009E173B /* PageBar.swift */,
 				5C23DDC1235DD49F0006EAFC /* ReadingView.swift */,
 				5CD9644E236504D6004528AC /* RefreshControl.swift */,
 				5C3F57CA236686E7007E8095 /* UIAlertController.swift */,
@@ -590,7 +596,7 @@
 				5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */,
 				5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */,
 				5CFA6D162354D1A800CFE10C /* CLKComplication.swift in Sources */,
-				5C147141220E85B500C2A723 /* UIColor.swift in Sources */,
+				5CEA4427236E48C4009E173B /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB0055121ED002100F2E503 /* AppDelegate.swift in Sources */,
+				5CEA4424236D39AF009E173B /* PageBar.swift in Sources */,
 				5CFA6D112354CEC300CFE10C /* URL.swift in Sources */,
 				5C3F57C923667F35007E8095 /* UIViewController.swift in Sources */,
 				5CD9A7A523675CAB000F9666 /* UITextField.swift in Sources */,
@@ -620,6 +627,7 @@
 				5C835864235F95E800CFE869 /* UILabel.swift in Sources */,
 				5CD9A7A323674AF4000F9666 /* Keyboard.swift in Sources */,
 				5CC8B2DB21ED51AA00BDBF35 /* MainViewController.swift in Sources */,
+				5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */,
 				5CD726D821EF78D600564338 /* UIColor.swift in Sources */,
 				5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */,
 				5C4D316823687801007052FC /* DeauthorizeControl.swift in Sources */,

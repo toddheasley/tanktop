@@ -16,10 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         TankUtility.appGroup = "group.toddheasley.tanktop"
         
-        let decoder: JSONDecoder = JSONDecoder()
-        decoder.userInfo[CodingUserInfoKey(rawValue: "id")!] = "54ff69057492666782350667"
-        deviceView.device = try? decoder.decode(Device.self, from: data)
-        deviceView.contentInset = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 44.0, right: 8.0)
+        deviceView.contentInset = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 24.0, right: 8.0)
         deviceView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         deviceView.frame = view.bounds
         view.addSubview(deviceView)
@@ -32,21 +29,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     // MARK: NCWidgetProviding
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        completionHandler(.noData)
+        TankUtility.device { device, _, _ in
+            self.deviceView.device = device
+            completionHandler(.newData)
+        }
     }
 }
-
-private let data: Data = """
-{
-    "name": "Sample Device",
-    "address": "6 Dane St., Somerville, MA 02143, USA",
-    "fuelType": "propane",
-    "orientation": "vertical",
-    "capacity": 100,
-    "lastReading": {
-        "tank": 34,
-        "temperature": 72.12,
-        "time": 1444338760345,
-    }
-}
-""".data(using: .utf8)!

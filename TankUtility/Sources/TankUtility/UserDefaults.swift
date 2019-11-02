@@ -12,7 +12,7 @@ extension UserDefaults {
             alerts = alerts.filter { alert in
                 return ids.contains(alert.key)
             }
-            primary = primary ?? nil
+            current = current ?? nil
         }
         get {
             guard let data: Data = data(forKey: Key.devices.stringValue),
@@ -36,16 +36,16 @@ extension UserDefaults {
         }
     }
     
-    var primary: String? {
+    var current: String? {
         set {
-            set(newValue, forKey: Key.primary.stringValue)
+            set(newValue, forKey: Key.current.stringValue)
         }
         get {
-            return string(forKey: Key.primary.stringValue)
+            return string(forKey: Key.current.stringValue)
         }
     }
     
     private enum Key: String, CodingKey {
-        case devices, alerts, primary
+        case devices, alerts, current
     }
 }

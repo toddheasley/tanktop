@@ -42,13 +42,21 @@ extension Device {
         }
     }
     
-    public var isPrimary: Bool {
+    public var isCurrent: Bool {
         set {
-            UserDefaults.shared.primary = id
+            UserDefaults.shared.current = id
         }
         get {
-            return id == UserDefaults.shared.primary
+            return id == UserDefaults.shared.current
         }
+    }
+}
+
+extension Device: Equatable {
+    
+    // MARK: Equatable
+    public static func ==(x: Device, y: Device) -> Bool {
+        return x.id == y.id
     }
 }
 

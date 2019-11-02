@@ -41,14 +41,14 @@ extension UserDefaultsTests {
         UserDefaults.standard.removeObject(forKey: "alerts")
     }
     
-    func testPrimary() {
-        UserDefaults.standard.removeObject(forKey: "primary")
-        XCTAssertNil(UserDefaults.standard.primary)
-        UserDefaults.standard.primary = "54df6a066667531535371367"
-        XCTAssertEqual(UserDefaults.standard.primary, "54df6a066667531535371367")
-        UserDefaults.standard.primary = nil
-        XCTAssertNil(UserDefaults.standard.primary)
-        UserDefaults.standard.removeObject(forKey: "primary")
+    func testCurrent() {
+        UserDefaults.standard.removeObject(forKey: "current")
+        XCTAssertNil(UserDefaults.standard.current)
+        UserDefaults.standard.current = "54df6a066667531535371367"
+        XCTAssertEqual(UserDefaults.standard.current, "54df6a066667531535371367")
+        UserDefaults.standard.current = nil
+        XCTAssertNil(UserDefaults.standard.current)
+        UserDefaults.standard.removeObject(forKey: "current")
     }
 }
 

@@ -67,7 +67,7 @@ class DeviceView: UIView {
         let height: CGFloat = bounds.size.height - (y + safeAreaInsets.bottom + contentInset.bottom)
         let pointSize: CGFloat = UIFont.preferredFont(forTextStyle: .body).pointSize * (bounds.size.width < 768.0 ? 1.0 : 2.0)
         
-        tankView.frame.size.height = bounds.size.height
+        tankView.frame.size.height = bounds.size.height * 2.0
         UIView.animate(withDuration: 0.42) {
             self.tankView.backgroundColor = .deviceStatus(self.device)
             self.tankView.frame.origin.y = (height - (CGFloat(self.device?.lastReading?.tank ?? 0.0) * height)) + y

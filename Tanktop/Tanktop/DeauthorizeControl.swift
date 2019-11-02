@@ -1,7 +1,6 @@
 import UIKit
 
 class DeauthorizeControl: UIControl {
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

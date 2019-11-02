@@ -7,9 +7,11 @@ class DeviceViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func handleRefresh(_ control: RefreshControl? = nil) {
-        //TankUtility.device(id: id) { device, finished, error in }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            control?.endRefreshing()
+        TankUtility.device(id: device?.id ?? "") { device, finished, error in
+            if finished {
+                self.refreshControl.endRefreshing()
+            }
+            self.deviceView.device = device ?? self.device
         }
     }
     
@@ -19,13 +21,7 @@ class DeviceViewController: UIViewController, UIScrollViewDelegate {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        let decoder: JSONDecoder = JSONDecoder()
-        decoder.userInfo[CodingUserInfoKey(rawValue: "id")!] = "54ff69057492666782350667"
-        deviceView.device = try? decoder.decode(Device.self, from: data)
-        
-        //fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }
     
     private let scrollView: UIScrollView = UIScrollView()
@@ -54,9 +50,9 @@ class DeviceViewController: UIViewController, UIScrollViewDelegate {
         view.addSubview(scrollView)
         
         #if targetEnvironment(macCatalyst)
-        deviceView.contentInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
+        deviceView.contentInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 37.0, right: 8.0)
         #else
-        deviceView.contentInset = UIEdgeInsets(top: 16.0, left: 8.0, bottom: 0.0, right: 8.0)
+        deviceView.contentInset = UIEdgeInsets(top: 16.0, left: 8.0, bottom: 37.0, right: 8.0)
         #endif
         deviceView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         deviceView.frame = view.bounds
@@ -79,18 +75,3 @@ class DeviceViewController: UIViewController, UIScrollViewDelegate {
         refreshControl.beginRefreshing(force: false)
     }
 }
-
-private let data: Data = """
-{
-    "name": "Sample Device",
-    "address": "6 Dane St., Somerville, MA 02143, USA",
-    "fuelType": "propane",
-    "orientation": "vertical",
-    "capacity": 100,
-    "lastReading": {
-        "tank": 44,
-        "temperature": 72.12,
-        "time": 1444338760345,
-    }
-}
-""".data(using: .utf8)!

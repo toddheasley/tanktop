@@ -28,8 +28,8 @@ public struct TankUtility {
         return URLRequest.username
     }
     
-    public static var primary: String? {
-        return UserDefaults.shared.primary ?? UserDefaults.shared.devices.first?.id
+    public static var current: String? {
+        return UserDefaults.shared.current ?? UserDefaults.shared.devices.first?.id
     }
     
     public static func devices(completion: @escaping ([Device]?, Error?) -> Void) {
@@ -50,7 +50,11 @@ public struct TankUtility {
         }
     }
     
-    public static func device(id: String, completion: @escaping (Device?, Bool, Error?) -> Void) {
+    public static func device(id: String? = nil, completion: @escaping (Device?, Bool, Error?) -> Void) {
+        guard let id: String = id ?? current, !id.isEmpty else {
+            completion(nil, true, .notFound)
+            return
+        }
         if URLRequest.isExample, let devices: [Device] = Device.examples {
             for device in devices {
                 guard device.id == id else {
@@ -114,11 +118,13 @@ extension TankUtility {
         let authorization: Data? = URLRequest.authorization
         let devices: [Device] = UserDefaults.shared.devices
         let alerts: [String: Alert] = UserDefaults.shared.alerts
-        let primary: String? = UserDefaults.shared.primary
+        let current: String? = UserDefaults.shared.current
         
         fileprivate func reset() {
             URLRequest.authorization = nil
+            UserDefaults.shared.current = nil
             UserDefaults.shared.devices = []
+            UserDefaults.shared.alerts = [:]
             Token.reset()
         }
     }
@@ -128,7 +134,7 @@ extension TankUtility {
             URLRequest.authorization = newValue.authorization
             UserDefaults.shared.devices = newValue.devices
             UserDefaults.shared.alerts = newValue.alerts
-            UserDefaults.shared.primary = newValue.primary
+            UserDefaults.shared.current = newValue.current
         }
         get {
             return Context()

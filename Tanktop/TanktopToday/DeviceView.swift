@@ -48,13 +48,8 @@ class DeviceView: UIView {
         emptyLabel.isHidden = device != nil
         
         tankView.backgroundColor = .deviceStatus(self.device)
-        tankView.frame.size.height = bounds.size.height
-        tankView.frame.origin.y = self.bounds.size.height - (CGFloat(self.device?.lastReading?.tank ?? 0.0) * self.bounds.size.height)
-        
-        tankView.backgroundColor = .deviceStatus(self.device)
-        tankView.frame.size.height = bounds.size.height
-        tankView.frame.origin.y = (bounds.size.height - (CGFloat(self.device?.lastReading?.tank ?? 0.0) * bounds.size.height))
-        
+        tankView.frame.size.height = bounds.size.height + contentInset.bottom
+        tankView.frame.origin.y = self.bounds.size.height - (CGFloat(self.device?.lastReading?.tank ?? 0.0) * self.bounds.size.height) - (contentInset.bottom / 2.0)
         contentView.frame.size.width = bounds.size.width - (contentInset.left + contentInset.right)
         contentView.frame.size.height = bounds.size.height - (contentInset.top + contentInset.bottom)
         contentView.frame.origin.x = contentInset.left
