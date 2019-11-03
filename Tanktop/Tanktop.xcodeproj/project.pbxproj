@@ -529,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 		5C45581D220B09610099EDED /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -547,7 +547,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 		5C58DD4D220BD243001DE8F1 /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -565,7 +565,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 		5C58DD4E220BD279001DE8F1 /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -583,7 +583,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -709,7 +709,7 @@
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				IBSC_MODULE = TanktopWatch_Extension;
 				INFOPLIST_FILE = TanktopWatch/Info.plist;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -732,7 +732,7 @@
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				IBSC_MODULE = TanktopWatch_Extension;
 				INFOPLIST_FILE = TanktopWatch/Info.plist;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -757,7 +757,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -782,7 +782,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -807,7 +807,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -831,7 +831,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -975,7 +975,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -1000,7 +1000,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

@@ -2,11 +2,18 @@ import UIKit
 import TankUtility
 
 class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, PageBarDelegate {
-    func open(device id: String? = nil) {
-        
+    @IBAction func toggleAuthorizeView() {
+        if let presentedViewController: UIViewController = presentedViewController {
+            guard !presentedViewController.isModalInPresentation else {
+                return
+            }
+            dismiss(animated: true, completion: nil)
+        } else {
+            present(AuthorizeViewController(), animated: true, completion: nil)
+        }
     }
     
-    func refresh() {
+    @IBAction func refresh() {
         TankUtility.devices { devices, error in
             guard !self.handle(error: error),
                 let devices: [Device] = devices else {
@@ -14,6 +21,10 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
             }
             self.devices = devices
         }
+    }
+    
+    func open(device id: String? = nil) {
+        
     }
     
     func reset() {
@@ -28,17 +39,18 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         didSet {
             pageBar.numberOfPages = devices.count
             if let index: Int = index {
-                if let device: Device = (pageViewController.viewControllers?.first as? DeviceViewController)?.device, device == devices[index] {
-                    return
+                if let deviceViewController: DeviceViewController = pageViewController.viewControllers?.first as? DeviceViewController, deviceViewController.device == devices[index] {
+                    deviceViewController.device = devices[index]
+                } else {
+                    pageViewController.setViewControllers([
+                        DeviceViewController(device: devices[index])
+                    ], direction: .forward, animated: false, completion: nil)
                 }
-                pageViewController.setViewControllers([
-                    DeviceViewController(device: devices[index])
-                ], direction: .forward, animated: false, completion: nil)
                 pageBar.currentPage = index
             } else {
                 pageViewController.setViewControllers([
                     UIViewController()
-                ], direction: .reverse, animated: true, completion: nil)
+                ], direction: .reverse, animated: false, completion: nil)
             }
         }
     }
@@ -125,6 +137,6 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     }
     
     func pageAccessoryDidOpen() {
-        present(AuthorizeViewController(), animated: true, completion: nil)
+        toggleAuthorizeView()
     }
 }

@@ -3,13 +3,18 @@ import TankUtility
 
 class DeviceViewController: UIViewController, UIScrollViewDelegate {
     var device: Device? {
-        return deviceView.device
+        set {
+            deviceView.device = newValue
+        }
+        get {
+            return deviceView.device
+        }
     }
     
     @objc func handleRefresh(_ control: RefreshControl? = nil) {
         TankUtility.device(id: device?.id ?? "") { device, finished, error in
             if finished {
-                self.refreshControl.endRefreshing()
+                control?.endRefreshing()
             }
             self.deviceView.device = device ?? self.device
         }
