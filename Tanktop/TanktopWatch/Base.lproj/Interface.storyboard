@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15504" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
@@ -10,7 +10,21 @@
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller spacing="0.0" fullBounds="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TanktopWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="ncX-Ob-tPD">
+                            <items>
+                                <label width="1" height="0.90000000000000002" alignment="center" hidden="YES" alpha="0.5" text="NO DEVICE" textAlignment="center" minimumScaleFactor="0.5" id="HKO-8z-4X0" userLabel="Empty Label">
+                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="34"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="emptyLabel" destination="HKO-8z-4X0" id="Ld3-3l-Q8H"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="34" y="31"/>

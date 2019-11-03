@@ -9,6 +9,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
     
     func applicationDidBecomeActive() {
-        
+        (WKExtension.shared().rootInterfaceController as? InterfaceController)?.device = nil
     }
 }
