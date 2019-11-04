@@ -31,11 +31,11 @@ extension UserDefaultsTests {
         ]
         XCTAssertEqual(UserDefaults.standard.alerts.count, 1)
         XCTAssertEqual(UserDefaults.standard.alerts["54df6a066667531535371367"]?.threshold, 0.15)
-        XCTAssertFalse(UserDefaults.standard.alerts["54df6a066667531535371367"]?.isEnabled ?? true)
+        XCTAssertTrue(UserDefaults.standard.alerts["54df6a066667531535371367"]?.isEnabled ?? false)
         UserDefaults.standard.alerts["54ff69057492666782350667"] = Alert(isEnabled: true)
         XCTAssertEqual(UserDefaults.standard.alerts.count, 2)
         XCTAssertEqual(UserDefaults.standard.alerts["54df6a066667531535371367"]?.threshold, 0.15)
-        XCTAssertFalse(UserDefaults.standard.alerts["54df6a066667531535371367"]?.isEnabled ?? true)
+        XCTAssertTrue(UserDefaults.standard.alerts["54df6a066667531535371367"]?.isEnabled ?? false)
         XCTAssertEqual(UserDefaults.standard.alerts["54ff69057492666782350667"]?.threshold, 0.25)
         XCTAssertTrue(UserDefaults.standard.alerts["54ff69057492666782350667"]?.isEnabled ?? false)
         UserDefaults.standard.removeObject(forKey: "alerts")

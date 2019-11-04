@@ -1,12 +1,12 @@
 import Foundation
 
 extension String {
-    public init?(percent: Double?) {
+    public init?(percent: Double?, symbol: Bool = true) {
         guard let percent: Double = percent,
             let string: String = String.numberFormatter.string(from: NSNumber(value: percent)) else {
             return nil
         }
-        self = string
+        self = string.replacingOccurrences(of: symbol ? "" : String.numberFormatter.percentSymbol, with: "")
     }
     
     private static let numberFormatter: NumberFormatter = .numberFormatter(style: .percent)

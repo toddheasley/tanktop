@@ -28,11 +28,11 @@ extension DeviceTests {
             return
         }
         XCTAssertEqual(device.alert.threshold, 0.25)
-        XCTAssertFalse(device.alert.isEnabled)
+        XCTAssertTrue(device.alert.isEnabled)
         device.alert.threshold = 0.35
         XCTAssertEqual(device.alert.threshold, 0.35)
-        device.alert.isEnabled = true
-        XCTAssertTrue(device.alert.isEnabled)
+        device.alert.isEnabled = false
+        XCTAssertFalse(device.alert.isEnabled)
         UserDefaults.standard.alerts = [:]
     }
 }

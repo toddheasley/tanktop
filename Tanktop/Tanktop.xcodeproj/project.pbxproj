@@ -34,6 +34,9 @@
 		5C9F574221F4045D00D7AEC8 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F574021F4045D00D7AEC8 /* Today.storyboard */; };
 		5C9F574621F4045D00D7AEC8 /* TanktopToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5C9F575121F4051600D7AEC8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9F575021F4051600D7AEC8 /* NotificationCenter.framework */; };
+		5CA39198236F438E00399BB1 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA39197236F438E00399BB1 /* WCSession.swift */; };
+		5CA39199236F438E00399BB1 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA39197236F438E00399BB1 /* WCSession.swift */; };
+		5CA3919B236F94B500399BB1 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */; };
 		5CAC92672200EFAB00B77FD3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5CB0055121ED002100F2E503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0055021ED002100F2E503 /* AppDelegate.swift */; };
 		5CB0055621ED002100F2E503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055421ED002100F2E503 /* Main.storyboard */; };
@@ -148,6 +151,8 @@
 		5C9F574321F4045D00D7AEC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9F575021F4051600D7AEC8 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5C9F575221F4056F00D7AEC8 /* TanktopToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanktopToday.entitlements; sourceTree = "<group>"; };
+		5CA39197236F438E00399BB1 /* WCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSession.swift; sourceTree = "<group>"; };
+		5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		5CB0055021ED002100F2E503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CB0055521ED002100F2E503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CB0055721ED002200F2E503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,9 +288,11 @@
 				5C3F57CA236686E7007E8095 /* UIAlertController.swift */,
 				5CD726D721EF78D600564338 /* UIColor.swift */,
 				5C835863235F95E800CFE869 /* UILabel.swift */,
+				5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */,
 				5CD9A7A423675CAB000F9666 /* UITextField.swift */,
 				5C3F57C823667F35007E8095 /* UIViewController.swift */,
 				5CD579C721F56EC4001B9562 /* URL.swift */,
+				5CA39197236F438E00399BB1 /* WCSession.swift */,
 				5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */,
 				5CB0055C21ED002200F2E503 /* Info.plist */,
 			);
@@ -594,6 +601,7 @@
 			files = (
 				5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */,
 				5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */,
+				5CA39199236F438E00399BB1 /* WCSession.swift in Sources */,
 				5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */,
 				5CFA6D162354D1A800CFE10C /* CLKComplication.swift in Sources */,
 				5CEA4427236E48C4009E173B /* UIColor.swift in Sources */,
@@ -630,6 +638,8 @@
 				5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */,
 				5CD726D821EF78D600564338 /* UIColor.swift in Sources */,
 				5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */,
+				5CA39198236F438E00399BB1 /* WCSession.swift in Sources */,
+				5CA3919B236F94B500399BB1 /* UNUserNotificationCenter.swift in Sources */,
 				5C4D316823687801007052FC /* DeauthorizeControl.swift in Sources */,
 				5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */,
 				5C23DDC2235DD49F0006EAFC /* DragControl.swift in Sources */,
@@ -892,7 +902,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -948,7 +958,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

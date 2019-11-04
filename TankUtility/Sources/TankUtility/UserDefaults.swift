@@ -12,7 +12,6 @@ extension UserDefaults {
             alerts = alerts.filter { alert in
                 return ids.contains(alert.key)
             }
-            current = current ?? nil
         }
         get {
             guard let data: Data = data(forKey: Key.devices.stringValue),
@@ -26,6 +25,7 @@ extension UserDefaults {
     var alerts: [String: Alert] {
         set {
             set(try? JSONEncoder().encode(newValue), forKey: Key.alerts.stringValue)
+            NotificationCenter.default.post(Notification(name: TankUtility.contextDidChangeNotification))
         }
         get {
             guard let data: Data = data(forKey: Key.alerts.stringValue),
@@ -39,6 +39,7 @@ extension UserDefaults {
     var current: String? {
         set {
             set(newValue, forKey: Key.current.stringValue)
+            NotificationCenter.default.post(Notification(name: TankUtility.contextDidChangeNotification))
         }
         get {
             return string(forKey: Key.current.stringValue)

@@ -114,7 +114,7 @@ private let data: Data = """
         "capacity": 120,
         "lastReading": {
             "tank": 77,
-            "temperature": 41.21,
+            "temperature": 42.1,
             "time": 1549488000000
         }
     },
@@ -127,7 +127,7 @@ private let data: Data = """
         "capacity": 120,
         "lastReading": {
             "tank": 13,
-            "temperature": 41.21,
+            "temperature": 42.1,
             "time": 1549488000000
         }
     },

@@ -51,7 +51,7 @@ class ReadingView: UIView {
         dateLabel.frame.size.height = dateLabel.sizeThatFits(contentView.bounds.size).height
         dateLabel.frame.origin.y = tankLabel.frame.size.height
         
-        temperatureLabel.font = .monospacedDigitSystemFont(ofSize: round(tankLabel.font.pointSize / 2.0), weight: .bold)
+        temperatureLabel.font = .monospacedDigitSystemFont(ofSize: round(tankLabel.font.pointSize / 2.0), weight: .semibold)
         temperatureLabel.frame.size.height = temperatureLabel.sizeThatFits(contentView.bounds.size).height + 8.0
         temperatureLabel.frame.origin.y = dateLabel.frame.size.height + dateLabel.frame.origin.y
         

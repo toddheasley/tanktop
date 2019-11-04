@@ -15,15 +15,40 @@
                             <items>
                                 <label width="1" height="0.90000000000000002" alignment="center" hidden="YES" alpha="0.5" text="NO DEVICE" textAlignment="center" minimumScaleFactor="0.5" id="HKO-8z-4X0" userLabel="Empty Label">
                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                    <fontDescription key="font" type="system" weight="semibold" pointSize="34"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="32"/>
                                 </label>
+                                <group width="1" height="0.0" alignment="center" verticalAlignment="bottom" radius="0.0" spacing="0.0" id="o6V-p1-Bwx">
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                </group>
+                                <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="4" id="7WH-Gn-gZq">
+                                    <items>
+                                        <label width="1" alignment="center" verticalAlignment="center" text="Name" textAlignment="center" id="Q2d-st-xtI">
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                        </label>
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" 42%" textAlignment="center" id="LvO-B4-KVq">
+                                            <fontDescription key="font" type="system" weight="semibold" pointSize="42"/>
+                                        </label>
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" FEB 6, 2019 4:20 AM" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="4TS-Q3-TIX">
+                                            <fontDescription key="font" type="system" weight="semibold" pointSize="13"/>
+                                        </label>
+                                        <label width="1" alignment="center" verticalAlignment="center" text="72 F" textAlignment="center" id="3wt-AD-vhS">
+                                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="12"/>
+                                </group>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                     <connections>
+                        <outlet property="dateLabel" destination="4TS-Q3-TIX" id="COX-0t-o9S"/>
                         <outlet property="emptyLabel" destination="HKO-8z-4X0" id="Ld3-3l-Q8H"/>
+                        <outlet property="nameLabel" destination="Q2d-st-xtI" id="Tzi-bO-k5R"/>
+                        <outlet property="tankGroup" destination="o6V-p1-Bwx" id="D1J-nQ-jrP"/>
+                        <outlet property="tankLabel" destination="LvO-B4-KVq" id="tTs-zI-cOF"/>
+                        <outlet property="temperatureLabel" destination="3wt-AD-vhS" id="S0l-Hr-KFT"/>
                     </connections>
                 </controller>
             </objects>

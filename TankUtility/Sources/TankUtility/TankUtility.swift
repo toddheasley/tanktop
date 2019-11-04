@@ -92,7 +92,7 @@ public struct TankUtility {
     }
     
     public static func authorize(username: String, password: String, completion: ((Error?) -> Void)?) {
-        context.reset()
+        Context.reset()
         URLRequest.authorize(username: username, password: password)
         guard !URLRequest.isExample else {
             completion?(nil)
@@ -109,35 +109,55 @@ public struct TankUtility {
     }
     
     public static func deauthorize() {
-        context.reset()
+        Context.reset()
     }
 }
 
 extension TankUtility {
-    struct Context: Codable {
-        let authorization: Data? = URLRequest.authorization
-        let devices: [Device] = UserDefaults.shared.devices
-        let alerts: [String: Alert] = UserDefaults.shared.alerts
-        let current: String? = UserDefaults.shared.current
+    public static let contextDidChangeNotification: Notification.Name = Notification.Name("contextDidChange")
+    
+    public static var context: [String: Any] {
+        set {
+            guard let data: Data = newValue[Key.context.stringValue] as? Data,
+                let context: Context = try? JSONDecoder().decode(Context.self, from: data) else {
+                return
+            }
+            URLRequest.authorization = context.authorization
+            UserDefaults.shared.devices = context.devices
+            UserDefaults.shared.alerts = context.alerts
+            UserDefaults.shared.current = context.current
+        }
+        get {
+            return [
+                Key.context.stringValue: try! JSONEncoder().encode(Context())
+            ]
+        }
+    }
+    
+    private enum Key: CodingKey {
+        case context
+    }
+    
+    private struct Context: Codable {
+        let authorization: Data?
+        let devices: [Device]
+        let alerts: [String: Alert]
+        let current: String?
         
-        fileprivate func reset() {
+        init() {
+            authorization = URLRequest.authorization
+            devices = UserDefaults.shared.devices
+            alerts = UserDefaults.shared.alerts
+            current = UserDefaults.shared.current
+        }
+                
+        fileprivate static func reset() {
             URLRequest.authorization = nil
             UserDefaults.shared.current = nil
             UserDefaults.shared.devices = []
             UserDefaults.shared.alerts = [:]
             Token.reset()
-        }
-    }
-    
-    static var context: Context {
-        set {
-            URLRequest.authorization = newValue.authorization
-            UserDefaults.shared.devices = newValue.devices
-            UserDefaults.shared.alerts = newValue.alerts
-            UserDefaults.shared.current = newValue.current
-        }
-        get {
-            return Context()
+            NotificationCenter.default.post(Notification(name: contextDidChangeNotification))
         }
     }
 }

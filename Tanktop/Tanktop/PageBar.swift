@@ -52,7 +52,7 @@ class PageBar: UIView {
         super.init(frame: frame)
         
         pageControl.pageIndicatorTintColor = UIColor.tertiaryLabel.resolvedColor(with: UITraitCollection(userInterfaceStyle: .light))
-        pageControl.currentPageIndicatorTintColor = tintColor
+        pageControl.currentPageIndicatorTintColor = UIColor.secondaryLabel.resolvedColor(with: UITraitCollection(userInterfaceStyle: .light))
         pageControl.hidesForSinglePage = true
         pageControl.addTarget(self, action: #selector(handlePage(_:)), for: .valueChanged)
         pageControl.autoresizingMask = [.flexibleHeight]

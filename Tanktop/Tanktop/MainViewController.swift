@@ -52,6 +52,7 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
                     UIViewController()
                 ], direction: .reverse, animated: false, completion: nil)
             }
+            UNUserNotificationCenter.current().refreshAlerts(for: devices)
         }
     }
     

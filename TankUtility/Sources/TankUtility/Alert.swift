@@ -12,7 +12,7 @@ public struct Alert {
         }
     }
     
-    public init(threshold: Double = 0.25, isEnabled: Bool = false) {
+    public init(threshold: Double = 0.25, isEnabled: Bool = true) {
         self.threshold = min(max(threshold, Alert.range.lowerBound), Alert.range.upperBound)
         self.isEnabled = isEnabled
     }
