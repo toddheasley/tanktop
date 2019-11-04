@@ -5,7 +5,7 @@ class PageAccessoryControl: UIControl {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let imageView: UIImageView = UIImageView(image: UIImage(systemName: "ellipsis.circle"))
+    private let imageView: UIImageView = UIImageView(image: UIImage(systemName: "ellipsis"))
     
     // MARK: UIControl
     override var description: String {

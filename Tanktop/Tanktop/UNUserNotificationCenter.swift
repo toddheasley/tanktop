@@ -39,7 +39,7 @@ fileprivate extension UNNotificationRequest {
         guard let content: UNNotificationContent = UNMutableNotificationContent(device: device) else {
             return nil
         }
-        self.init(identifier: device.id, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 60.0, repeats: false))
+        self.init(identifier: device.id, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 30.0, repeats: false))
     }
 }
 

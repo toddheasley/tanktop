@@ -24,7 +24,14 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     }
     
     func open(device id: String? = nil) {
-        
+        for (index, device) in devices.enumerated() {
+            guard device.id == id else {
+                continue
+            }
+            pageBar.currentPage = index
+            pageDidChange(bar: pageBar)
+            break
+        }
     }
     
     func reset() {
@@ -67,6 +74,15 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
     }
     
     // MARK: UIViewController
+    override var keyCommands: [UIKeyCommand]? {
+        guard !(presentedViewController?.isModalInPresentation ?? true) else {
+            return []
+        }
+        return [
+            UIKeyCommand(title: "Dismiss", action: #selector(toggleAuthorizeView), input: UIKeyCommand.inputEscape)
+        ]
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
