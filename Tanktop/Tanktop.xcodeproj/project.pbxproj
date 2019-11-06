@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDBE235DCDD40006EAFC /* DeviceView.swift */; };
-		5C23DDC2235DD49F0006EAFC /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* DragControl.swift */; };
+		5C23DDC2235DD49F0006EAFC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* AlertView.swift */; };
 		5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC1235DD49F0006EAFC /* ReadingView.swift */; };
 		5C320B5A234B8D4F002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B59234B8D4F002DF386 /* TankUtility */; };
 		5C320B5C234B8D73002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5B234B8D73002DF386 /* TankUtility */; };
@@ -124,7 +124,7 @@
 		5C05E57E220BDAE500BA5155 /* TanktopWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TanktopWatch Extension.entitlements"; sourceTree = "<group>"; };
 		5C05E57F220BDAEF00BA5155 /* TanktopWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanktopWatch.entitlements; sourceTree = "<group>"; };
 		5C23DDBE235DCDD40006EAFC /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
-		5C23DDC0235DD49F0006EAFC /* DragControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragControl.swift; sourceTree = "<group>"; };
+		5C23DDC0235DD49F0006EAFC /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		5C23DDC1235DD49F0006EAFC /* ReadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
 		5C2A59E12210D076006B4287 /* CLKComplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplication.swift; sourceTree = "<group>"; };
 		5C3F57C623666040007E8095 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +268,7 @@
 		5CB0054F21ED002100F2E503 /* Tanktop */ = {
 			isa = PBXGroup;
 			children = (
+				5C23DDC0235DD49F0006EAFC /* AlertView.swift */,
 				5CB0055021ED002100F2E503 /* AppDelegate.swift */,
 				5C4D3165236877BA007052FC /* AuthorizeControl.swift */,
 				5CD9A7A023674578000F9666 /* AuthorizeView.swift */,
@@ -276,7 +277,6 @@
 				5C4D316723687801007052FC /* DeauthorizeControl.swift */,
 				5C23DDBE235DCDD40006EAFC /* DeviceView.swift */,
 				5CE5DA092364A32100DB55BB /* DeviceViewController.swift */,
-				5C23DDC0235DD49F0006EAFC /* DragControl.swift */,
 				5CD9A7A223674AF4000F9666 /* Keyboard.swift */,
 				5CB0055921ED002200F2E503 /* Launch.storyboard */,
 				5CB0055421ED002100F2E503 /* Main.storyboard */,
@@ -642,7 +642,7 @@
 				5CA3919B236F94B500399BB1 /* UNUserNotificationCenter.swift in Sources */,
 				5C4D316823687801007052FC /* DeauthorizeControl.swift in Sources */,
 				5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */,
-				5C23DDC2235DD49F0006EAFC /* DragControl.swift in Sources */,
+				5C23DDC2235DD49F0006EAFC /* AlertView.swift in Sources */,
 				5CD9644F236504D6004528AC /* RefreshControl.swift in Sources */,
 				5C3F57CB236686E7007E8095 /* UIAlertController.swift in Sources */,
 				5C4D3166236877BA007052FC /* AuthorizeControl.swift in Sources */,

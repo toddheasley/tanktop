@@ -1,12 +1,13 @@
 import UIKit
 import TankUtility
 
-class DeviceView: UIView {
+class DeviceView: UIView, AlertDelegate {
     var device: Device? {
         didSet {
             nameLabel.text = device?.name
             addressLabel.text = device?.address
             readingView.reading = device?.lastReading
+            alertView.alert = device?.alert
             
             setNeedsLayout()
             layoutIfNeeded()
@@ -20,20 +21,6 @@ class DeviceView: UIView {
         }
     }
     
-    @objc func handleDrag(_ control: DragControl?, event: UIEvent) {
-        guard let control: DragControl = control,
-            let touch: UITouch = event.touches(for: control)?.first else {
-            return
-        }
-        let delta: CGFloat = touch.location(in: control).y - touch.previousLocation(in: control).y
-        guard delta != 0.0 else {
-            return
-        }
-        let y: CGFloat = contentView.frame.origin.y
-        let height: CGFloat = bounds.size.height - (y + safeAreaInsets.bottom)
-        device?.alert.threshold = Double(1.0 - ((control.frame.origin.y + delta - y) / height))
-    }
-    
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -44,7 +31,7 @@ class DeviceView: UIView {
     private let nameLabel: UILabel = UILabel()
     private let addressLabel: UILabel = UILabel()
     private let readingView: ReadingView = ReadingView()
-    private let dragControl: DragControl = DragControl()
+    private let alertView: AlertView = AlertView()
     
     // MARK: UIView
     override var description: String {
@@ -90,9 +77,8 @@ class DeviceView: UIView {
         readingView.frame.size.height = readingView.intrinsicContentSize.height + (nameLabel.frame.origin.y * 2.0)
         readingView.frame.origin.y = addressLabel.frame.size.height + addressLabel.frame.origin.y
         
-        dragControl.frame.origin.y = (height - (CGFloat(device?.alert.threshold ?? 0.0) * height)) + y
-        dragControl.threshold = device?.alert.threshold
-        dragControl.isHidden = true // device == nil
+        alertView.frame.origin.y = y
+        alertView.frame.size.height = height
         
         accessibilityLabel = accessibilityLabel ?? description
     }
@@ -138,12 +124,17 @@ class DeviceView: UIView {
         readingView.frame.size.width = bounds.size.width
         contentView.addSubview(readingView)
         
-        dragControl.addTarget(self, action: #selector(handleDrag(_:event:)), for: .touchDragInside)
-        dragControl.autoresizingMask = [.flexibleWidth]
-        dragControl.frame.size.width = bounds.size.width
-        addSubview(dragControl)
+        alertView.autoresizingMask = [.flexibleWidth]
+        alertView.frame.size.width = bounds.size.width
+        alertView.delegate = self
+        addSubview(alertView)
         
         accessibilityTraits = .summaryElement
         isAccessibilityElement = true
+    }
+    
+    // MARK: AlertDelegate
+    func alertDidChange(_ alert: Alert) {
+        device?.alert = alert
     }
 }

@@ -17,7 +17,7 @@ public struct Alert {
         self.isEnabled = isEnabled
     }
     
-    private static let range: ClosedRange<Double> = 0.1...0.9
+    public static let range: ClosedRange<Double> = 0.1...0.9
 }
 
 extension Alert: Codable {

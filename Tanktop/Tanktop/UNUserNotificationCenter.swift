@@ -4,6 +4,10 @@ import TankUtility
 
 extension UNUserNotificationCenter {
     func refreshAlerts(for devices: [Device], completion: ((Bool) -> Void)? = nil) {
+        completion?(false)
+        return
+        
+        /*
         getNotificationSettings { settings in
             switch settings.authorizationStatus {
             case .authorized, .provisional:
@@ -21,7 +25,7 @@ extension UNUserNotificationCenter {
             default:
                 completion?(false)
             }
-        }
+        } */
     }
     
     func requestAuthorization() {

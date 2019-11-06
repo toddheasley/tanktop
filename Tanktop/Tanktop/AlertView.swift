@@ -1,7 +1,92 @@
 import UIKit
 import TankUtility
 
-class DragControl: UIControl {
+protocol AlertDelegate {
+    func alertDidChange(_ alert: Alert)
+}
+
+class AlertView: UIView {
+    var delegate: AlertDelegate?
+    
+    var alert: Alert? {
+        didSet {
+            alertControl.isHidden = alert == nil
+            alertControl.frame.origin.y = (bounds.size.height - (bounds.size.height * CGFloat(alert?.threshold ?? Alert().threshold))) - (alertControl.frame.size.height / 2.0)
+            
+            print("\(String(percent: alert?.threshold) ?? "nil")")
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc fileprivate func handleDrag(_ control: AlertControl, event: UIEvent) {
+        guard let touch: UITouch = event.touches(for: control)?.first else {
+            return
+        }
+        
+        let y: CGFloat = alertControl.frame.origin.y + (alertControl.frame.size.height / 2.0) + (touch.location(in: control).y - touch.previousLocation(in: control).y)
+        alert?.threshold = Double((bounds.size.height - y) / bounds.size.height)
+    }
+    
+    @objc fileprivate func handleDragEnd() {
+        guard let alert: Alert = alert else {
+            return
+        }
+        delegate?.alertDidChange(alert)
+    }
+    
+    private let alertControl: AlertControl = AlertControl()
+    
+    // MARK: UIView
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        alert?.threshold = alert?.threshold ?? 0.0
+        
+        alertControl.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.5)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        alertControl.addTarget(self, action: #selector(handleDrag(_:event:)), for: .touchDragInside)
+        alertControl.addTarget(self, action: #selector(handleDragEnd), for: .touchUpInside)
+        alertControl.autoresizingMask = [.flexibleWidth]
+        alertControl.frame.size.width = bounds.size.width
+        addSubview(alertControl)
+    }
+}
+
+fileprivate class AlertControl: UIControl {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: UIControl
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: -1.0, height: 44.0)
+    }
+    
+    override var frame: CGRect {
+        set {
+            super.frame = CGRect(x: newValue.origin.x, y: newValue.origin.y, width: newValue.size.width, height: intrinsicContentSize.height)
+        }
+        get {
+            return super.frame
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
+}
+
+/*
+
+
     var threshold: Double? {
         didSet {
             label.text = String(percent: threshold)
@@ -84,4 +169,4 @@ class DragControl: UIControl {
         label.isHidden = true
         addSubview(label)
     }
-}
+} */
