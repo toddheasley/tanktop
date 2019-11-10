@@ -53,8 +53,6 @@
 		5CEA4424236D39AF009E173B /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA4423236D39AF009E173B /* PageBar.swift */; };
 		5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */; };
 		5CEA4427236E48C4009E173B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
-		5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
-		5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CFA6D112354CEC300CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
 		5CFA6D122354CEC500CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
 		5CFA6D162354D1A800CFE10C /* CLKComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A59E12210D076006B4287 /* CLKComplication.swift */; };
@@ -484,7 +482,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C58DD2A220BD11C001DE8F1 /* Assets.xcassets in Resources */,
-				5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */,
 				5C58DD28220BD119001DE8F1 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,7 +490,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */,
 				5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
