@@ -13,6 +13,10 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         }
     }
     
+    @IBAction func showHelp() {
+        UIApplication.shared.open(.help, options: [:], completionHandler: nil)
+    }
+    
     @IBAction func refresh() {
         TankUtility.devices { devices, error in
             guard !self.handle(error: error),

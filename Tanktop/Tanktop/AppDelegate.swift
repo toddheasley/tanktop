@@ -7,7 +7,6 @@ import TankUtility
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, WCSessionDelegate {
     @objc func handleContext(notification: Notification?) {
         try? WCSession.available?.updateApplicationContext(TankUtility.context)
-        UNUserNotificationCenter.current().requestAuthorization()
     }
     
     // MARK: UIApplicationDelegate

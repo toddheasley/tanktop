@@ -68,6 +68,18 @@
                                 <menuDeletion anchor="com.apple.menu.toolbar"/>
                             </systemMenuChildDeletions>
                         </menu>
+                        <menu isSystemItem="YES" title="Help" identifier="com.apple.menu.help" id="guj-2f-cuC">
+                            <children>
+                                <command title="TankUtility Support" id="BHa-j4-xx8">
+                                    <connections>
+                                        <action selector="showHelp" destination="HL5-Ji-qR3" id="a3Z-WX-746"/>
+                                    </connections>
+                                </command>
+                            </children>
+                            <systemMenuChildDeletions>
+                                <itemDeletion anchorAction="showHelp:"/>
+                            </systemMenuChildDeletions>
+                        </menu>
                     </children>
                     <systemMenuChildDeletions>
                         <menuDeletion anchor="com.apple.menu.format"/>
