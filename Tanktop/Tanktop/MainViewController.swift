@@ -64,6 +64,7 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
                 ], direction: .reverse, animated: false, completion: nil)
             }
             UNUserNotificationCenter.current().refreshAlerts(for: devices)
+            emptyLabel.isAccessibilityElement = devices.isEmpty
         }
     }
     

@@ -9,7 +9,7 @@ class PageAccessoryControl: UIControl {
     
     // MARK: UIControl
     override var description: String {
-        return ""
+        return "Settings"
     }
     
     override var isHighlighted: Bool {
@@ -37,8 +37,9 @@ class PageAccessoryControl: UIControl {
         imageView.frame.size.height = bounds.size.height
         addSubview(imageView)
         
-        accessibilityLabel = description
         accessibilityTraits = .button
+        accessibilityHint = "Tank Utility account"
+        accessibilityLabel = description
         isAccessibilityElement = true
     }
 }

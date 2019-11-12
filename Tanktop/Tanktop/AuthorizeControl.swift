@@ -54,6 +54,7 @@ class AuthorizeControl: UIControl {
         label.frame.origin.x = 3.0
         label.frame.size.width = bounds.size.width - (label.frame.origin.x * 2.0)
         label.frame.size.height = intrinsicContentSize.height
+        
         accessibilityLabel = description
     }
     
@@ -72,8 +73,8 @@ class AuthorizeControl: UIControl {
         label.numberOfLines = 0
         addSubview(label)
         
-        accessibilityTraits = .button
-        accessibilityHint = "Open Tank Utility website"
+        accessibilityTraits = .link
+        accessibilityHint = "Tank Utility website"
         isAccessibilityElement = true
     }
 }

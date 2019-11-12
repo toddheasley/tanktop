@@ -8,6 +8,7 @@ class ReadingView: UIView {
             temperatureLabel.text = String(temperature: reading?.temperature)
             dateLabel.text = String(date: reading?.date)?.uppercased()
             
+            accessibilityLabel = description
             setNeedsLayout()
             layoutIfNeeded()
         }
@@ -63,8 +64,6 @@ class ReadingView: UIView {
         contentView.frame.size.height = max(temperatureLabel.frame.size.height + temperatureLabel.frame.origin.y, emptyLabel.frame.size.height)
         contentView.frame.origin.x = (bounds.size.width - contentView.frame.size.width) / 2.0
         contentView.frame.origin.y = (bounds.size.height - contentView.frame.size.height) / 2.0
-        
-        accessibilityLabel = accessibilityLabel ?? description
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

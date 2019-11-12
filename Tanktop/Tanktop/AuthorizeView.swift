@@ -4,6 +4,7 @@ import TankUtility
 protocol AuthorizeViewDelegate {
     func authorizeView(_ view: AuthorizeView, didOpen url: URL)
     func authorizeViewDidAuthorize(_ view: AuthorizeView)
+    func authorizeViewDidDismiss(_view: AuthorizeView)
 }
 
 class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
@@ -43,6 +44,10 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
         layoutIfNeeded()
     }
     
+    @objc func handleDismiss() {
+        delegate?.authorizeViewDidDismiss(_view: self)
+    }
+    
     @objc func handleTextDidChange(_ textField: UITextField?) {
         passwordTextField.enablesReturnKeyAutomatically = !(usernameTextField.text ?? "").isEmpty
         passwordTextField.returnKeyType = passwordTextField.enablesReturnKeyAutomatically ? .go : .next
@@ -64,16 +69,13 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
     }
     
     private let contentView: UIView = UIView()
+    private let dismissControl: UIControl = UIControl()
     private let deauthorizeControl: DeauthorizeControl = DeauthorizeControl()
     private let authorizeControl: AuthorizeControl = AuthorizeControl()
     private let usernameTextField: UITextField = .username
     private let passwordTextField: UITextField = .password
     
     // MARK: UIView
-    override var description: String {
-        return authorizeControl.description
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -101,7 +103,15 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
         contentView.frame.origin.x = max((bounds.size.width - contentView.frame.size.width) / 2.0, contentInset.left)
         keyboardWillChangeFrame(Keyboard.shared, duration: 0.0)
         
-        accessibilityLabel = description
+        accessibilityElements = isAuthorized ? [
+            authorizeControl,
+            deauthorizeControl,
+            dismissControl
+        ] : [
+            authorizeControl,
+            usernameTextField,
+            passwordTextField
+        ]
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -115,6 +125,13 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
         super.init(frame: frame)
         
         addSubview(contentView)
+        
+        dismissControl.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
+        dismissControl.frame.size = CGSize(width: 1.0, height: 1.0)
+        dismissControl.accessibilityTraits = .button
+        dismissControl.accessibilityLabel = "Dismiss"
+        dismissControl.isAccessibilityElement = true
+        contentView.addSubview(dismissControl)
         
         authorizeControl.addTarget(self, action: #selector(handleAuthorize(_:)), for: .touchUpInside)
         authorizeControl.autoresizingMask = [.flexibleWidth]
@@ -144,8 +161,6 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
         Keyboard.shared.delegate = self
-        
-        isAccessibilityElement = true
     }
     
     // MARK: UITextFieldDelegate

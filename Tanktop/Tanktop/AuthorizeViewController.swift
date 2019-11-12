@@ -45,4 +45,8 @@ class AuthorizeViewController: UIViewController, AuthorizeViewDelegate {
             mainViewController?.reset()
         }
     }
+    
+    func authorizeViewDidDismiss(_view: AuthorizeView) {
+        dismiss(animated: true, completion: nil)
+    }
 }

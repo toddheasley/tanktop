@@ -45,8 +45,8 @@ class DeauthorizeControl: UIControl {
         label.numberOfLines = 0
         addSubview(label)
         
-        accessibilityLabel = description
         accessibilityTraits = .button
+        accessibilityLabel = description
         isAccessibilityElement = true
     }
 }

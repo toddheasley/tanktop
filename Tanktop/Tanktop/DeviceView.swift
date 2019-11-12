@@ -9,6 +9,7 @@ class DeviceView: UIView, AlertDelegate {
             readingView.reading = device?.lastReading
             alertView.alert = device?.alert
             
+            accessibilityLabel = description
             setNeedsLayout()
             layoutIfNeeded()
         }
@@ -79,8 +80,6 @@ class DeviceView: UIView, AlertDelegate {
         
         alertView.frame.origin.y = y
         alertView.frame.size.height = height
-        
-        accessibilityLabel = accessibilityLabel ?? description
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

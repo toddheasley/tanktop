@@ -67,6 +67,11 @@ class PageBar: UIView {
         accessoryControl.frame.size.height = bounds.size.height
         addSubview(accessoryControl)
         #endif
+        
+        accessibilityElements = [
+            pageControl,
+            accessoryControl
+        ]
     }
     
     required init?(coder decoder: NSCoder) {
