@@ -65,6 +65,7 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
             }
             UNUserNotificationCenter.current().refreshAlerts(for: devices)
             emptyLabel.isAccessibilityElement = devices.isEmpty
+            emptyLabel.isHidden = !devices.isEmpty
         }
     }
     
