@@ -9,7 +9,7 @@ class DeviceView: UIView, AlertDelegate {
             readingView.reading = device?.lastReading
             alertView.alert = device?.alert
             
-            accessibilityLabel = description
+            contentView.accessibilityLabel = description
             setNeedsLayout()
             layoutIfNeeded()
         }
@@ -104,6 +104,7 @@ class DeviceView: UIView, AlertDelegate {
         addSubview(tankView)
         
         contentView.isUserInteractionEnabled = false
+        contentView.isAccessibilityElement = true
         addSubview(contentView)
         
         nameLabel.adjustsFontForContentSizeCategory = true
@@ -128,8 +129,10 @@ class DeviceView: UIView, AlertDelegate {
         alertView.delegate = self
         addSubview(alertView)
         
-        accessibilityTraits = .summaryElement
-        isAccessibilityElement = true
+        accessibilityElements = [
+            contentView,
+            alertView
+        ]
     }
     
     // MARK: AlertDelegate

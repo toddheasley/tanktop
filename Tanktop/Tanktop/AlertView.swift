@@ -13,6 +13,10 @@ class AlertView: UIView {
             alertControl.isHidden = alert == nil
             alertControl.frame.origin.y = (bounds.size.height - (bounds.size.height * CGFloat(alert?.threshold ?? Alert().threshold))) - (alertControl.frame.size.height / 2.0)
             alertControl.threshold = alert?.threshold
+            
+            accessibilityLabel = "Alert when tank level is below"
+            accessibilityValue = String(percent: alert?.threshold)
+            isAccessibilityElement = !isHidden
         }
     }
     
@@ -43,10 +47,26 @@ class AlertView: UIView {
     private let alertControl: AlertControl = AlertControl()
     
     // MARK: UIView
+    override func accessibilityIncrement() {
+        guard var alert: Alert = alert else {
+            return
+        }
+        alert.threshold = (Double(lround(alert.threshold * 20.0)) / 20.0) + 0.05
+        delegate?.alertDidChange(alert)
+    }
+    
+    override func accessibilityDecrement() {
+        guard var alert: Alert = alert else {
+            return
+        }
+        alert.threshold = (Double(lround(alert.threshold * 20.0)) / 20.0) - 0.05
+        delegate?.alertDidChange(alert)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        alert?.threshold = round((alert?.threshold ?? 0.0) * 100.0) / 100.0
+        alert?.threshold = Double(lround((alert?.threshold ?? 0.0) * 100.0)) / 100.0
     }
     
     override init(frame: CGRect) {
@@ -58,6 +78,8 @@ class AlertView: UIView {
         alertControl.autoresizingMask = [.flexibleWidth]
         alertControl.frame.size.width = bounds.size.width
         addSubview(alertControl)
+        
+        accessibilityTraits = .adjustable
     }
 }
 
