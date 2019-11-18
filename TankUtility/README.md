@@ -31,7 +31,7 @@ TankUtility.authorize(username: "tankutility@example.com", password: "********")
 
 ```
 
-<small>Authorize with the email address `tankutility@example.com` and any non-empty password to access a bundled example account, useful for testing or just being a tourist. The example account behaves just like a real Tank Utility account but makes no networking requests to the Tank Utility API.</small>
+> Authorize with the email address `tankutility@example.com` and any non-empty password to access a bundled example account, useful for testing or just being a tourist. Example account behaves like a real Tank Utility account but makes no networking requests to the Tank Utility API.
 
 Retrieve all devices for authorized account:
 
