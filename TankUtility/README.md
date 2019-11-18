@@ -11,8 +11,66 @@
 
 Supports apps targeting [iOS](https://developer.apple.com/ios)/[iPadOS](https://developer.apple.com/ipad)/[tvOS ](https://developer.apple.com/tvos) 13, as well as [watchOS](https://developer.apple.com/watchos) 6 and [macOS](https://developer.apple.com/macos) 10.15 Catalina.
 
-It's written in [Swift](https://developer.apple.com/documentation/swift) 5.1 using the [Foundation](https://developer.apple.com/documentation/foundation), [BackgroundTasks](https://developer.apple.com/documentation/backgroundtasks) and [WatchConnectivity](https://developer.apple.com/documentation/watchconnectivity) frameworks and requires [Xcode](https://developer.apple.com/xcode) 11 or newer to build.
+It's written in [Swift](https://developer.apple.com/documentation/swift) 5.1 using the [Foundation](https://developer.apple.com/documentation/foundation) framework and requires [Xcode](https://developer.apple.com/xcode) 11 or newer to build.
 
-## Examples
+## Example Usage
 
-Access the bundled example account by authenticating with the email address `tankutility@example.com` and any non-empty string as the password. The example account behaves just like a real Tank Utility account but makes no networking requests to the Tank Utility API.
+Optionally configure `TankUtility` with an app group to enable `UserDefaults` and Keychain access in a shared container.
+
+Authorize with any Tank Utility account:
+
+```swift
+import Foundation
+import TankUtility
+
+TankUtility.appGroup = "group.example.tankutility"
+
+TankUtility.authorize(username: "tankutility@example.com", password: "********") { error in
+    print(error)
+}
+
+```
+
+<small>Authorize with the email address `tankutility@example.com` and any non-empty password to access a bundled example account, useful for testing or just being a tourist. The example account behaves just like a real Tank Utility account but makes no networking requests to the Tank Utility API.</small>
+
+Retrieve all devices for authorized account:
+
+```swift
+import Foundation
+import TankUtility
+
+TankUtility.devices { devices, error in
+    guard let devices: [Device] = devices else {
+        print(error)
+        return
+    }
+    print(devices)
+}
+
+```
+
+Refresh an individual device using device ID:
+
+```swift
+import Foundation
+import TankUtility
+
+TankUtility.device(id: "000f0031353730350d473731") { device, finished, error in
+    guard let device: Device = device else {
+        print(error)
+        return
+    }
+    print(device)
+}
+
+```
+
+Reset `UserDefaults` and delete authorized account from Keychain:
+
+```swift
+import Foundation
+import TankUtility
+
+TankUtility.deauthorize()
+
+```

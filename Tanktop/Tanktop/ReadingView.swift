@@ -45,14 +45,14 @@ class ReadingView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        tankLabel.font = .monospacedDigitSystemFont(ofSize: bounds.size.width > 414.0 ? 144.0 : 72.0, weight: .semibold)
+        tankLabel.font = .monospacedDigitSystemFont(ofSize: 72.0, weight: .medium)
         tankLabel.frame.size.height = tankLabel.sizeThatFits(contentView.bounds.size).height
         
-        dateLabel.font = .systemFont(ofSize: round(tankLabel.font.pointSize / 4.0), weight: .semibold)
+        dateLabel.font = .systemFont(ofSize: 16.0, weight: .regular)
         dateLabel.frame.size.height = dateLabel.sizeThatFits(contentView.bounds.size).height
         dateLabel.frame.origin.y = tankLabel.frame.size.height
         
-        temperatureLabel.font = .monospacedDigitSystemFont(ofSize: round(tankLabel.font.pointSize / 2.0), weight: .semibold)
+        temperatureLabel.font = .monospacedDigitSystemFont(ofSize: round(tankLabel.font.pointSize / 2.0), weight: .medium)
         temperatureLabel.frame.size.height = temperatureLabel.sizeThatFits(contentView.bounds.size).height + 13.0
         temperatureLabel.frame.origin.y = dateLabel.frame.size.height + dateLabel.frame.origin.y
         

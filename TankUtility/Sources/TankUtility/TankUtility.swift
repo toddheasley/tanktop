@@ -1,21 +1,12 @@
 import Foundation
 
 public struct TankUtility {
-    public enum Error: Int, Swift.Error {
-        case badRequest = 400
-        case unauthorized = 401
-        case forbidden = 403
-        case notFound = 404
-        case notAllowed = 405
-        case notAcceptable = 406
-        case gone = 410
-        case tooManyRequests = 429
-        case server = 500
-        case unavailable = 503
-    }
-    
     public static var website: URL {
         return .website
+    }
+    
+    public static var support: URL {
+        return .support
     }
     
     public static var appGroup: String? {
@@ -158,6 +149,54 @@ extension TankUtility {
             UserDefaults.shared.alerts = [:]
             Token.reset()
             NotificationCenter.default.post(Notification(name: contextDidChangeNotification))
+        }
+    }
+}
+
+extension TankUtility {
+    public enum Error: Int, Swift.Error, CustomStringConvertible {
+        case badRequest = 400
+        case unauthorized = 401
+        case forbidden = 403
+        case notFound = 404
+        case notAllowed = 405
+        case notAcceptable = 406
+        case gone = 410
+        case tooManyRequests = 429
+        case server = 500
+        case unavailable = 503
+        
+        init?(response: URLResponse?) {
+            guard let response: HTTPURLResponse = response as? HTTPURLResponse else {
+                return nil
+            }
+            self.init(rawValue: response.statusCode)
+        }
+        
+        // MARK: CustomStringConvertible
+        public var description: String {
+            switch self {
+            case .badRequest:
+                return "bad request"
+            case .unauthorized:
+                return "unauthorized"
+            case .forbidden:
+                return "forbidden"
+            case .notFound:
+                return "not found"
+            case .notAllowed:
+                return "method not allowed"
+            case .notAcceptable:
+                return "not acceptable"
+            case .gone:
+                return "gone"
+            case .tooManyRequests:
+                return "too many requests"
+            case .server:
+                return "internal server error"
+            case .unavailable:
+                return "service unavailable"
+            }
         }
     }
 }

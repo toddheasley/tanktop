@@ -27,6 +27,7 @@
 		5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */; };
 		5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */; };
 		5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */; platformFilter = ios; };
+		5C67E077237C5A7C0011DC54 /* BGTaskScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */; };
 		5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5C835864235F95E800CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
 		5C83586823600A9700CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
@@ -142,6 +143,7 @@
 		5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C58DD3D220BD11D001DE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTaskScheduler.swift; sourceTree = "<group>"; };
 		5C835863235F95E800CFE869 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TanktopToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9F573E21F4045D00D7AEC8 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				5CD9A7A023674578000F9666 /* AuthorizeView.swift */,
 				5C3F57C623666040007E8095 /* AuthorizeViewController.swift */,
 				5CB0055721ED002200F2E503 /* Assets.xcassets */,
+				5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */,
 				5C4D316723687801007052FC /* DeauthorizeControl.swift */,
 				5C23DDBE235DCDD40006EAFC /* DeviceView.swift */,
 				5CE5DA092364A32100DB55BB /* DeviceViewController.swift */,
@@ -632,6 +635,7 @@
 				5CD9A7A323674AF4000F9666 /* Keyboard.swift in Sources */,
 				5CC8B2DB21ED51AA00BDBF35 /* MainViewController.swift in Sources */,
 				5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */,
+				5C67E077237C5A7C0011DC54 /* BGTaskScheduler.swift in Sources */,
 				5CD726D821EF78D600564338 /* UIColor.swift in Sources */,
 				5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */,
 				5CA39198236F438E00399BB1 /* WCSession.swift in Sources */,

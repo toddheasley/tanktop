@@ -13,7 +13,6 @@ extension UNUserNotificationCenter {
                 guard !(TankUtility.username ?? "").isEmpty else {
                     fallthrough
                 }
-                var result: Bool = false
                 for device in devices {
                     guard let request: UNNotificationRequest = UNNotificationRequest(device: device) else {
                         continue
@@ -21,17 +20,15 @@ extension UNUserNotificationCenter {
                     self.add(request) { error in
                         request.notified = Date()
                     }
-                    result = true
                 }
-                completion?(result)
+                completion?(true)
             case .denied:
                 UserDefaults.standard.notified = [:]
                 self.removeAllPendingNotificationRequests()
                 self.removeAllDeliveredNotifications()
                 fallthrough
-            @unknown default:
+            default:
                 completion?(false)
-                
             }
         }
     }

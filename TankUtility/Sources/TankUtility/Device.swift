@@ -106,7 +106,7 @@ extension Device {
 private let data: Data = """
 [
     {
-        "id": "example66667531535371367",
+        "id": "000f0031353730350d473731",
         "name": "Propane Tank",
         "address": "Home",
         "fuelType": "propane",
@@ -115,12 +115,12 @@ private let data: Data = """
         "lastReading": {
             "tank": 77,
             "temperature": 42.1,
-            "time": 1549488000000
+            "time": 1576214160000
         }
     },
     {
-        "id": "example57492666782350637",
-        "name": "Propane Tank #2",
+        "id": "000f0031353730350d473732",
+        "name": "Propane Tank 2",
         "address": "Home",
         "fuelType": "propane",
         "orientation": "vertical",
@@ -128,11 +128,11 @@ private let data: Data = """
         "lastReading": {
             "tank": 13,
             "temperature": 42.1,
-            "time": 1549488000000
+            "time": 1576212660000
         }
     },
     {
-        "id": "example57492666782350667",
+        "id": "000f0031353730350d473733",
         "name": "Oil Tank",
         "address": "Ski Cabin",
         "fuelType": "oil",
@@ -141,7 +141,7 @@ private let data: Data = """
         "lastReading": {
             "tank": 32,
             "temperature": 14.12,
-            "time": 1549444800000
+            "time": 1576236900000
         }
     }
 ]

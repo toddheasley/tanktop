@@ -8,7 +8,7 @@ class TokenTests: XCTestCase {
 extension TokenTests {
     
     // MARK: Decodable
-    func testDecodeInit() {
+    func testDecoderInit() {
         guard let token: Token = (try? JSONDecoder().decode([Token].self, from: data))?.first else {
             XCTFail()
             return

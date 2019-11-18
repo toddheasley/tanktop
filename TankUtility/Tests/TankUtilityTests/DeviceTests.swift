@@ -55,7 +55,7 @@ extension DeviceTests {
         XCTAssertEqual(device.lastReading?.tank, 0.2)
     }
     
-    func testDecodeInit() {
+    func testDecoderInit() {
         guard let device: Device = try? JSONDecoder(device: "54ff69057492666782350667").decode(Device.self, from: data) else {
             XCTFail()
             return

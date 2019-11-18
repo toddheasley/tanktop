@@ -19,7 +19,7 @@ extension ReadingTests {
         XCTAssertEqual(reading.date, Date(timeIntervalSince1970: 1444338760.345))
     }
     
-    func testDecodeInit() {
+    func testDecoderInit() {
         guard let reading: Reading = try? JSONDecoder().decode(Reading.self, from: data) else {
             XCTFail()
             return

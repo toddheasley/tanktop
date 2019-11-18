@@ -53,7 +53,7 @@ class DeviceView: UIView, AlertDelegate {
         
         let y: CGFloat = safeAreaInsets.top + contentInset.top
         let height: CGFloat = bounds.size.height - (y + safeAreaInsets.bottom + contentInset.bottom)
-        let pointSize: CGFloat = UIFont.preferredFont(forTextStyle: .body).pointSize * (bounds.size.width < 768.0 ? 1.0 : 2.0)
+        let pointSize: CGFloat = UIFont.preferredFont(forTextStyle: .body).pointSize
         
         tankView.frame.size.height = bounds.size.height * 2.0
         UIView.animate(withDuration: 0.42) {

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
@@ -22,17 +22,17 @@
                                 </group>
                                 <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="4" id="7WH-Gn-gZq">
                                     <items>
-                                        <label width="1" alignment="center" verticalAlignment="center" text="Name" textAlignment="center" id="Q2d-st-xtI">
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" " textAlignment="center" id="Q2d-st-xtI">
                                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                         </label>
-                                        <label width="1" alignment="center" verticalAlignment="center" text=" 42%" textAlignment="center" id="LvO-B4-KVq">
-                                            <fontDescription key="font" type="system" weight="semibold" pointSize="42"/>
+                                        <label width="1" alignment="center" verticalAlignment="center" text="  " textAlignment="center" id="LvO-B4-KVq">
+                                            <fontDescription key="font" type="system" weight="medium" pointSize="42"/>
                                         </label>
-                                        <label width="1" alignment="center" verticalAlignment="center" text=" FEB 6, 2019 4:20 AM" textAlignment="center" minimumScaleFactor="0.80000000000000004" id="4TS-Q3-TIX">
-                                            <fontDescription key="font" type="system" weight="semibold" pointSize="13"/>
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" " textAlignment="center" minimumScaleFactor="0.80000000000000004" id="4TS-Q3-TIX">
+                                            <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
                                         </label>
-                                        <label width="1" alignment="center" verticalAlignment="center" text="72 F" textAlignment="center" id="3wt-AD-vhS">
-                                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" " textAlignment="center" id="3wt-AD-vhS">
+                                            <fontDescription key="font" type="system" weight="medium" pointSize="24"/>
                                         </label>
                                     </items>
                                     <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="12"/>

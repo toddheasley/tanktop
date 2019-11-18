@@ -1,10 +1,6 @@
 import Foundation
 
 extension URLRequest {
-    static func devices(token: String, device id: String? = nil) -> URLRequest {
-        return URLRequest(url: URL.devices(token: token, device: id))
-    }
-    
     static var token: URLRequest {
         var request: URLRequest = URLRequest(url: .token)
         if let authorization: String = URLRequest.authorization?.base64EncodedString() {
@@ -12,6 +8,10 @@ extension URLRequest {
         }
         request.cachePolicy = .reloadIgnoringLocalCacheData
         return request
+    }
+    
+    static func devices(token: String, device id: String? = nil) -> URLRequest {
+        return URLRequest(url: URL.devices(token: token, device: id))
     }
 }
 
@@ -70,8 +70,6 @@ extension URLRequest {
 
 extension URLRequest {
     static var isExample: Bool {
-        return username == example
+        return username == "tankutility@example.com"
     }
-    
-    private static let example: String = "tankutility@example.com"
 }

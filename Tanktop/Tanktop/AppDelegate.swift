@@ -1,6 +1,7 @@
 import UIKit
 import UserNotifications
 import WatchConnectivity
+import BackgroundTasks
 import TankUtility
 
 @UIApplicationMain
@@ -14,9 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         TankUtility.appGroup = "group.toddheasley.tanktop"
+        NotificationCenter.default.addObserver(self, selector: #selector(handleContext(notification:)), name: TankUtility.contextDidChangeNotification, object: nil)
         UNUserNotificationCenter.current().delegate = self
         WCSession.activate(delegate: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleContext(notification:)), name: TankUtility.contextDidChangeNotification, object: nil)
+        BGTaskScheduler.shared.registerRefresh()
         return true
     }
     
@@ -25,10 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window?.windowScene?.titlebar?.titleVisibility = .hidden
         #endif
         (window?.rootViewController as? MainViewController)?.refresh()
-        
         try? WCSession.available?.updateApplicationContext(TankUtility.context)
-        
-        
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        BGTaskScheduler.shared.scheduleRefresh()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

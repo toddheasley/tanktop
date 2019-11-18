@@ -13,8 +13,8 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         }
     }
     
-    @IBAction func showHelp() {
-        UIApplication.shared.open(.help, options: [:], completionHandler: nil)
+    @IBAction func showSupport() {
+        UIApplication.shared.open(TankUtility.support, options: [:], completionHandler: nil)
     }
     
     @IBAction func refresh() {

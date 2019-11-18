@@ -8,7 +8,7 @@ class JSONTests: XCTestCase {
 extension JSONTests {
     
     // MARK: Decodable
-    func testDecodeInit() {
+    func testDecoderInit() {
         guard let json: [JSON] = try? JSONDecoder(device: "54df6a066667531535371367").decode([JSON].self, from: data), json.count == 3 else {
             XCTFail()
             return

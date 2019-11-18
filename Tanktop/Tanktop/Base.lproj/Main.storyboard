@@ -72,7 +72,7 @@
                             <children>
                                 <command title="TankUtility Support" id="BHa-j4-xx8">
                                     <connections>
-                                        <action selector="showHelp" destination="HL5-Ji-qR3" id="a3Z-WX-746"/>
+                                        <action selector="showSupport" destination="HL5-Ji-qR3" id="A9M-6q-neZ"/>
                                     </connections>
                                 </command>
                             </children>
