@@ -4,7 +4,7 @@ Tanktop is an easy way to keep track of your [Tank Utility](https://www.tankutil
 
 ![](Tanktop/Tanktop1.png)
 
-[![Download on the App Store](Tanktop/App.svg)](https://itunes.apple.com/app/id1452241428)
+[![Download on the App Store](Tanktop/AppStore.svg)](https://apps.apple.com/us/app/tanktop-for-tank-utility/id1452241428)
 
 Tanktop is useless without a Tank Utility monitor, which can be [purchased online](https://shop.tankutility.com) and connected to any [remote-ready R3D tank gauge.](http://www.tankutility.com/r3d-compatible-gauge-faces) To simply try out Tanktop's functionality with some example devices, authorize Tanktop with the email address `tankutility@example.com` and any non-empty password.
 
@@ -14,7 +14,7 @@ Thanks to the magic of [Catalyst](https://developer.apple.com/mac-catalyst), Tan
 
 ![](Tanktop/Tanktop2.png)
 
-[__Download Tanktop for Mac__](Tanktop/Tanktop.zip)
+[![Download on the Mac App Store](Tanktop/MacAppStore.svg)](https://apps.apple.com/us/app/tanktop-for-tank-utility/id1488392736)
 
 ## `TankUtility`
 

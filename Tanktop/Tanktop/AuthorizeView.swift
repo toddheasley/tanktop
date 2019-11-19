@@ -7,7 +7,7 @@ protocol AuthorizeViewDelegate {
     func authorizeViewDidDismiss(_view: AuthorizeView)
 }
 
-class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
+class AuthorizeView: UIView, UITextFieldDelegate {
     var delegate: AuthorizeViewDelegate?
     
     var isAuthorized: Bool {
@@ -16,16 +16,6 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
     
     var error: TankUtility.Error? {
         didSet {
-            setNeedsLayout()
-            layoutIfNeeded()
-        }
-    }
-    
-    var contentInset: UIEdgeInsets = .zero {
-        didSet {
-            guard contentInset != oldValue else {
-                return
-            }
             setNeedsLayout()
             layoutIfNeeded()
         }
@@ -79,11 +69,10 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let contentSize: CGSize = CGSize(width: min(bounds.size.width - (contentInset.left + contentInset.right), 304.0), height: 414.0)
+        let contentSize: CGSize = CGSize(width: 304.0, height: bounds.size.height - (safeAreaInsets.top + safeAreaInsets.bottom))
         
         authorizeControl.isAuthorized = error == nil && TankUtility.username != nil
         authorizeControl.frame.size.height = authorizeControl.intrinsicContentSize.height
-        authorizeControl.frame.origin.y = 88.0
         
         usernameTextField.frame.size.height = usernameTextField.sizeThatFits(contentView.bounds.size).height + 9.0
         usernameTextField.frame.origin.y = authorizeControl.frame.origin.y + authorizeControl.frame.size.height + 14.0
@@ -99,9 +88,9 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
         deauthorizeControl.frame.origin.y = passwordTextField.frame.origin.y
         
         contentView.frame.size.width = contentSize.width
-        contentView.frame.size.height = passwordTextField.frame.origin.y + passwordTextField.frame.size.height + authorizeControl.frame.origin.y
-        contentView.frame.origin.x = max((bounds.size.width - contentView.frame.size.width) / 2.0, contentInset.left)
-        keyboardWillChangeFrame(Keyboard.shared, duration: 0.0)
+        contentView.frame.size.height = passwordTextField.frame.origin.y + passwordTextField.frame.size.height + (authorizeControl.frame.size.height * 3.0)
+        contentView.frame.origin.x = (bounds.size.width - contentView.frame.size.width) / 2.0
+        contentView.frame.origin.y = safeAreaInsets.top + max((contentSize.height - contentView.frame.size.height) / 2.0, 0.0)
         
         accessibilityElements = isAuthorized ? [
             authorizeControl,
@@ -160,7 +149,6 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
         contentView.addSubview(passwordTextField)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
-        Keyboard.shared.delegate = self
     }
     
     // MARK: UITextFieldDelegate
@@ -183,14 +171,5 @@ class AuthorizeView: UIView, UITextFieldDelegate, KeyboardDelegate {
             }
         }
         return false
-    }
-    
-    // MARK: KeyboardDelegate
-    func keyboardWillChangeFrame(_ keyboard: Keyboard, duration: TimeInterval) {
-        let y: CGFloat = safeAreaInsets.top + contentInset.top
-        let height: CGFloat = bounds.size.height - (max(safeAreaInsets.bottom * 2.0, keyboard.height) + contentInset.bottom + y)
-        UIView.animate(withDuration: duration) {
-            self.contentView.frame.origin.y = max((height - self.contentView.frame.size.height) / 2.0, 0.0) + y
-        }
     }
 }

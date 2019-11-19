@@ -16,9 +16,6 @@ extension BGTaskScheduler {
     }
     
     func scheduleRefresh() {
-        guard !(TankUtility.username ?? "").isEmpty else {
-            return
-        }
         try? submit(.refresh)
     }
 }

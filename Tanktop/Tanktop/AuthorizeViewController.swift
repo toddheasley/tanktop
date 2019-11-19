@@ -25,7 +25,6 @@ class AuthorizeViewController: UIViewController, AuthorizeViewDelegate {
         
         view.backgroundColor = .systemBackground
         
-        authorizeView.contentInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
         authorizeView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         authorizeView.frame = view.bounds
         view.addSubview(authorizeView)

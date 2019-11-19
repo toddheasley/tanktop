@@ -7,21 +7,28 @@ extension UNUserNotificationCenter {
         getNotificationSettings { settings in
             switch settings.authorizationStatus {
             case .notDetermined:
-                self.requestAuthorization()
-                completion?(false)
+                self.requestAuthorization(options: [.alert, .badge]) { _, _ in
+                    
+                }
             case .authorized, .provisional:
-                guard !(TankUtility.username ?? "").isEmpty else {
+                guard TankUtility.username != nil else {
                     fallthrough
                 }
-                for device in devices {
-                    guard let request: UNNotificationRequest = UNNotificationRequest(device: device) else {
-                        continue
-                    }
-                    self.add(request) { error in
+                let requests: [UNNotificationRequest] = devices.compactMap { device in
+                    return UNNotificationRequest(device: device)
+                }
+                guard !requests.isEmpty else {
+                    completion?(true)
+                    return
+                }
+                for (index, request) in requests.enumerated() {
+                    self.add(request) { _ in
                         request.notified = Date()
+                        if index + 1 == requests.count {
+                            completion?(true)
+                        }
                     }
                 }
-                completion?(true)
             case .denied:
                 UserDefaults.standard.notified = [:]
                 self.removeAllPendingNotificationRequests()
@@ -33,14 +40,7 @@ extension UNUserNotificationCenter {
         }
     }
     
-    func requestAuthorization() {
-        guard TankUtility.username != nil else {
-            return
-        }
-        requestAuthorization(options: [.alert, .badge]) { _, _ in
-            
-        }
-    }
+    
 }
 
 extension UNNotificationRequest {
@@ -61,7 +61,7 @@ extension UNNotificationRequest {
         guard let content: UNNotificationContent = UNMutableNotificationContent(device: device) else {
             return nil
         }
-        if let date: Date = UserDefaults.standard.notified[device.id], Date() < Date(timeInterval: 86400.0, since: date) {
+        if let date: Date = UserDefaults.standard.notified[device.id], Date() < Date(timeInterval: 28800.0, since: date) {
             return nil
         }
         self.init(identifier: device.id, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 60.0, repeats: false))
