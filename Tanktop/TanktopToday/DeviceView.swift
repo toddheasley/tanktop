@@ -70,7 +70,7 @@ class DeviceView: UIView {
             nameLabel.frame.origin.x = 0.0
         }
         
-        accessibilityLabel = accessibilityLabel ?? description
+        accessibilityLabel = description
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
