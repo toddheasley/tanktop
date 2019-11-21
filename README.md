@@ -10,11 +10,9 @@ Tanktop is useless without a Tank Utility monitor, which can be [purchased onlin
 
 ## Tanktop for Mac
 
-Thanks to the magic of [Catalyst](https://developer.apple.com/mac-catalyst), Tanktop is now a mediocre Mac app!
+Just for fun, Tanktop builds as a [Catalyst](https://developer.apple.com/mac-catalyst) app.
 
 ![](Tanktop/Tanktop2.png)
-
-[![Download on the Mac App Store](Tanktop/MacAppStore.svg)](https://apps.apple.com/us/app/tanktop-for-tank-utility/id1488392736)
 
 ## `TankUtility`
 
