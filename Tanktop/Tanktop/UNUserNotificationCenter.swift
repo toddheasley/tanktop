@@ -6,36 +6,70 @@ extension UNUserNotificationCenter {
     func refreshAlerts(for devices: [Device], completion: ((Bool) -> Void)? = nil) {
         getNotificationSettings { settings in
             switch settings.authorizationStatus {
+            case .notDetermined:
+                self.requestAuthorization(options: [.alert, .badge]) { _, _ in
+                    
+                }
             case .authorized, .provisional:
+                guard TankUtility.username != nil else {
+                    fallthrough
+                }
+                let requests: [UNNotificationRequest] = devices.compactMap { device in
+                    return UNNotificationRequest(device: device)
+                }
+                guard !requests.isEmpty else {
+                    completion?(true)
+                    return
+                }
+                for (index, request) in requests.enumerated() {
+                    self.add(request) { _ in
+                        request.notified = Date()
+                        if index + 1 == requests.count {
+                            completion?(true)
+                        }
+                    }
+                }
+            case .denied:
+                UserDefaults.standard.notified = [:]
                 self.removeAllPendingNotificationRequests()
                 self.removeAllDeliveredNotifications()
-                var result: Bool = false
-                for device in devices {
-                    guard let request: UNNotificationRequest = UNNotificationRequest(device: device) else {
-                        continue
-                    }
-                    self.add(request, withCompletionHandler: nil)
-                    result = true
-                }
-                completion?(result)
+                fallthrough
             default:
                 completion?(false)
             }
         }
     }
+    
+    
 }
 
-fileprivate extension UNNotificationRequest {
-    convenience init?(device: Device) {
+extension UNNotificationRequest {
+    fileprivate var notified: Date? {
+        set {
+            if let date: Date = newValue {
+                UserDefaults.standard.notified[identifier] = date
+            } else {
+                UserDefaults.standard.notified.removeValue(forKey: identifier)
+            }
+        }
+        get {
+            return UserDefaults.standard.notified[identifier]
+        }
+    }
+    
+    fileprivate convenience init?(device: Device) {
         guard let content: UNNotificationContent = UNMutableNotificationContent(device: device) else {
             return nil
         }
-        self.init(identifier: device.id, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 30.0, repeats: false))
+        if let date: Date = UserDefaults.standard.notified[device.id], Date() < Date(timeInterval: 28800.0, since: date) {
+            return nil
+        }
+        self.init(identifier: device.id, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 60.0, repeats: false))
     }
 }
 
-fileprivate extension UNMutableNotificationContent {
-    convenience init?(device: Device) {
+extension UNMutableNotificationContent {
+    fileprivate convenience init?(device: Device) {
         guard device.isAlerting else {
             return nil
         }
@@ -43,5 +77,16 @@ fileprivate extension UNMutableNotificationContent {
         title = "\(device.name)"
         subtitle = "\(device.address)"
         body = "\(device.fuel.description.capitalized) tank is below \(String(percent: device.alert.threshold)!)"
+    }
+}
+
+extension UserDefaults {
+    fileprivate var notified: [String: Date] {
+        set {
+            set(newValue, forKey: "notified")
+        }
+        get {
+            return dictionary(forKey: "notified") as? [String: Date] ?? [:]
+        }
     }
 }

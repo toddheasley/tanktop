@@ -1,126 +1,142 @@
 import UIKit
-import WatchConnectivity
 import TankUtility
 
-class DeviceView: UIView {
+class DeviceView: UIView, AlertDelegate {
     var device: Device? {
         didSet {
             nameLabel.text = device?.name
             addressLabel.text = device?.address
             readingView.reading = device?.lastReading
+            alertView.alert = device?.alert
+            
+            contentView.accessibilityLabel = description
             setNeedsLayout()
             layoutIfNeeded()
         }
     }
     
-    var contentInset: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 6.0, bottom: 0.0, right: 6.0) {
+    var contentInset: UIEdgeInsets = .zero {
         didSet {
             setNeedsLayout()
             layoutIfNeeded()
         }
     }
     
-    var contentSize: UIUserInterfaceSizeClass = .regular {
-        didSet {
-            setNeedsLayout()
-            layoutIfNeeded()
-        }
+    required init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func handleDrag(_ sender: UIControl?, event: UIEvent) {
-        guard let sender: DragControl = sender as? DragControl,
-            let touch: UITouch = event.touches(for: sender)?.first else {
-            return
-        }
-        let delta: CGFloat = touch.location(in: sender).y - touch.previousLocation(in: sender).y
-        guard delta != 0.0 else {
-            return
-        }
-        let y: CGFloat = contentInset.top + safeAreaInsets.top
-        let height: CGFloat = bounds.size.height - (y + contentInset.bottom + safeAreaInsets.bottom)
-        
-        device?.alert.threshold = Double(1.0 - ((sender.frame.origin.y + delta - y) / height))
-        try? WCSession.available?.updateApplicationContext(TankUtility.context)
-    }
-    
+    private let emptyLabel: UILabel = .empty(text: "No device")
     private let tankView: UIView = UIView()
     private let contentView: UIView = UIView()
     private let nameLabel: UILabel = UILabel()
     private let addressLabel: UILabel = UILabel()
     private let readingView: ReadingView = ReadingView()
-    private let dragControl: DragControl = DragControl()
+    private let alertView: AlertView = AlertView()
     
     // MARK: UIView
+    override var description: String {
+        if let device: Device = device,
+            let reading: String = readingView.accessibilityLabel {
+            return "\(device.name); \(device.address); \(reading)"
+        } else {
+            return emptyLabel.text!
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let y: CGFloat = contentInset.top + safeAreaInsets.top
-        let height: CGFloat = bounds.size.height - (y + contentInset.bottom + safeAreaInsets.bottom)
+        emptyLabel.frame.size.width = round(bounds.size.width * 0.8)
+        emptyLabel.frame.origin.x = (bounds.size.width - emptyLabel.frame.size.width) / 2.0
+        emptyLabel.isHidden = device != nil
         
-        tankView.frame.size.height = bounds.size.height
-        UIView.animate(withDuration: 0.75) {
-            self.tankView.backgroundColor = .status(device: self.device)
+        let y: CGFloat = safeAreaInsets.top + contentInset.top
+        let height: CGFloat = bounds.size.height - (y + safeAreaInsets.bottom + contentInset.bottom)
+        let pointSize: CGFloat = UIFont.preferredFont(forTextStyle: .body).pointSize
+        
+        tankView.frame.size.height = bounds.size.height * 2.0
+        UIView.animate(withDuration: 0.42) {
+            self.tankView.backgroundColor = .deviceStatus(self.device)
             self.tankView.frame.origin.y = (height - (CGFloat(self.device?.lastReading?.tank ?? 0.0) * height)) + y
         }
         
-        contentView.frame.origin.y = contentInset.top + safeAreaInsets.top
         contentView.frame.size.width = bounds.size.width - (contentInset.left + contentInset.right)
-        contentView.frame.size.height = bounds.size.height - (contentView.frame.origin.y + contentInset.bottom + safeAreaInsets.bottom)
+        contentView.frame.size.height = height
         contentView.frame.origin.x = contentInset.left
+        contentView.frame.origin.y = y
+        contentView.isHidden = device == nil
         
-        nameLabel.frame.size.width = contentView.bounds.size.width
-        nameLabel.frame.size.height = nameLabel.intrinsicContentSize.height
-        addressLabel.frame.size.width = contentView.bounds.size.width
-        switch contentSize {
-        case .compact:
-            nameLabel.font = .systemFont(ofSize: 16.0, weight: .semibold)
-            addressLabel.frame.size.height = 0.0
-            addressLabel.frame.origin.y = 2.0
-        default:
-            nameLabel.font = .systemFont(ofSize: nameLabel.font.pointSize, weight: .semibold)
-            addressLabel.frame.size.height = addressLabel.sizeThatFits(contentView.bounds.size).height
-            addressLabel.frame.origin.y = nameLabel.frame.origin.y + nameLabel.frame.size.height + 3.0
-        }
+        nameLabel.font = .systemFont(ofSize: pointSize, weight: .semibold)
+        nameLabel.frame.size.height = nameLabel.sizeThatFits(contentView.bounds.size).height + 5.0
+        nameLabel.frame.origin.y = 32.0
         
-        readingView.frame.size.width = contentView.bounds.size.width
-        readingView.frame.size.height = readingView.intrinsicContentSize.height
-        readingView.frame.origin.y = addressLabel.frame.origin.y + addressLabel.frame.size.height + 6.0
+        addressLabel.font = .systemFont(ofSize: pointSize, weight: .regular)
+        addressLabel.frame.size.height = addressLabel.sizeThatFits(contentView.bounds.size).height + 5.0
+        addressLabel.frame.origin.y = nameLabel.frame.size.height + nameLabel.frame.origin.y
         
-        dragControl.isEnabled = contentSize != .compact
-        dragControl.frame.origin.y = (height - (CGFloat(device?.alert.threshold ?? 0.0) * height)) + y
-        dragControl.threshold = device?.alert.threshold
-        dragControl.isHidden = !dragControl.isEnabled || device == nil
+        readingView.frame.size.height = readingView.intrinsicContentSize.height + (nameLabel.frame.origin.y * 2.0)
+        readingView.frame.origin.y = addressLabel.frame.size.height + addressLabel.frame.origin.y
+        
+        alertView.frame.origin.y = y
+        alertView.frame.size.height = height
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        setNeedsLayout()
+        layoutIfNeeded()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        emptyLabel.isUserInteractionEnabled = false
+        emptyLabel.autoresizingMask = [.flexibleHeight]
+        emptyLabel.frame.size.height = bounds.size.height
+        addSubview(emptyLabel)
+        
+        tankView.isUserInteractionEnabled = false
         tankView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
         tankView.frame.size.width = bounds.size.width
         tankView.frame.origin.y = bounds.size.height
         addSubview(tankView)
         
+        contentView.isUserInteractionEnabled = false
+        contentView.isAccessibilityElement = true
         addSubview(contentView)
         
-        nameLabel.lineBreakMode = .byTruncatingTail
-        nameLabel.numberOfLines = 1
+        nameLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.textAlignment = .center
+        nameLabel.autoresizingMask = [.flexibleWidth]
+        nameLabel.frame.size.width = bounds.size.width
         contentView.addSubview(nameLabel)
         
-        addressLabel.lineBreakMode = .byTruncatingTail
+        addressLabel.adjustsFontForContentSizeCategory = true
+        addressLabel.textAlignment = .center
         addressLabel.numberOfLines = 3
+        addressLabel.autoresizingMask = [.flexibleWidth]
+        addressLabel.frame.size.width = bounds.size.width
         contentView.addSubview(addressLabel)
         
+        readingView.autoresizingMask = [.flexibleWidth]
+        readingView.frame.size.width = bounds.size.width
         contentView.addSubview(readingView)
         
-        dragControl.addTarget(self, action: #selector(handleDrag(_:event:)), for: .touchDragInside)
-        dragControl.autoresizingMask = [.flexibleWidth]
-        dragControl.frame.size.width = bounds.size.width
-        dragControl.frame.size.height = 26.0
-        dragControl.isHidden = true
-        addSubview(dragControl)
+        alertView.autoresizingMask = [.flexibleWidth]
+        alertView.frame.size.width = bounds.size.width
+        alertView.delegate = self
+        addSubview(alertView)
+        
+        accessibilityElements = [
+            contentView,
+            alertView
+        ]
     }
     
-    required init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    // MARK: AlertDelegate
+    func alertDidChange(_ alert: Alert) {
+        device?.alert = alert
     }
 }

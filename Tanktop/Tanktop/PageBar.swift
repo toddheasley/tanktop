@@ -2,7 +2,7 @@ import UIKit
 
 protocol PageBarDelegate {
     func pageDidChange(bar: PageBar)
-    func pageBarDidDeauthorize()
+    func pageAccessoryDidOpen()
 }
 
 class PageBar: UIView {
@@ -26,43 +26,52 @@ class PageBar: UIView {
         }
     }
     
-    @objc func handlePage(_ sender: AnyObject?) {
+    @objc func handlePage(_ control: UIPageControl?) {
         delegate?.pageDidChange(bar: self)
     }
     
-    @objc func handleDeauthorize(_ sender: AnyObject?) {
-        delegate?.pageBarDidDeauthorize()
+    @objc func handleAccessory(_ control: PageAccessoryControl?) {
+        delegate?.pageAccessoryDidOpen()
     }
     
     private let pageControl: UIPageControl = UIPageControl()
-    private let deauthorizeControl: DeauthorizeControl = DeauthorizeControl()
+    private let accessoryControl: PageAccessoryControl = PageAccessoryControl()
     
     // MARK: UIView
     override var intrinsicContentSize: CGSize {
-        return pageControl.intrinsicContentSize
+        return CGSize(width: super.intrinsicContentSize.width, height: 37.0)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         pageControl.frame.size.width = bounds.size.width - (pageControl.frame.origin.x * 2.0)
-        pageControl.frame.size.height = bounds.size.height - pageControl.frame.origin.y
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        pageControl.pageIndicatorTintColor = .lightGray
-        pageControl.currentPageIndicatorTintColor = .darkGray
+        pageControl.pageIndicatorTintColor = UIColor.tertiaryLabel.resolvedColor(with: UITraitCollection(userInterfaceStyle: .light))
+        pageControl.currentPageIndicatorTintColor = UIColor.secondaryLabel.resolvedColor(with: UITraitCollection(userInterfaceStyle: .light))
         pageControl.hidesForSinglePage = true
         pageControl.addTarget(self, action: #selector(handlePage(_:)), for: .valueChanged)
-        pageControl.frame.origin.x = 44.0
-        pageControl.frame.origin.y = 1.0
+        pageControl.autoresizingMask = [.flexibleHeight]
+        pageControl.frame.size.height = bounds.size.height
+        pageControl.frame.origin.x = 72.0
         addSubview(pageControl)
         
-        deauthorizeControl.addTarget(self, action: #selector(handleDeauthorize(_:)), for: .touchUpInside)
-        deauthorizeControl.frame.size = CGSize(width: 38.0, height: 44.0)
-        addSubview(deauthorizeControl)
+        #if !targetEnvironment(macCatalyst)
+        accessoryControl.addTarget(self, action: #selector(handleAccessory(_:)), for: .touchUpInside)
+        accessoryControl.autoresizingMask = [.flexibleHeight]
+        accessoryControl.frame.size.width = pageControl.frame.origin.x
+        accessoryControl.frame.size.height = bounds.size.height
+        addSubview(accessoryControl)
+        #endif
+        
+        accessibilityElements = [
+            pageControl,
+            accessoryControl
+        ]
     }
     
     required init?(coder decoder: NSCoder) {

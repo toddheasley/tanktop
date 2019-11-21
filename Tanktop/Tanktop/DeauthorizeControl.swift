@@ -1,38 +1,52 @@
 import UIKit
 
 class DeauthorizeControl: UIControl {
-    private let imageView: UIImageView = UIImageView()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let label: UILabel = UILabel()
     
     // MARK: UIControl
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 26.0, height: 26.0)
+    override var description: String {
+        return "Revoke access"
     }
     
     override var isHighlighted: Bool {
-        set {
-            super.isHighlighted = newValue
-            imageView.tintColor = isHighlighted ? tintColor : .darkGray
+        didSet {
+            guard isHighlighted != oldValue else {
+                return
+            }
+            setNeedsLayout()
+            layoutIfNeeded()
         }
-        get {
-            return super.isHighlighted
-        }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: bounds.size.width, height: label.sizeThatFits(CGSize(width: bounds.size.width, height: 414.0)).height)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        label.textColor = tintColor.withAlphaComponent(isHighlighted ? 0.4 : 1.0)
+        label.frame.origin.x = 3.0
+        label.frame.size.width = bounds.size.width - (label.frame.origin.x * 2.0)
+        label.frame.size.height = max(bounds.size.height, intrinsicContentSize.height)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "Deauthorize")
-        imageView.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin, .flexibleBottomMargin, .flexibleLeftMargin]
-        imageView.frame.size = intrinsicContentSize
-        imageView.frame.origin.x = (bounds.size.width - imageView.frame.size.width) / 2.0
-        imageView.frame.origin.y = (bounds.size.height - imageView.frame.size.height) / 2.0
-        addSubview(imageView)
+        label.isUserInteractionEnabled = false
+        label.adjustsFontForContentSizeCategory = true
+        label.font = .preferredFont(forTextStyle: .body)
+        label.text = description
+        label.numberOfLines = 0
+        addSubview(label)
         
-        isHighlighted = false
-    }
-    
-    required init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        accessibilityTraits = .button
+        accessibilityLabel = description
+        isAccessibilityElement = true
     }
 }

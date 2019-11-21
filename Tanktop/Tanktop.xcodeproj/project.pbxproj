@@ -3,21 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C147141220E85B500C2A723 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
-		5C175C4A2200AE36009C3742 /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
-		5C1AD92B21FF6D92000C4040 /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1AD92A21FF6D92000C4040 /* PageBar.swift */; };
-		5C1BFD2C224CDFE100ECB788 /* AuthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1BFD2B224CDFE100ECB788 /* AuthorizeControl.swift */; };
-		5C29A53221F0390A00E3914B /* DeauthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */; };
-		5C2A59E22210D076006B4287 /* CLKComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A59E12210D076006B4287 /* CLKComplication.swift */; };
-		5C2A59E42210D0FC006B4287 /* CLKComplication.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C2A59E32210D0FC006B4287 /* CLKComplication.json */; };
-		5C3A19FB220235A10071098A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FA220235A10071098A /* EmptyView.swift */; };
-		5C3A19FE220239B00071098A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FD220239B00071098A /* ErrorView.swift */; };
-		5C3A19FF220239B00071098A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A19FD220239B00071098A /* ErrorView.swift */; };
+		5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDBE235DCDD40006EAFC /* DeviceView.swift */; };
+		5C23DDC2235DD49F0006EAFC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* AlertView.swift */; };
+		5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC1235DD49F0006EAFC /* ReadingView.swift */; };
+		5C320B5A234B8D4F002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B59234B8D4F002DF386 /* TankUtility */; };
+		5C320B5C234B8D73002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5B234B8D73002DF386 /* TankUtility */; };
+		5C320B5E234B8D87002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5D234B8D87002DF386 /* TankUtility */; };
+		5C3F57C723666040007E8095 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F57C623666040007E8095 /* AuthorizeViewController.swift */; };
+		5C3F57C923667F35007E8095 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F57C823667F35007E8095 /* UIViewController.swift */; };
+		5C3F57CB236686E7007E8095 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F57CA236686E7007E8095 /* UIAlertController.swift */; };
 		5C41F7582205C99400FE5DC1 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */; };
+		5C4D3166236877BA007052FC /* AuthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D3165236877BA007052FC /* AuthorizeControl.swift */; };
+		5C4D316823687801007052FC /* DeauthorizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D316723687801007052FC /* DeauthorizeControl.swift */; };
 		5C58DD28220BD119001DE8F1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD26220BD119001DE8F1 /* Interface.storyboard */; };
 		5C58DD2A220BD11C001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD29220BD11C001DE8F1 /* Assets.xcassets */; };
 		5C58DD31220BD11C001DE8F1 /* TanktopWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -25,43 +26,36 @@
 		5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C58DD37220BD11C001DE8F1 /* ExtensionDelegate.swift */; };
 		5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */; };
 		5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */; };
-		5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */; };
-		5C58DD4A220BD1B3001DE8F1 /* TankUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */; };
-		5C58DD4B220BD1B3001DE8F1 /* TankUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5C7045F2220644C500FAF28E /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3841821F673AB00163A1C /* DeviceView.swift */; };
-		5C7045F32206458600FAF28E /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE4FD4220268B600343DA3 /* ReadingView.swift */; };
-		5C7045F42206459800FAF28E /* DragControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C175C492200AE36009C3742 /* DragControl.swift */; };
+		5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */; platformFilter = ios; };
+		5C67E077237C5A7C0011DC54 /* BGTaskScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */; };
 		5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
-		5C7375EB220E28AA004275C5 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
-		5C80846622048F48008F8B11 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */; };
-		5C91AFF1220CA9DB004CCB6D /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
-		5C91AFF2220CA9DB004CCB6D /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C91AFF0220CA9DB004CCB6D /* WCSession.swift */; };
-		5C9F573F21F4045D00D7AEC8 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F573E21F4045D00D7AEC8 /* TodayViewController.swift */; };
+		5C835864235F95E800CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
+		5C83586823600A9700CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
+		5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F573E21F4045D00D7AEC8 /* TodayController.swift */; };
 		5C9F574221F4045D00D7AEC8 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F574021F4045D00D7AEC8 /* Today.storyboard */; };
-		5C9F574621F4045D00D7AEC8 /* TanktopToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C9F574621F4045D00D7AEC8 /* TanktopToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5C9F575121F4051600D7AEC8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9F575021F4051600D7AEC8 /* NotificationCenter.framework */; };
-		5CA7AFC022072469004619C2 /* TankUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCD037421ED056C00EF3373 /* TankUtility.framework */; };
+		5CA39198236F438E00399BB1 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA39197236F438E00399BB1 /* WCSession.swift */; };
+		5CA39199236F438E00399BB1 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA39197236F438E00399BB1 /* WCSession.swift */; };
+		5CA3919B236F94B500399BB1 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */; };
 		5CAC92672200EFAB00B77FD3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5CB0055121ED002100F2E503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0055021ED002100F2E503 /* AppDelegate.swift */; };
 		5CB0055621ED002100F2E503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055421ED002100F2E503 /* Main.storyboard */; };
 		5CB0055821ED002200F2E503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CB0055B21ED002200F2E503 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055921ED002200F2E503 /* Launch.storyboard */; };
-		5CC8B2D921ED50F400BDBF35 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8B2D821ED50F400BDBF35 /* DeviceViewController.swift */; };
 		5CC8B2DB21ED51AA00BDBF35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */; };
-		5CCD037521ED056C00EF3373 /* TankUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCD037421ED056C00EF3373 /* TankUtility.framework */; };
-		5CCD037621ED056C00EF3373 /* TankUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCD037421ED056C00EF3373 /* TankUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5CD3841921F673AB00163A1C /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3841821F673AB00163A1C /* DeviceView.swift */; };
-		5CD3841C21F6E93800163A1C /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3841B21F6E93800163A1C /* RefreshControl.swift */; };
-		5CD3841E21F773D600163A1C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3841D21F773D600163A1C /* TextField.swift */; };
-		5CD579C821F56EC4001B9562 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
-		5CD579C921F56EC4001B9562 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
-		5CD726D221EE1CE800564338 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D121EE1CE800564338 /* AuthorizeViewController.swift */; };
+		5CCA328623607FEA000B56E5 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA328523607FEA000B56E5 /* DeviceView.swift */; };
 		5CD726D821EF78D600564338 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
-		5CD7F23321F22329006FE3DE /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD7F23221F22329006FE3DE /* Keyboard.swift */; };
-		5CEE4FD5220268B600343DA3 /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE4FD4220268B600343DA3 /* ReadingView.swift */; };
-		5CEE4FD7220299BB00343DA3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE4FD6220299BB00343DA3 /* SettingsView.swift */; };
-		5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
-		5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
+		5CD9644F236504D6004528AC /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9644E236504D6004528AC /* RefreshControl.swift */; };
+		5CD9A7A123674578000F9666 /* AuthorizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A023674578000F9666 /* AuthorizeView.swift */; };
+		5CD9A7A523675CAB000F9666 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A423675CAB000F9666 /* UITextField.swift */; };
+		5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5DA092364A32100DB55BB /* DeviceViewController.swift */; };
+		5CEA4424236D39AF009E173B /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA4423236D39AF009E173B /* PageBar.swift */; };
+		5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */; };
+		5CEA4427236E48C4009E173B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
+		5CFA6D112354CEC300CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
+		5CFA6D122354CEC500CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
+		5CFA6D162354D1A800CFE10C /* CLKComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A59E12210D076006B4287 /* CLKComplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,44 +116,22 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C58DD4C220BD1B3001DE8F1 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5C58DD4B220BD1B3001DE8F1 /* TankUtility.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CCD037721ED056C00EF3373 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5CCD037621ED056C00EF3373 /* TankUtility.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5C05E57E220BDAE500BA5155 /* TanktopWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TanktopWatch Extension.entitlements"; sourceTree = "<group>"; };
 		5C05E57F220BDAEF00BA5155 /* TanktopWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanktopWatch.entitlements; sourceTree = "<group>"; };
-		5C0BE3A3220862D30000EBE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5C175C492200AE36009C3742 /* DragControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragControl.swift; sourceTree = "<group>"; };
-		5C1AD92A21FF6D92000C4040 /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
-		5C1BFD2B224CDFE100ECB788 /* AuthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeControl.swift; sourceTree = "<group>"; };
-		5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeauthorizeControl.swift; sourceTree = "<group>"; };
+		5C23DDBE235DCDD40006EAFC /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		5C23DDC0235DD49F0006EAFC /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		5C23DDC1235DD49F0006EAFC /* ReadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
 		5C2A59E12210D076006B4287 /* CLKComplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplication.swift; sourceTree = "<group>"; };
-		5C2A59E32210D0FC006B4287 /* CLKComplication.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CLKComplication.json; sourceTree = "<group>"; };
-		5C3A19FA220235A10071098A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		5C3A19FD220239B00071098A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		5C3F57C623666040007E8095 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
+		5C3F57C823667F35007E8095 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5C3F57CA236686E7007E8095 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		5C41F7572205C99400FE5DC1 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		5C455823220B3A580099EDED /* Tanktop.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tanktop.sketch; sourceTree = "<group>"; };
+		5C4D3165236877BA007052FC /* AuthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeControl.swift; sourceTree = "<group>"; };
+		5C4D316723687801007052FC /* DeauthorizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeauthorizeControl.swift; sourceTree = "<group>"; };
 		5C58DD24220BD119001DE8F1 /* TanktopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TanktopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C58DD27220BD119001DE8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5C58DD29220BD11C001DE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,15 +142,16 @@
 		5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C58DD3D220BD11D001DE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TankUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
-		5C91AFF0220CA9DB004CCB6D /* WCSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCSession.swift; sourceTree = "<group>"; };
+		5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTaskScheduler.swift; sourceTree = "<group>"; };
+		5C835863235F95E800CFE869 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TanktopToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C9F573E21F4045D00D7AEC8 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		5C9F573E21F4045D00D7AEC8 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
 		5C9F574121F4045D00D7AEC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
 		5C9F574321F4045D00D7AEC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9F575021F4051600D7AEC8 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5C9F575221F4056F00D7AEC8 /* TanktopToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanktopToday.entitlements; sourceTree = "<group>"; };
+		5CA39197236F438E00399BB1 /* WCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSession.swift; sourceTree = "<group>"; };
+		5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		5CB0055021ED002100F2E503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CB0055521ED002100F2E503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CB0055721ED002200F2E503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,18 +159,16 @@
 		5CB0055C21ED002200F2E503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC8B2BE21ED058100BDBF35 /* Tanktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tanktop.entitlements; sourceTree = "<group>"; };
-		5CC8B2D821ED50F400BDBF35 /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5CCD037421ED056C00EF3373 /* TankUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TankUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CD3841821F673AB00163A1C /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
-		5CD3841B21F6E93800163A1C /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
-		5CD3841D21F773D600163A1C /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		5CCA328523607FEA000B56E5 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		5CD579C721F56EC4001B9562 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
-		5CD726D121EE1CE800564338 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
 		5CD726D721EF78D600564338 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		5CD7F23221F22329006FE3DE /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
-		5CEE4FD4220268B600343DA3 /* ReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
-		5CEE4FD6220299BB00343DA3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5CD9644E236504D6004528AC /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		5CD9A7A023674578000F9666 /* AuthorizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeView.swift; sourceTree = "<group>"; };
+		5CD9A7A423675CAB000F9666 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		5CE5DA092364A32100DB55BB /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		5CEA4423236D39AF009E173B /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
+		5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAccessoryControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C58DD4A220BD1B3001DE8F1 /* TankUtility.framework in Frameworks */,
+				5C320B5C234B8D73002DF386 /* TankUtility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9F575121F4051600D7AEC8 /* NotificationCenter.framework in Frameworks */,
-				5CA7AFC022072469004619C2 /* TankUtility.framework in Frameworks */,
+				5C320B5A234B8D4F002DF386 /* TankUtility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C41F7582205C99400FE5DC1 /* AuthenticationServices.framework in Frameworks */,
-				5CCD037521ED056C00EF3373 /* TankUtility.framework in Frameworks */,
+				5C320B5E234B8D87002DF386 /* TankUtility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +217,6 @@
 			children = (
 				5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */,
 				5C2A59E12210D076006B4287 /* CLKComplication.swift */,
-				5C2A59E32210D0FC006B4287 /* CLKComplication.json */,
 				5C58DD39220BD11C001DE8F1 /* ComplicationController.swift */,
 				5C58DD37220BD11C001DE8F1 /* ExtensionDelegate.swift */,
 				5C58DD35220BD11C001DE8F1 /* InterfaceController.swift */,
@@ -259,7 +229,8 @@
 		5C9F573D21F4045D00D7AEC8 /* TanktopToday */ = {
 			isa = PBXGroup;
 			children = (
-				5C9F573E21F4045D00D7AEC8 /* TodayViewController.swift */,
+				5CCA328523607FEA000B56E5 /* DeviceView.swift */,
+				5C9F573E21F4045D00D7AEC8 /* TodayController.swift */,
 				5C9F574021F4045D00D7AEC8 /* Today.storyboard */,
 				5C9F575221F4056F00D7AEC8 /* TanktopToday.entitlements */,
 				5C9F574321F4045D00D7AEC8 /* Info.plist */,
@@ -286,41 +257,40 @@
 				5C58DD25220BD119001DE8F1 /* TanktopWatch */,
 				5CC8B2BE21ED058100BDBF35 /* Tanktop.app */,
 				5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */,
-				5CCD037421ED056C00EF3373 /* TankUtility.framework */,
 				5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */,
 				5C58DD24220BD119001DE8F1 /* TanktopWatch.app */,
-				5C58DD49220BD1B3001DE8F1 /* TankUtility.framework */,
 				5C9F574D21F404EF00D7AEC8 /* Frameworks */,
-				5C0BE3A3220862D30000EBE8 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
 		5CB0054F21ED002100F2E503 /* Tanktop */ = {
 			isa = PBXGroup;
 			children = (
+				5C23DDC0235DD49F0006EAFC /* AlertView.swift */,
 				5CB0055021ED002100F2E503 /* AppDelegate.swift */,
+				5C4D3165236877BA007052FC /* AuthorizeControl.swift */,
+				5CD9A7A023674578000F9666 /* AuthorizeView.swift */,
+				5C3F57C623666040007E8095 /* AuthorizeViewController.swift */,
 				5CB0055721ED002200F2E503 /* Assets.xcassets */,
-				5C1BFD2B224CDFE100ECB788 /* AuthorizeControl.swift */,
-				5CD726D121EE1CE800564338 /* AuthorizeViewController.swift */,
-				5C29A53121F0390A00E3914B /* DeauthorizeControl.swift */,
-				5CC8B2D821ED50F400BDBF35 /* DeviceViewController.swift */,
-				5CD3841821F673AB00163A1C /* DeviceView.swift */,
-				5C175C492200AE36009C3742 /* DragControl.swift */,
-				5C3A19FA220235A10071098A /* EmptyView.swift */,
-				5C3A19FD220239B00071098A /* ErrorView.swift */,
-				5CD7F23221F22329006FE3DE /* Keyboard.swift */,
+				5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */,
+				5C4D316723687801007052FC /* DeauthorizeControl.swift */,
+				5C23DDBE235DCDD40006EAFC /* DeviceView.swift */,
+				5CE5DA092364A32100DB55BB /* DeviceViewController.swift */,
 				5CB0055921ED002200F2E503 /* Launch.storyboard */,
-				5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */,
 				5CB0055421ED002100F2E503 /* Main.storyboard */,
-				5C1AD92A21FF6D92000C4040 /* PageBar.swift */,
-				5CEE4FD4220268B600343DA3 /* ReadingView.swift */,
-				5CD3841B21F6E93800163A1C /* RefreshControl.swift */,
-				5CEE4FD6220299BB00343DA3 /* SettingsView.swift */,
-				5CD3841D21F773D600163A1C /* TextField.swift */,
+				5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */,
+				5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */,
+				5CEA4423236D39AF009E173B /* PageBar.swift */,
+				5C23DDC1235DD49F0006EAFC /* ReadingView.swift */,
+				5CD9644E236504D6004528AC /* RefreshControl.swift */,
+				5C3F57CA236686E7007E8095 /* UIAlertController.swift */,
 				5CD726D721EF78D600564338 /* UIColor.swift */,
-				5C80846522048F48008F8B11 /* UNUserNotificationCenter.swift */,
+				5C835863235F95E800CFE869 /* UILabel.swift */,
+				5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */,
+				5CD9A7A423675CAB000F9666 /* UITextField.swift */,
+				5C3F57C823667F35007E8095 /* UIViewController.swift */,
 				5CD579C721F56EC4001B9562 /* URL.swift */,
-				5C91AFF0220CA9DB004CCB6D /* WCSession.swift */,
+				5CA39197236F438E00399BB1 /* WCSession.swift */,
 				5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */,
 				5CB0055C21ED002200F2E503 /* Info.plist */,
 			);
@@ -355,7 +325,6 @@
 				5C58DD2C220BD11C001DE8F1 /* Sources */,
 				5C58DD2D220BD11C001DE8F1 /* Frameworks */,
 				5C58DD2E220BD11C001DE8F1 /* Resources */,
-				5C58DD4C220BD1B3001DE8F1 /* Embed Frameworks */,
 				5C58DD4D220BD243001DE8F1 /* Set Build Number */,
 			);
 			buildRules = (
@@ -363,6 +332,9 @@
 			dependencies = (
 			);
 			name = "TanktopWatch Extension";
+			packageProductDependencies = (
+				5C320B5B234B8D73002DF386 /* TankUtility */,
+			);
 			productName = "TanktopWatch Extension";
 			productReference = 5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -381,6 +353,9 @@
 			dependencies = (
 			);
 			name = TanktopToday;
+			packageProductDependencies = (
+				5C320B59234B8D4F002DF386 /* TankUtility */,
+			);
 			productName = TanktopToday;
 			productReference = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -392,7 +367,6 @@
 				5CB0054921ED002000F2E503 /* Sources */,
 				5CB0054A21ED002000F2E503 /* Frameworks */,
 				5CB0054B21ED002000F2E503 /* Resources */,
-				5CCD037721ED056C00EF3373 /* Embed Frameworks */,
 				5C4AB2BE21F4032D006D0AA5 /* Embed App Extensions */,
 				5C45581B220B09060099EDED /* Set Build Number */,
 				5C58DD48220BD11D001DE8F1 /* Embed Watch Content */,
@@ -404,6 +378,9 @@
 				5C58DD3F220BD11D001DE8F1 /* PBXTargetDependency */,
 			);
 			name = Tanktop;
+			packageProductDependencies = (
+				5C320B5D234B8D87002DF386 /* TankUtility */,
+			);
 			productName = Tanktop;
 			productReference = 5CC8B2BE21ED058100BDBF35 /* Tanktop.app */;
 			productType = "com.apple.product-type.application";
@@ -505,7 +482,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C58DD2A220BD11C001DE8F1 /* Assets.xcassets in Resources */,
-				5CF01B0D220F287E005C3870 /* Assets.xcassets in Resources */,
 				5C58DD28220BD119001DE8F1 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,9 +490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CF01B0E220F2889005C3870 /* Assets.xcassets in Resources */,
 				5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */,
-				5C2A59E42210D0FC006B4287 /* CLKComplication.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +532,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 		5C45581D220B09610099EDED /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -576,7 +550,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 		5C58DD4D220BD243001DE8F1 /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -594,7 +568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 		5C58DD4E220BD279001DE8F1 /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -612,7 +586,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git=`sh /etc/profile; which git`\nbundleVersion=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n";
+			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -621,12 +595,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C91AFF2220CA9DB004CCB6D /* WCSession.swift in Sources */,
 				5C58DD38220BD11C001DE8F1 /* ExtensionDelegate.swift in Sources */,
-				5C2A59E22210D076006B4287 /* CLKComplication.swift in Sources */,
 				5C58DD36220BD11C001DE8F1 /* InterfaceController.swift in Sources */,
+				5CA39199236F438E00399BB1 /* WCSession.swift in Sources */,
 				5C58DD3A220BD11C001DE8F1 /* ComplicationController.swift in Sources */,
-				5C147141220E85B500C2A723 /* UIColor.swift in Sources */,
+				5CFA6D162354D1A800CFE10C /* CLKComplication.swift in Sources */,
+				5CEA4427236E48C4009E173B /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,14 +608,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C7375EB220E28AA004275C5 /* WCSession.swift in Sources */,
-				5C3A19FF220239B00071098A /* ErrorView.swift in Sources */,
-				5C7045F2220644C500FAF28E /* DeviceView.swift in Sources */,
-				5C7045F42206459800FAF28E /* DragControl.swift in Sources */,
-				5C9F573F21F4045D00D7AEC8 /* TodayViewController.swift in Sources */,
+				5CFA6D122354CEC500CFE10C /* URL.swift in Sources */,
+				5C83586823600A9700CFE869 /* UILabel.swift in Sources */,
+				5CCA328623607FEA000B56E5 /* DeviceView.swift in Sources */,
+				5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */,
 				5CAC92672200EFAB00B77FD3 /* UIColor.swift in Sources */,
-				5C7045F32206458600FAF28E /* ReadingView.swift in Sources */,
-				5CD579C921F56EC4001B9562 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,26 +620,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C29A53221F0390A00E3914B /* DeauthorizeControl.swift in Sources */,
-				5CEE4FD5220268B600343DA3 /* ReadingView.swift in Sources */,
-				5CD3841E21F773D600163A1C /* TextField.swift in Sources */,
-				5CD726D221EE1CE800564338 /* AuthorizeViewController.swift in Sources */,
-				5CD3841921F673AB00163A1C /* DeviceView.swift in Sources */,
-				5CD7F23321F22329006FE3DE /* Keyboard.swift in Sources */,
 				5CB0055121ED002100F2E503 /* AppDelegate.swift in Sources */,
-				5C1AD92B21FF6D92000C4040 /* PageBar.swift in Sources */,
-				5CC8B2D921ED50F400BDBF35 /* DeviceViewController.swift in Sources */,
-				5CEE4FD7220299BB00343DA3 /* SettingsView.swift in Sources */,
-				5C175C4A2200AE36009C3742 /* DragControl.swift in Sources */,
+				5CEA4424236D39AF009E173B /* PageBar.swift in Sources */,
+				5CFA6D112354CEC300CFE10C /* URL.swift in Sources */,
+				5C3F57C923667F35007E8095 /* UIViewController.swift in Sources */,
+				5CD9A7A523675CAB000F9666 /* UITextField.swift in Sources */,
+				5C3F57C723666040007E8095 /* AuthorizeViewController.swift in Sources */,
+				5CD9A7A123674578000F9666 /* AuthorizeView.swift in Sources */,
+				5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */,
+				5C835864235F95E800CFE869 /* UILabel.swift in Sources */,
 				5CC8B2DB21ED51AA00BDBF35 /* MainViewController.swift in Sources */,
-				5C3A19FE220239B00071098A /* ErrorView.swift in Sources */,
-				5C80846622048F48008F8B11 /* UNUserNotificationCenter.swift in Sources */,
+				5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */,
+				5C67E077237C5A7C0011DC54 /* BGTaskScheduler.swift in Sources */,
 				5CD726D821EF78D600564338 /* UIColor.swift in Sources */,
-				5CD579C821F56EC4001B9562 /* URL.swift in Sources */,
-				5C3A19FB220235A10071098A /* EmptyView.swift in Sources */,
-				5C1BFD2C224CDFE100ECB788 /* AuthorizeControl.swift in Sources */,
-				5CD3841C21F6E93800163A1C /* RefreshControl.swift in Sources */,
-				5C91AFF1220CA9DB004CCB6D /* WCSession.swift in Sources */,
+				5CE5DA0A2364A32100DB55BB /* DeviceViewController.swift in Sources */,
+				5CA39198236F438E00399BB1 /* WCSession.swift in Sources */,
+				5CA3919B236F94B500399BB1 /* UNUserNotificationCenter.swift in Sources */,
+				5C4D316823687801007052FC /* DeauthorizeControl.swift in Sources */,
+				5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */,
+				5C23DDC2235DD49F0006EAFC /* AlertView.swift in Sources */,
+				5CD9644F236504D6004528AC /* RefreshControl.swift in Sources */,
+				5C3F57CB236686E7007E8095 /* UIAlertController.swift in Sources */,
+				5C4D3166236877BA007052FC /* AuthorizeControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,11 +655,13 @@
 		};
 		5C58DD3F220BD11D001DE8F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5C58DD23220BD119001DE8F1 /* TanktopWatch */;
 			targetProxy = 5C58DD3E220BD11D001DE8F1 /* PBXContainerItemProxy */;
 		};
 		5C9F574521F4045D00D7AEC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 5C9F573821F4045D00D7AEC8 /* TanktopToday */;
 			targetProxy = 5C9F574421F4045D00D7AEC8 /* PBXContainerItemProxy */;
 		};
@@ -736,16 +711,18 @@
 				CODE_SIGN_ENTITLEMENTS = TanktopWatch/TanktopWatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				IBSC_MODULE = TanktopWatch_Extension;
 				INFOPLIST_FILE = TanktopWatch/Info.plist;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -757,16 +734,18 @@
 				CODE_SIGN_ENTITLEMENTS = TanktopWatch/TanktopWatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				IBSC_MODULE = TanktopWatch_Extension;
 				INFOPLIST_FILE = TanktopWatch/Info.plist;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -776,6 +755,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "TanktopWatch Extension/TanktopWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				INFOPLIST_FILE = "TanktopWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -783,13 +763,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -799,6 +780,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "TanktopWatch Extension/TanktopWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				INFOPLIST_FILE = "TanktopWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -806,13 +788,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.watch.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -822,6 +805,7 @@
 				CODE_SIGN_ENTITLEMENTS = TanktopToday/TanktopToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				INFOPLIST_FILE = TanktopToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -829,9 +813,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -843,6 +829,7 @@
 				CODE_SIGN_ENTITLEMENTS = TanktopToday/TanktopToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				INFOPLIST_FILE = TanktopToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -850,9 +837,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -909,8 +898,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -965,8 +954,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -984,14 +973,18 @@
 				CODE_SIGN_ENTITLEMENTS = Tanktop/Tanktop.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				INFOPLIST_FILE = Tanktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1005,14 +998,18 @@
 				CODE_SIGN_ENTITLEMENTS = Tanktop/Tanktop.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9Q3DL72K7D;
 				INFOPLIST_FILE = Tanktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1067,6 +1064,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C320B59234B8D4F002DF386 /* TankUtility */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TankUtility;
+		};
+		5C320B5B234B8D73002DF386 /* TankUtility */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TankUtility;
+		};
+		5C320B5D234B8D87002DF386 /* TankUtility */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TankUtility;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CB0054521ED002000F2E503 /* Project object */;
 }

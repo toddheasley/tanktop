@@ -1,6 +1,5 @@
 import Foundation
 import WatchConnectivity
-import TankUtility
 
 extension WCSession {
     static var available: WCSession? {

@@ -5,11 +5,9 @@ class RefreshControl: UIControl {
         didSet {
             let offset: CGFloat = max((0.0 - contentOffset.y) * 0.5, 0.0)
             contentView.frame.size.height = max(bounds.size.height + offset, isRefreshing ? bounds.size.height + progressView.intrinsicContentSize.height : 0.0)
+            contentView.alpha = progressView.isWaiting ? 1.0 : min(max(contentView.frame.size.height - 24.0, 0.0) * 0.1, 1.0)
             
-            progressView.isHidden = !progressView.isWaiting && contentView.frame.size.height < (bounds.size.height + 4.0)
-            progressView.progress = min(offset * 0.02, 1.0)
-            
-            (UIApplication.shared.delegate?.window??.rootViewController as? MainViewController)?.pageBar.alpha = progressView.isWaiting ? 0.0 : 1.0 - (progressView.progress * 2.5)
+            progressView.progress = min(max(offset - 12.0, 0.0) * 0.02, 1.0)
         }
     }
     
@@ -34,6 +32,10 @@ class RefreshControl: UIControl {
         })
     }
     
+    required init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let contentView: UIView = UIView()
     private let progressView: RefreshProgressView = RefreshProgressView()
     
@@ -51,19 +53,15 @@ class RefreshControl: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.autoresizingMask = [.flexibleHeight]
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.frame.size = bounds.size
+        contentView.alpha = 0.0
         addSubview(contentView)
         
         progressView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
         progressView.frame.size.width = bounds.size.width
         progressView.frame.origin.y = bounds.size.height - progressView.frame.size.height
-        progressView.isHidden = true
         contentView.addSubview(progressView)
-    }
-    
-    required init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -88,13 +86,17 @@ fileprivate class RefreshProgressView: UIView {
         }
     }
     
+    required init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let contentView: UIView = UIView()
     private let progressView: UIView = UIView()
     private let waitingView: UIImageView = UIImageView()
     
     // MARK: UIView
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 108.0, height: 46.0)
+        return CGSize(width: 108.0, height: 34.0)
     }
     
     override var frame: CGRect {
@@ -109,8 +111,9 @@ fileprivate class RefreshProgressView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.backgroundColor = .lightGray
+        contentView.backgroundColor = .tertiaryLabel
         contentView.clipsToBounds = true
+        contentView.layer.cornerCurve = .continuous
         contentView.layer.cornerRadius = 3.0
         contentView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
         contentView.frame.size.width = intrinsicContentSize.width
@@ -123,7 +126,6 @@ fileprivate class RefreshProgressView: UIView {
         contentView.addSubview(progressView)
         
         waitingView.contentMode = .scaleAspectFill
-        waitingView.tintColor = .white
         waitingView.animationDuration = 0.15
         waitingView.animationImages = [
             UIImage(named: "Progress1")!,
@@ -134,9 +136,5 @@ fileprivate class RefreshProgressView: UIView {
         waitingView.alpha = 0.5
         waitingView.isHidden = true
         contentView.addSubview(waitingView)
-    }
-    
-    required init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

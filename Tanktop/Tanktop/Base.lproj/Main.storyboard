@@ -1,27 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r" initialMenu="aHY-bO-APj">
+    <device id="mac" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main Menu-->
+        <scene sceneID="H1W-b8-KTu">
+            <objects>
+                <menu isSystemItem="YES" title="Main Menu" identifier="com.apple.menu.root" id="aHY-bO-APj" sceneMemberID="viewController">
+                    <children>
+                        <menu isSystemItem="YES" title="Application" identifier="com.apple.menu.application" id="4ya-gp-qPI">
+                            <children>
+                                <menu title="Inline Menu" anchor="com.apple.menu.about" id="8Id-C5-7A7" userLabel="Tank Utility">
+                                    <menuOptions key="menuOptions" displayInline="YES"/>
+                                    <children>
+                                        <command title="Tank Utility Account..." input="," id="uAN-bM-PeY" userLabel="Tank Utility Account...">
+                                            <keyModifierFlags key="modifierFlags" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleAuthorizeView" destination="HL5-Ji-qR3" id="K5Y-mO-hJ4"/>
+                                            </connections>
+                                        </command>
+                                    </children>
+                                </menu>
+                            </children>
+                            <systemMenuChildDeletions>
+                                <menuDeletion anchor="com.apple.menu.preferences"/>
+                                <menuDeletion anchor="com.apple.menu.services"/>
+                            </systemMenuChildDeletions>
+                        </menu>
+                        <menu isSystemItem="YES" title="File" identifier="com.apple.menu.file" id="2QZ-U7-IuQ">
+                            <systemMenuChildDeletions>
+                                <menuDeletion anchor="com.apple.menu.print"/>
+                            </systemMenuChildDeletions>
+                        </menu>
+                        <menu isSystemItem="YES" title="Edit" identifier="com.apple.menu.edit" id="Crh-1u-ZhB">
+                            <children>
+                                <menu isSystemItem="YES" title="Standard Edit" identifier="com.apple.menu.standard-edit" id="sxU-1B-DIz">
+                                    <menuOptions key="menuOptions" displayInline="YES"/>
+                                    <systemMenuChildDeletions>
+                                        <itemDeletion anchorAction="cut:"/>
+                                        <itemDeletion anchorAction="pasteAndMatchStyle:"/>
+                                        <itemDeletion anchorAction="delete:"/>
+                                    </systemMenuChildDeletions>
+                                </menu>
+                            </children>
+                            <systemMenuChildDeletions>
+                                <menuDeletion anchor="com.apple.menu.undo-redo"/>
+                                <menuDeletion anchor="com.apple.menu.find"/>
+                                <menuDeletion anchor="com.apple.menu.spelling"/>
+                                <menuDeletion anchor="com.apple.menu.substitutions"/>
+                                <menuDeletion anchor="com.apple.menu.transformations"/>
+                            </systemMenuChildDeletions>
+                        </menu>
+                        <menu isSystemItem="YES" title="View" identifier="com.apple.menu.view" id="SKX-OJ-FgE">
+                            <children>
+                                <command title="Refresh Devices" input="r" id="9gm-ad-JHD" userLabel="Refresh Devices">
+                                    <keyModifierFlags key="modifierFlags" command="YES"/>
+                                    <connections>
+                                        <action selector="refresh" destination="HL5-Ji-qR3" id="De1-mx-uVP"/>
+                                    </connections>
+                                </command>
+                            </children>
+                            <systemMenuChildDeletions>
+                                <menuDeletion anchor="com.apple.menu.toolbar"/>
+                            </systemMenuChildDeletions>
+                        </menu>
+                        <menu isSystemItem="YES" title="Help" identifier="com.apple.menu.help" id="guj-2f-cuC">
+                            <children>
+                                <command title="TankUtility Support" id="BHa-j4-xx8">
+                                    <connections>
+                                        <action selector="showSupport" destination="HL5-Ji-qR3" id="A9M-6q-neZ"/>
+                                    </connections>
+                                </command>
+                            </children>
+                            <systemMenuChildDeletions>
+                                <itemDeletion anchorAction="showHelp:"/>
+                            </systemMenuChildDeletions>
+                        </menu>
+                    </children>
+                    <systemMenuChildDeletions>
+                        <menuDeletion anchor="com.apple.menu.format"/>
+                    </systemMenuChildDeletions>
+                </menu>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HL5-Ji-qR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="-284"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Tanktop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXe-wP-BJz"/>
+                        <viewControllerLayoutGuide type="bottom" id="D9p-ZS-cbF"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.599999999999994" y="134.48275862068968"/>
+            <point key="canvasLocation" x="136.96000000000001" y="120.97399576074035"/>
         </scene>
     </scenes>
 </document>

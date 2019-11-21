@@ -1,46 +1,44 @@
 import UIKit
 import UserNotifications
 import WatchConnectivity
+import BackgroundTasks
 import TankUtility
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, WCSessionDelegate {
+    @objc func handleContext(notification: Notification?) {
+        try? WCSession.available?.updateApplicationContext(TankUtility.context)
+    }
     
     // MARK: UIApplicationDelegate
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         TankUtility.appGroup = "group.toddheasley.tanktop"
-        application.setMinimumBackgroundFetchInterval(7200.0)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleContext(notification:)), name: TankUtility.contextDidChangeNotification, object: nil)
         UNUserNotificationCenter.current().delegate = self
         WCSession.activate(delegate: self)
+        BGTaskScheduler.shared.registerRefresh()
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        (window?.rootViewController as? MainViewController)?.open()
+        #if targetEnvironment(macCatalyst)
+        window?.windowScene?.titlebar?.titleVisibility = .hidden
+        #endif
+        (window?.rootViewController as? MainViewController)?.refresh()
         try? WCSession.available?.updateApplicationContext(TankUtility.context)
     }
     
-    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        TankUtility.alerting { devices, error in
-            guard error == nil else {
-                completionHandler(.failed)
-                return
-            }
-            UNUserNotificationCenter.current().refreshAlerts(for: devices) { newData in
-                completionHandler(newData ? .newData : .noData)
-            }
-        }
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        BGTaskScheduler.shared.scheduleRefresh()
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let scheme: String = URL.app().scheme, scheme == url.scheme else {
             return false
         }
-        if let id: String = url.host, !id.isEmpty {
-            (window?.rootViewController as? MainViewController)?.open(device: id)
-        }
+        (window?.rootViewController as? MainViewController)?.open(device: url.host)
         return true
     }
     
@@ -53,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         (window?.rootViewController as? MainViewController)?.open(device: response.notification.request.identifier)
         completionHandler()
     }
+
     
     // MARK: WCSessionDelegate
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {

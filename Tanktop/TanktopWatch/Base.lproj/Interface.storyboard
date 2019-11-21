@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.55" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+    <device id="watch38"/>
     <dependencies>
-        <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.43"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -14,26 +11,31 @@
             <objects>
                 <controller spacing="0.0" fullBounds="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TanktopWatch" customModuleProvider="target">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="hfj-JP-S4u">
+                        <group width="1" height="1" alignment="left" layout="overlap" radius="0.0" spacing="0.0" id="ncX-Ob-tPD">
                             <items>
-                                <group width="100" height="120" alignment="center" verticalAlignment="center" hidden="YES" id="9cv-Y1-GVu" userLabel="Error Group">
-                                    <items>
-                                        <imageView width="100" height="100" alignment="center" image="Error" contentMode="scaleAspectFit" id="mRp-PP-xzP">
-                                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </imageView>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="center" verticalAlignment="bottom" layout="vertical" radius="0.0" spacing="0.0" id="u7q-dg-RnV">
-                                    <items>
-                                        <label width="1" widthAdjustment="-4" height="22" alignment="center" textAlignment="left" id="bCC-vF-kfo">
-                                            <fontDescription key="font" type="system" weight="medium" pointSize="12"/>
-                                        </label>
-                                        <group width="1" height="1" alignment="left" verticalAlignment="bottom" id="2oz-uV-ria">
-                                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
-                                        </group>
-                                    </items>
+                                <label width="1" height="0.90000000000000002" alignment="center" hidden="YES" alpha="0.5" text="NO DEVICE" textAlignment="center" minimumScaleFactor="0.5" id="HKO-8z-4X0" userLabel="Empty Label">
+                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="32"/>
+                                </label>
+                                <group width="1" height="0.0" alignment="center" verticalAlignment="bottom" radius="0.0" spacing="0.0" id="o6V-p1-Bwx">
                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                </group>
+                                <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="4" id="7WH-Gn-gZq">
+                                    <items>
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" " textAlignment="center" id="Q2d-st-xtI">
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                        </label>
+                                        <label width="1" alignment="center" verticalAlignment="center" text="  " textAlignment="center" id="LvO-B4-KVq">
+                                            <fontDescription key="font" type="system" weight="medium" pointSize="42"/>
+                                        </label>
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" " textAlignment="center" minimumScaleFactor="0.80000000000000004" id="4TS-Q3-TIX">
+                                            <fontDescription key="font" type="system" weight="medium" pointSize="14"/>
+                                        </label>
+                                        <label width="1" alignment="center" verticalAlignment="center" text=" " textAlignment="center" id="3wt-AD-vhS">
+                                            <fontDescription key="font" type="system" weight="medium" pointSize="24"/>
+                                        </label>
+                                    </items>
+                                    <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="12"/>
                                 </group>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
@@ -41,14 +43,16 @@
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                     <connections>
-                        <outlet property="deviceGroup" destination="u7q-dg-RnV" id="rna-4E-rhQ"/>
-                        <outlet property="errorGroup" destination="9cv-Y1-GVu" id="13e-Qt-O3C"/>
-                        <outlet property="group" destination="hfj-JP-S4u" id="AmN-pL-abI"/>
-                        <outlet property="nameLabel" destination="bCC-vF-kfo" id="4Qe-DS-mfl"/>
-                        <outlet property="tankGroup" destination="2oz-uV-ria" id="zW7-gR-vgB"/>
+                        <outlet property="dateLabel" destination="4TS-Q3-TIX" id="COX-0t-o9S"/>
+                        <outlet property="emptyLabel" destination="HKO-8z-4X0" id="Ld3-3l-Q8H"/>
+                        <outlet property="nameLabel" destination="Q2d-st-xtI" id="Tzi-bO-k5R"/>
+                        <outlet property="tankGroup" destination="o6V-p1-Bwx" id="D1J-nQ-jrP"/>
+                        <outlet property="tankLabel" destination="LvO-B4-KVq" id="tTs-zI-cOF"/>
+                        <outlet property="temperatureLabel" destination="3wt-AD-vhS" id="S0l-Hr-KFT"/>
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="34" y="31"/>
         </scene>
     </scenes>
 </document>

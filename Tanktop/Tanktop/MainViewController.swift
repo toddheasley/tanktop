@@ -1,58 +1,112 @@
 import UIKit
 import TankUtility
 
-class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, PageBarDelegate, AuthorizeViewDelegate {
-    func open(device id: String? = nil) {
-        if let id: String = id, devices.contains(id) {
-            current = id
+class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, PageBarDelegate {
+    @IBAction func toggleAuthorizeView() {
+        if let presentedViewController: UIViewController = presentedViewController {
+            guard !presentedViewController.isModalInPresentation else {
+                return
+            }
+            dismiss(animated: true, completion: nil)
+        } else {
+            present(AuthorizeViewController(), animated: true, completion: nil)
         }
-        viewDidAuthorize()
     }
     
-    let pageBar: PageBar = PageBar()
-    private let pageViewController: UIPageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-    private var current: String?
+    @IBAction func showSupport() {
+        UIApplication.shared.open(TankUtility.support, options: [:], completionHandler: nil)
+    }
     
-    private var devices: [String] = [] {
+    @IBAction func refresh() {
+        TankUtility.devices { devices, error in
+            guard !self.handle(error: error),
+                let devices: [Device] = devices else {
+                return
+            }
+            self.devices = devices
+        }
+    }
+    
+    func open(device id: String? = nil) {
+        for (index, device) in devices.enumerated() {
+            guard device.id == id else {
+                continue
+            }
+            pageBar.currentPage = index
+            pageDidChange(bar: pageBar)
+            break
+        }
+    }
+    
+    func reset() {
+        devices = []
+    }
+    
+    private let emptyLabel: UILabel = .empty(text: "No devices")
+    private let pageViewController: UIPageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    private let pageBar: PageBar = PageBar()
+    
+    private var devices: [Device] = [] {
         didSet {
             pageBar.numberOfPages = devices.count
             if let index: Int = index {
-                pageViewController.setViewControllers([DeviceViewController(id: devices[index])], direction: .forward, animated: false, completion: nil)
+                if let deviceViewController: DeviceViewController = pageViewController.viewControllers?.first as? DeviceViewController, deviceViewController.device == devices[index] {
+                    deviceViewController.device = devices[index]
+                } else {
+                    pageViewController.setViewControllers([
+                        DeviceViewController(device: devices[index])
+                    ], direction: .forward, animated: false, completion: nil)
+                }
                 pageBar.currentPage = index
             } else {
-                pageViewController.setViewControllers([EmptyViewController()], direction: .reverse, animated: false, completion: nil)
+                pageViewController.setViewControllers([
+                    UIViewController()
+                ], direction: .reverse, animated: false, completion: nil)
             }
+            UNUserNotificationCenter.current().refreshAlerts(for: devices)
+            emptyLabel.isAccessibilityElement = devices.isEmpty
+            emptyLabel.isHidden = !devices.isEmpty
         }
     }
     
     private var index: Int? {
         for (index, device) in devices.enumerated() {
-            guard device == current else {
+            guard device.isCurrent else {
                 continue
             }
             return index
         }
-        current = devices.first
-        return current != nil ? 0 : nil
+        return !devices.isEmpty ? 0 : nil
     }
     
     // MARK: UIViewController
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        viewDidAuthorize()
+    override var keyCommands: [UIKeyCommand]? {
+        guard !(presentedViewController?.isModalInPresentation ?? true) else {
+            return []
+        }
+        return [
+            UIKeyCommand(title: "Dismiss", action: #selector(toggleAuthorizeView), input: UIKeyCommand.inputEscape)
+        ]
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        pageBar.frame.origin.y = view.safeAreaInsets.top
+        emptyLabel.frame.size.width = round(view.bounds.size.width * 0.8)
+        emptyLabel.frame.origin.x = (view.bounds.size.width - emptyLabel.frame.size.width) / 2.0
+        
+        pageBar.frame.origin.y = view.bounds.size.height - (pageBar.frame.size.height + view.safeAreaInsets.bottom)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
+        
+        emptyLabel.isUserInteractionEnabled = false
+        emptyLabel.autoresizingMask = [.flexibleHeight]
+        emptyLabel.frame.size.height = view.bounds.size.height
+        view.addSubview(emptyLabel)
         
         pageViewController.dataSource = self
         pageViewController.delegate = self
@@ -63,69 +117,49 @@ class MainViewController: UIViewController, UIPageViewControllerDataSource, UIPa
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
         
+        pageBar.delegate = self
         pageBar.autoresizingMask = [.flexibleWidth]
         pageBar.frame.size.width = view.bounds.size.width
-        pageBar.frame.size.height = 44.0
-        pageBar.delegate = self
+        pageBar.frame.size.height = pageBar.intrinsicContentSize.height
         view.addSubview(pageBar)
     }
     
     // MARK: UIPageViewControllerDataSource
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index: Int = index, index - 1 >= 0 else {
+        guard let index: Int = index, index > 0 else {
             return nil
         }
-        return DeviceViewController(id: devices[index - 1])
+        return DeviceViewController(device: devices[index - 1])
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let index: Int = index, index + 1 < devices.count else {
             return nil
         }
-        return DeviceViewController(id: devices[index + 1])
+        return DeviceViewController(device: devices[index + 1])
     }
     
     // MARK: UIPageViewControllerDelegate
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        current = (pageViewController.viewControllers?.first as? DeviceViewController)?.id
+        guard var device: Device = (pageViewController.viewControllers?.first as? DeviceViewController)?.device else {
+            return
+        }
+        device.isCurrent = true        
         pageBar.currentPage = index ?? 0
     }
     
     // MARK: PageBarDelegate
     func pageDidChange(bar: PageBar) {
         guard let index: Int = index, bar.currentPage != index else {
-                return
-        }
-        current = devices[bar.currentPage]
-        pageViewController.setViewControllers([DeviceViewController(id: current!)], direction: bar.currentPage < index ? .reverse : .forward, animated: true, completion: nil)
-    }
-    
-    func pageBarDidDeauthorize() {
-        self.present(AuthorizeViewController(delegate: self), animated: true) {
-            self.devices = []
-        }
-    }
-    
-    // MARK: AuthorizeViewDelegate
-    func viewDidAuthorize() {
-        guard presentedViewController == nil else {
-            dismiss(animated: true, completion: nil)
             return
         }
-        TankUtility.devices { devices, error in
-            guard let error: TankUtility.Error = error else {
-                self.devices = devices
-                return
-            }
-            switch error {
-            case .unauthorized:
-                self.present(AuthorizeViewController(delegate: self), animated: true) {
-                    self.devices = []
-                }
-            default:
-                self.devices = []
-                self.pageViewController.setViewControllers([ErrorViewController()], direction: .reverse, animated: false, completion: nil)
-            }
+        var device: Device = devices[bar.currentPage]
+        pageViewController.setViewControllers([DeviceViewController(device: devices[bar.currentPage])], direction: bar.currentPage < index ? .reverse : .forward, animated: true) { _ in
+            device.isCurrent = true
         }
+    }
+    
+    func pageAccessoryDidOpen() {
+        toggleAuthorizeView()
     }
 }

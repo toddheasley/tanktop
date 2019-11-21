@@ -4,7 +4,7 @@ import TankUtility
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     func refresh(completion: ((Error?) -> Void)? = nil) {
-        TankUtility.device { device, error in
+        TankUtility.device { device, completed, error in
             (WKExtension.shared().rootInterfaceController as? InterfaceController)?.device = device
             ComplicationController.device = device
             WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date(timeIntervalSinceNow: 7200.0), userInfo: nil) { error in
@@ -44,7 +44,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        TankUtility.context = session.receivedApplicationContext
+        TankUtility.context = applicationContext
         applicationDidBecomeActive()
     }
 }

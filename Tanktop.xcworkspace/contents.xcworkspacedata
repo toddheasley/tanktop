@@ -5,15 +5,12 @@
       location = "group:Tanktop/Tanktop.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TankUtility/TankUtility.xcodeproj">
+      location = "group:TankUtility">
    </FileRef>
    <FileRef
       location = "group:README.md">
    </FileRef>
    <FileRef
       location = "group:PRIVACY.md">
-   </FileRef>
-   <FileRef
-      location = "group:App.svg">
    </FileRef>
 </Workspace>
