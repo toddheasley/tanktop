@@ -46,7 +46,7 @@
                         </menu>
                         <menu isSystemItem="YES" title="Help" identifier="com.apple.menu.help" id="guj-2f-cuC">
                             <children>
-                                <command title="TankUtility Support" id="BHa-j4-xx8">
+                                <command title="Tank Utility Support" id="BHa-j4-xx8">
                                     <connections>
                                         <action selector="showSupport" destination="HL5-Ji-qR3" id="A9M-6q-neZ"/>
                                     </connections>
