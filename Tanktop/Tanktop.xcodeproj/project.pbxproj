@@ -10,7 +10,6 @@
 		5C23DDBF235DCDD40006EAFC /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDBE235DCDD40006EAFC /* DeviceView.swift */; };
 		5C23DDC2235DD49F0006EAFC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC0235DD49F0006EAFC /* AlertView.swift */; };
 		5C23DDC3235DD49F0006EAFC /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C23DDC1235DD49F0006EAFC /* ReadingView.swift */; };
-		5C320B5A234B8D4F002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B59234B8D4F002DF386 /* TankUtility */; };
 		5C320B5C234B8D73002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5B234B8D73002DF386 /* TankUtility */; };
 		5C320B5E234B8D87002DF386 /* TankUtility in Frameworks */ = {isa = PBXBuildFile; productRef = 5C320B5D234B8D87002DF386 /* TankUtility */; };
 		5C3F57C723666040007E8095 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F57C623666040007E8095 /* AuthorizeViewController.swift */; };
@@ -28,23 +27,15 @@
 		5C58DD3C220BD11D001DE8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C58DD3B220BD11D001DE8F1 /* Assets.xcassets */; };
 		5C58DD40220BD11D001DE8F1 /* TanktopWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C58DD24220BD119001DE8F1 /* TanktopWatch.app */; platformFilter = ios; };
 		5C67E077237C5A7C0011DC54 /* BGTaskScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */; };
-		5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5C835864235F95E800CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
-		5C83586823600A9700CFE869 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C835863235F95E800CFE869 /* UILabel.swift */; };
-		5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9F573E21F4045D00D7AEC8 /* TodayController.swift */; };
-		5C9F574221F4045D00D7AEC8 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F574021F4045D00D7AEC8 /* Today.storyboard */; };
-		5C9F574621F4045D00D7AEC8 /* TanktopToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5C9F575121F4051600D7AEC8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9F575021F4051600D7AEC8 /* NotificationCenter.framework */; };
 		5CA39198236F438E00399BB1 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA39197236F438E00399BB1 /* WCSession.swift */; };
 		5CA39199236F438E00399BB1 /* WCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA39197236F438E00399BB1 /* WCSession.swift */; };
 		5CA3919B236F94B500399BB1 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */; };
-		5CAC92672200EFAB00B77FD3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5CB0055121ED002100F2E503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0055021ED002100F2E503 /* AppDelegate.swift */; };
 		5CB0055621ED002100F2E503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055421ED002100F2E503 /* Main.storyboard */; };
 		5CB0055821ED002200F2E503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055721ED002200F2E503 /* Assets.xcassets */; };
 		5CB0055B21ED002200F2E503 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0055921ED002200F2E503 /* Launch.storyboard */; };
 		5CC8B2DB21ED51AA00BDBF35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */; };
-		5CCA328623607FEA000B56E5 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA328523607FEA000B56E5 /* DeviceView.swift */; };
 		5CD726D821EF78D600564338 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5CD9644F236504D6004528AC /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9644E236504D6004528AC /* RefreshControl.swift */; };
 		5CD9A7A123674578000F9666 /* AuthorizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9A7A023674578000F9666 /* AuthorizeView.swift */; };
@@ -54,7 +45,6 @@
 		5CEA4426236D3F1F009E173B /* PageAccessoryControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA4425236D3F1F009E173B /* PageAccessoryControl.swift */; };
 		5CEA4427236E48C4009E173B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD726D721EF78D600564338 /* UIColor.swift */; };
 		5CFA6D112354CEC300CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
-		5CFA6D122354CEC500CFE10C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD579C721F56EC4001B9562 /* URL.swift */; };
 		5CFA6D162354D1A800CFE10C /* CLKComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A59E12210D076006B4287 /* CLKComplication.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,13 +63,6 @@
 			remoteGlobalIDString = 5C58DD23220BD119001DE8F1;
 			remoteInfo = TanktopWatch;
 		};
-		5C9F574421F4045D00D7AEC8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CB0054521ED002000F2E503 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5C9F573821F4045D00D7AEC8;
-			remoteInfo = TanktopToday;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,7 +72,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5C9F574621F4045D00D7AEC8 /* TanktopToday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,12 +126,7 @@
 		5C58DD3D220BD11D001DE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C67E076237C5A7C0011DC54 /* BGTaskScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTaskScheduler.swift; sourceTree = "<group>"; };
 		5C835863235F95E800CFE869 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TanktopToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C9F573E21F4045D00D7AEC8 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
-		5C9F574121F4045D00D7AEC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
-		5C9F574321F4045D00D7AEC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C9F575021F4051600D7AEC8 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		5C9F575221F4056F00D7AEC8 /* TanktopToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanktopToday.entitlements; sourceTree = "<group>"; };
 		5CA39197236F438E00399BB1 /* WCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSession.swift; sourceTree = "<group>"; };
 		5CA3919A236F94B500399BB1 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		5CB0055021ED002100F2E503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +137,6 @@
 		5CC8B2BE21ED058100BDBF35 /* Tanktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC8B2D721ED1A5B00BDBF35 /* Tanktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tanktop.entitlements; sourceTree = "<group>"; };
 		5CC8B2DA21ED51AA00BDBF35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5CCA328523607FEA000B56E5 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		5CD579C721F56EC4001B9562 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		5CD726D721EF78D600564338 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5CD9644E236504D6004528AC /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
@@ -177,15 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C320B5C234B8D73002DF386 /* TankUtility in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5C9F573621F4045D00D7AEC8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C9F575121F4051600D7AEC8 /* NotificationCenter.framework in Frameworks */,
-				5C320B5A234B8D4F002DF386 /* TankUtility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,18 +193,6 @@
 			path = "TanktopWatch Extension";
 			sourceTree = "<group>";
 		};
-		5C9F573D21F4045D00D7AEC8 /* TanktopToday */ = {
-			isa = PBXGroup;
-			children = (
-				5CCA328523607FEA000B56E5 /* DeviceView.swift */,
-				5C9F573E21F4045D00D7AEC8 /* TodayController.swift */,
-				5C9F574021F4045D00D7AEC8 /* Today.storyboard */,
-				5C9F575221F4056F00D7AEC8 /* TanktopToday.entitlements */,
-				5C9F574321F4045D00D7AEC8 /* Info.plist */,
-			);
-			path = TanktopToday;
-			sourceTree = "<group>";
-		};
 		5C9F574D21F404EF00D7AEC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,11 +207,9 @@
 			children = (
 				5C455823220B3A580099EDED /* Tanktop.sketch */,
 				5CB0054F21ED002100F2E503 /* Tanktop */,
-				5C9F573D21F4045D00D7AEC8 /* TanktopToday */,
 				5C58DD34220BD11C001DE8F1 /* TanktopWatch Extension */,
 				5C58DD25220BD119001DE8F1 /* TanktopWatch */,
 				5CC8B2BE21ED058100BDBF35 /* Tanktop.app */,
-				5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */,
 				5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */,
 				5C58DD24220BD119001DE8F1 /* TanktopWatch.app */,
 				5C9F574D21F404EF00D7AEC8 /* Frameworks */,
@@ -339,27 +292,6 @@
 			productReference = 5C58DD30220BD11C001DE8F1 /* TanktopWatch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
-		5C9F573821F4045D00D7AEC8 /* TanktopToday */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5C9F574721F4045D00D7AEC8 /* Build configuration list for PBXNativeTarget "TanktopToday" */;
-			buildPhases = (
-				5C9F573521F4045D00D7AEC8 /* Sources */,
-				5C9F573621F4045D00D7AEC8 /* Frameworks */,
-				5C9F573721F4045D00D7AEC8 /* Resources */,
-				5C45581D220B09610099EDED /* Set Build Number */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TanktopToday;
-			packageProductDependencies = (
-				5C320B59234B8D4F002DF386 /* TankUtility */,
-			);
-			productName = TanktopToday;
-			productReference = 5C9F573921F4045D00D7AEC8 /* TanktopToday.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		5CB0054C21ED002000F2E503 /* Tanktop */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CB0055F21ED002200F2E503 /* Build configuration list for PBXNativeTarget "Tanktop" */;
@@ -374,7 +306,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5C9F574521F4045D00D7AEC8 /* PBXTargetDependency */,
 				5C58DD3F220BD11D001DE8F1 /* PBXTargetDependency */,
 			);
 			name = Tanktop;
@@ -410,21 +341,6 @@
 								enabled = 1;
 							};
 							com.apple.BackgroundModes.watchos.extension = {
-								enabled = 0;
-							};
-							com.apple.Keychain = {
-								enabled = 1;
-							};
-						};
-					};
-					5C9F573821F4045D00D7AEC8 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.AutoFillCredentialProvider = {
 								enabled = 0;
 							};
 							com.apple.Keychain = {
@@ -469,7 +385,6 @@
 			projectRoot = "";
 			targets = (
 				5CB0054C21ED002000F2E503 /* Tanktop */,
-				5C9F573821F4045D00D7AEC8 /* TanktopToday */,
 				5C58DD2F220BD11C001DE8F1 /* TanktopWatch Extension */,
 				5C58DD23220BD119001DE8F1 /* TanktopWatch */,
 			);
@@ -494,15 +409,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C9F573721F4045D00D7AEC8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C7045F5220659C900FAF28E /* Assets.xcassets in Resources */,
-				5C9F574221F4045D00D7AEC8 /* Today.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5CB0054B21ED002000F2E503 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,24 +423,6 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		5C45581B220B09060099EDED /* Set Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Set Build Number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "build=`$(sh /etc/profile; which git) rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n";
-		};
-		5C45581D220B09610099EDED /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -604,18 +492,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C9F573521F4045D00D7AEC8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5CFA6D122354CEC500CFE10C /* URL.swift in Sources */,
-				5C83586823600A9700CFE869 /* UILabel.swift in Sources */,
-				5CCA328623607FEA000B56E5 /* DeviceView.swift in Sources */,
-				5C9F573F21F4045D00D7AEC8 /* TodayController.swift in Sources */,
-				5CAC92672200EFAB00B77FD3 /* UIColor.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5CB0054921ED002000F2E503 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,12 +535,6 @@
 			target = 5C58DD23220BD119001DE8F1 /* TanktopWatch */;
 			targetProxy = 5C58DD3E220BD11D001DE8F1 /* PBXContainerItemProxy */;
 		};
-		5C9F574521F4045D00D7AEC8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 5C9F573821F4045D00D7AEC8 /* TanktopToday */;
-			targetProxy = 5C9F574421F4045D00D7AEC8 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -674,14 +544,6 @@
 				5C58DD27220BD119001DE8F1 /* Base */,
 			);
 			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-		5C9F574021F4045D00D7AEC8 /* Today.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C9F574121F4045D00D7AEC8 /* Base */,
-			);
-			name = Today.storyboard;
 			sourceTree = "<group>";
 		};
 		5CB0055421ED002100F2E503 /* Main.storyboard */ = {
@@ -722,7 +584,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
@@ -745,7 +607,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
@@ -770,7 +632,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -795,55 +656,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.1;
-			};
-			name = Release;
-		};
-		5C9F574821F4045D00D7AEC8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TanktopToday/TanktopToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 9Q3DL72K7D;
-				INFOPLIST_FILE = TanktopToday/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.today;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		5C9F574921F4045D00D7AEC8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TanktopToday/TanktopToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 9Q3DL72K7D;
-				INFOPLIST_FILE = TanktopToday/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.toddheasley.tanktop.today;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -898,7 +710,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -906,6 +718,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 13.3;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
@@ -954,14 +768,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 13.3;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
@@ -1036,15 +852,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5C9F574721F4045D00D7AEC8 /* Build configuration list for PBXNativeTarget "TanktopToday" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5C9F574821F4045D00D7AEC8 /* Debug */,
-				5C9F574921F4045D00D7AEC8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		5CB0054821ED002000F2E503 /* Build configuration list for PBXProject "Tanktop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1066,10 +873,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5C320B59234B8D4F002DF386 /* TankUtility */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TankUtility;
-		};
 		5C320B5B234B8D73002DF386 /* TankUtility */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TankUtility;
