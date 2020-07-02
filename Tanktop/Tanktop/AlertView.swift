@@ -10,13 +10,18 @@ class AlertView: UIView {
     
     var alert: Alert? {
         didSet {
-            alertControl.isHidden = alert == nil
-            alertControl.frame.origin.y = (bounds.size.height - (bounds.size.height * CGFloat(alert?.threshold ?? Alert().threshold))) - (alertControl.frame.size.height / 2.0)
             alertControl.threshold = alert?.threshold
             
             accessibilityLabel = "Alert when tank level is below"
             accessibilityValue = String(percent: alert?.threshold)
             isAccessibilityElement = !isHidden
+            
+            setNeedsLayout()
+            
+            guard let alert: Alert = alert, alert.threshold != oldValue?.threshold else {
+                return
+            }
+            delegate?.alertDidChange(alert)
         }
     }
     
@@ -24,7 +29,9 @@ class AlertView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc fileprivate func handleDrag(_ control: AlertControl, event: UIEvent) {
+    private let alertControl: AlertControl = AlertControl()
+    
+    @objc private func handleDrag(_ control: AlertControl, event: UIEvent) {
         guard let touch: UITouch = event.touches(for: control)?.first else {
             return
         }
@@ -32,19 +39,12 @@ class AlertView: UIView {
         alert?.threshold = Double((bounds.size.height - y) / bounds.size.height)
     }
     
-    @objc fileprivate func handleDragEnd() {
+    @objc private func handleDragEnd() {
         setNeedsLayout()
         UIView.animate(withDuration: 0.2) {
             self.layoutIfNeeded()
         }
-        
-        guard let alert: Alert = alert else {
-            return
-        }
-        delegate?.alertDidChange(alert)
     }
-    
-    private let alertControl: AlertControl = AlertControl()
     
     // MARK: UIView
     override func accessibilityIncrement() {
@@ -66,7 +66,8 @@ class AlertView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        //alert?.threshold = Double(lround((alert?.threshold ?? 0.0) * 100.0)) / 100.0
+        alertControl.isHidden = alert == nil
+        alertControl.frame.origin.y = (bounds.size.height - (bounds.size.height * CGFloat(alert?.threshold ?? Alert().threshold))) - (alertControl.frame.size.height / 2.0)
     }
     
     override init(frame: CGRect) {

@@ -11,14 +11,12 @@ class DeviceView: UIView, AlertDelegate {
             
             contentView.accessibilityLabel = description
             setNeedsLayout()
-            layoutIfNeeded()
         }
     }
     
     var contentInset: UIEdgeInsets = .zero {
         didSet {
             setNeedsLayout()
-            layoutIfNeeded()
         }
     }
     
@@ -86,7 +84,6 @@ class DeviceView: UIView, AlertDelegate {
         super.traitCollectionDidChange(previousTraitCollection)
         
         setNeedsLayout()
-        layoutIfNeeded()
     }
     
     override init(frame: CGRect) {
