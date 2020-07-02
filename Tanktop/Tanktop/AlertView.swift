@@ -66,7 +66,7 @@ class AlertView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        alert?.threshold = Double(lround((alert?.threshold ?? 0.0) * 100.0)) / 100.0
+        //alert?.threshold = Double(lround((alert?.threshold ?? 0.0) * 100.0)) / 100.0
     }
     
     override init(frame: CGRect) {
