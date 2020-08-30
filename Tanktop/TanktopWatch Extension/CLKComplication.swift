@@ -9,7 +9,7 @@ extension CLKComplication {
         }
         switch family ?? self.family {
         case .graphicCircular:
-            return CLKComplicationTemplateGraphicCircularClosedGaugeText(gaugeProvider: CLKSimpleGaugeProvider(style: .ring, gaugeColor: .deviceStatus(device), fillFraction: Float(reading.tank)), center: CLKSimpleTextProvider(text: String(percent: reading.tank, symbol: false) ?? ""))
+            return CLKComplicationTemplateGraphicCircularClosedGaugeText(gaugeProvider: CLKSimpleGaugeProvider(style: .ring, gaugeColor: .deviceStatus(device), fillFraction: Float(reading.tank)), centerTextProvider: CLKSimpleTextProvider(text: String(percent: reading.tank, symbol: false) ?? ""))
         case .graphicBezel:
             guard let circularTemplate: CLKComplicationTemplateGraphicCircular = self.template(device: device, family: .graphicCircular) as? CLKComplicationTemplateGraphicCircular else {
                 return nil
